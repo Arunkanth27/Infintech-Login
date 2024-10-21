@@ -1,0 +1,10 @@
+.home {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .home__body {
+    display: flex;
+    margin-top: 20px;
+  }
+  
