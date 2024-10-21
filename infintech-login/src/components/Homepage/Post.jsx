@@ -8,7 +8,7 @@ const Post = ({ name, description, content }) => {
         <h3>{name}</h3>
         <p>{description}</p>
       </div>
-      <div className="post__content">
+      <div className="post__body">
         <p>{content}</p>
       </div>
     </div>

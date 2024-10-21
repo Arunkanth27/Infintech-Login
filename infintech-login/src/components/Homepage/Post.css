@@ -1,0 +1,37 @@
+/* Post Styling */
+.post {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+  
+  .post:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+  
+  .post__header h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #0073b1;
+  }
+  
+  .post__header p {
+    color: gray;
+    font-size: 14px;
+  }
+  
+  .post__body p {
+    margin-top: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .post__body p {
+      font-size: 14px;
+    }
+  }
+  

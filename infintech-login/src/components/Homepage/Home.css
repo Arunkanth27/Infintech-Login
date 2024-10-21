@@ -1,0 +1,21 @@
+/* Home Page Styling */
+.home {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f9f9f9;
+  }
+  
+  .home__body {
+    display: flex;
+    flex: 1;
+    margin-top: 70px; /* Add margin to push content below the header */
+  }
+  
+  @media screen and (max-width: 768px) {
+    .home__body {
+      flex-direction: column;
+      margin-top: 70px;
+    }
+  }
+  

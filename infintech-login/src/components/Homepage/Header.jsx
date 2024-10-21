@@ -1,29 +1,29 @@
 import React from 'react';
 import './Header.css';
 import { Link } from 'react-router-dom';
-import logo from '../images/download.jpg';
+
+
+
 
 const Header = () => {
   return (
     <div className="header">
       <div className="header__left">
         <img
-          src= {logo}
-          alt="LinkedIn Logo"
+          src="/images/download.jpg"
+          alt="Platform Logo"
           className="header__logo"
         />
-        <div className="header__search">
-          <input type="text" placeholder="Search" />
-        </div>
+        <input type="text" placeholder="Search for projects, jobs, or people" className="header__search" />
       </div>
 
       <div className="header__right">
-        <Link to="/">Home</Link>
-        <Link to="/network">My People</Link>
-        <Link to="/jobs">Projects</Link>
-        <Link to="/messages">Messaging</Link>
+        <Link to="/projects">Community</Link>
+        <Link to="/jobs">Jobs</Link>
+        <Link to="/network">My Network</Link>
+        <Link to="/messages">Messages</Link>
         <Link to="/notifications">Notifications</Link>
-        <Link to="/profile">Me</Link>
+        <Link to="/profile">Profile</Link>
       </div>
     </div>
   );

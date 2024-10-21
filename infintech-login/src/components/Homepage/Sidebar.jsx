@@ -10,14 +10,14 @@ const Sidebar = () => {
           alt="Profile"
           className="sidebar__profilePic"
         />
-        <h2>John </h2>
-        <p>Computing student</p>
-      </div>
-      <div className="sidebar__options">
-        <p>My Jobs</p>
-        <p>Groups</p>
-        <p>Events</p>
-        <p>Followed Hashtags</p>
+        <h3>John Doe</h3>
+        <p>Software Engineering Student</p>
+        <div className="sidebar__links">
+          <p>Monetize Skills</p>
+          <p>My Projects</p>
+          <p>Groups</p>
+          <p>Events</p>
+        </div>
       </div>
     </div>
   );

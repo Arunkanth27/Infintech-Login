@@ -1,0 +1,56 @@
+/* Sidebar Styling */
+.sidebar {
+    background-color: #fdfdfd;
+    padding: 20px;
+    flex: 0.2;
+    border-right: 1px solid lightgray;
+    min-height: 100vh;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+  }
+  
+  .sidebar__profile {
+    text-align: center;
+  }
+  
+  .sidebar__profilePic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    border: 2px solid #0073b1;
+    padding: 3px;
+  }
+  
+  .sidebar__profile h3 {
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .sidebar__profile p {
+    color: #777;
+    margin-top: 5px;
+    font-size: 14px;
+  }
+  
+  .sidebar__links p {
+    margin-top: 20px;
+    cursor: pointer;
+    color: #0073b1;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sidebar__links p:hover {
+    background-color: #eef7fc;
+    color: #005b8b;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .sidebar {
+      display: none;
+    }
+  }
+  

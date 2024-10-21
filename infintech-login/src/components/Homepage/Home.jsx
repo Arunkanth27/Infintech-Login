@@ -4,6 +4,7 @@ import Header from './Header';
 import Sidebar from './Sidebar';
 import Feed from './Feed';
 import Widgets from './Widgets';
+import Footer from './Footer';
 
 const Home = () => {
   return (
@@ -14,9 +15,9 @@ const Home = () => {
         <Feed />
         <Widgets />
       </div>
+      <Footer />
     </div>
   );
 };
 
 export default Home;
-

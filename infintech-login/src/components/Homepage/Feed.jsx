@@ -6,18 +6,19 @@ const Feed = () => {
   return (
     <div className="feed">
       <div className="feed__inputContainer">
-        <textarea placeholder="Start a post" />
+        <textarea placeholder="Post something to the community..." />
         <button>Post</button>
       </div>
+
       <Post
         name="John Doe"
-        description="Software Engineer"
-        content="Excited to start my new role at Google!"
+        description="Software Engineering Student"
+        content="Can anyone help me with a project using React?"
       />
       <Post
         name="Jane Smith"
-        description="Product Manager"
-        content="Looking forward to the Product Summit this weekend!"
+        description="Data Science Student"
+        content="Looking for a team to collaborate on a machine learning project!"
       />
     </div>
   );
