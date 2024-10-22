@@ -1,31 +1,26 @@
+// Header.js
 import React from 'react';
-import './Header.css';
 import { Link } from 'react-router-dom';
-
-
-
+import './Header.css';
+import Messaging from './Messaging';
 
 const Header = () => {
   return (
-    <div className="header">
+    <header className="header">
       <div className="header__left">
-        <img
-          src="/images/download.jpg"
-          alt="Platform Logo"
-          className="header__logo"
-        />
-        <input type="text" placeholder="Search for projects, jobs, or people" className="header__search" />
+        <h2>Tech Community</h2>
+        <nav>
+          <Link to="/feed">Feed</Link>
+          <Link to="/communities">Communities</Link>
+          <Link to="/activity">User Activity</Link>
+          <Link to="/profile">Profile</Link>
+          <Link to="/notifications">Notifications</Link>
+        </nav>
       </div>
-
       <div className="header__right">
-        <Link to="/projects">Community</Link>
-        <Link to="/jobs">Jobs</Link>
-        <Link to="/network">My Network</Link>
-        <Link to="/messages">Messages</Link>
-        <Link to="/notifications">Notifications</Link>
-        <Link to="/profile">Profile</Link>
+        <Messaging />
       </div>
-    </div>
+    </header>
   );
 };
 

@@ -1,25 +1,22 @@
+// Sidebar.js
 import React from 'react';
 import './Sidebar.css';
 
 const Sidebar = () => {
   return (
-    <div className="sidebar">
+    <aside className="sidebar">
       <div className="sidebar__profile">
-        <img
-          src="https://via.placeholder.com/100"
-          alt="Profile"
-          className="sidebar__profilePic"
-        />
+        <img src="/default-avatar.png" alt="User Avatar" />
         <h3>John Doe</h3>
-        <p>Software Engineering Student</p>
-        <div className="sidebar__links">
-          <p>Monetize Skills</p>
-          <p>My Projects</p>
-          <p>Groups</p>
-          <p>Events</p>
-        </div>
+        <p>Software Engineer</p>
       </div>
-    </div>
+      <ul className="sidebar__links">
+        <li><a href="/profile">My Profile</a></li>
+        <li><a href="/communities">Find Communities</a></li>
+        <li><a href="/activity">My Activities</a></li>
+        <li><a href="/achievements">Achievements</a></li>
+      </ul>
+    </aside>
   );
 };
 

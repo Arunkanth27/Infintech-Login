@@ -1,26 +1,22 @@
+// Feed.js
 import React from 'react';
 import './Feed.css';
-import Post from './Post';
 
 const Feed = () => {
   return (
-    <div className="feed">
-      <div className="feed__inputContainer">
-        <textarea placeholder="Post something to the community..." />
-        <button>Post</button>
+    <section className="feed">
+      <h2>Community Feed</h2>
+      <div className="feed__post">
+        <h3>John Doe</h3>
+        <p>Just finished working on a cool project using React! Check it out.</p>
+        <span>10 mins ago</span>
       </div>
-
-      <Post
-        name="John Doe"
-        description="Software Engineering Student"
-        content="Can anyone help me with a project using React?"
-      />
-      <Post
-        name="Jane Smith"
-        description="Data Science Student"
-        content="Looking for a team to collaborate on a machine learning project!"
-      />
-    </div>
+      <div className="feed__post">
+        <h3>Jane Smith</h3>
+        <p>Looking for collaborators on a new AI project. Anyone interested?</p>
+        <span>30 mins ago</span>
+      </div>
+    </section>
   );
 };
 
