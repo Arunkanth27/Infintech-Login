@@ -1,12 +1,11 @@
-// ProfilePage.js
 import React from 'react';
 import './ProfilePage.css';
 
 const ProfilePage = () => {
   return (
     <section className="profile">
-      <h2>John Doe</h2>
-      <p>Software Engineer | Web Developer</p>
+      <h2 className="profile__name">John Doe</h2>
+      <p className="profile__bio">Software Engineer | Web Developer</p>
       <div className="profile__details">
         <h3>Education</h3>
         <p>B.Sc. in Computer Science, XYZ University</p>

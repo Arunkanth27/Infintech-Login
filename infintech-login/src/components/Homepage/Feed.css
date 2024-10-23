@@ -1,0 +1,50 @@
+
+
+.feed {
+  flex: 0.75;
+  padding: 20px;
+  background-color: #fafafa; 
+}
+
+.feed__title {
+  font-size: 22px;
+  font-family: 'Helvetica', 'Arial', sans-serif;
+  color: #262626;
+  margin-bottom: 20px;
+}
+
+.feed__post {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #dbdbdb;
+  margin-bottom: 20px;
+  transition: box-shadow 0.3s ease;
+}
+
+.feed__post:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.feed__post-author {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0095f6; /* Instagram blue */
+}
+
+.feed__post-content {
+  font-size: 16px;
+  color: #262626;
+  margin: 10px 0;
+}
+
+.feed__post-time {
+  font-size: 12px;
+  color: #8e8e8e;
+}
+
+@media (max-width: 768px) {
+  .feed {
+    padding: 10px;
+  }
+}

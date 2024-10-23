@@ -1,0 +1,25 @@
+/* Notifications Styles */
+.notifications {
+    padding: 20px;
+  }
+  
+  .notifications__title {
+    font-size: 22px;
+    color: #1a1a2e;
+    margin-bottom: 20px;
+  }
+  
+  .notifications__list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .notifications__list li {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  

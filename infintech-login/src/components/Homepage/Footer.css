@@ -1,0 +1,28 @@
+
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  border-top: 1px solid #dbdbdb;
+  color: #8e8e8e;
+  font-size: 14px;
+}
+
+.footer__link {
+  text-decoration: none;
+  color: #0095f6; 
+  margin: 0 5px;
+  transition: color 0.3s ease;
+}
+
+.footer__link:hover {
+  color: #262626;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    font-size: 12px;
+    padding: 10px 0;
+  }
+}

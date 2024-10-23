@@ -1,0 +1,27 @@
+/* Community Page Styles */
+.communities {
+    padding: 20px;
+  }
+  
+  .communities__title {
+    font-size: 24px;
+    color: #1a1a2e;
+    margin-bottom: 20px;
+  }
+  
+  .community__item {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+  }
+  
+  .community__item h3 {
+    margin: 0 0 10px;
+  }
+  
+  .community__item p {
+    color: #555;
+  }
+  

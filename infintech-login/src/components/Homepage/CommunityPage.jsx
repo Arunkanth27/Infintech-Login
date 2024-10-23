@@ -1,11 +1,10 @@
-// CommunityPage.js
 import React from 'react';
 import './CommunityPage.css';
 
 const CommunityPage = () => {
   return (
     <section className="communities">
-      <h2>Find a Community</h2>
+      <h2 className="communities__title">Find a Community</h2>
       <div className="community__item">
         <h3>React Developers</h3>
         <p>A group for all things React.js</p>
