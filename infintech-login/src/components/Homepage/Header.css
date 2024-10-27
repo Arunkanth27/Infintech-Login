@@ -5,7 +5,7 @@
   align-items: center;
   padding: 10px 0; /* Reduced padding */
   background-color: #ffffff; /* White background */
-  border-bottom: 1px solid #87ceeb; /* Sky blue border */
+  border-bottom: 1px solid #0073b1; /* Sky blue border */
   position: sticky;
   top: 0;
   width: 100vw; /* Full viewport width */
@@ -18,7 +18,7 @@
   font-size: 20px; /* Smaller font size */
   font-family: 'Arial', sans-serif; /* Simpler font */
   font-weight: 700;
-  color: #87ceeb; /* Sky blue color for text */
+  color: #0073b1; /* Sky blue color for text */
   text-transform: uppercase;
   letter-spacing: 1px;
   padding-left: 20px; /* Left padding for alignment */
@@ -31,7 +31,7 @@
 
 .header__link {
   text-decoration: none;
-  color: #87ceeb; /* Sky blue color for links */
+  color: #0073b1; /* Sky blue color for links */
   font-size: 16px; /* Slightly smaller font */
   font-weight: 500;
   transition: color 0.2s ease, transform 0.2s ease;
@@ -40,7 +40,7 @@
 }
 
 .header__link:hover {
-  color: #4682b4; /* Darker sky blue on hover */
+  color: #0073b1; /* Darker sky blue on hover */
   background-color: #e6f7ff; /* Light sky blue background on hover */
   transform: scale(1.05); /* Subtle zoom effect */
 }

@@ -1,39 +1,39 @@
 /* Feed Container */
 .feed {
   padding: 20px;
-  max-width: 600px;
+  max-width: 700px;
   margin: 0 auto;
-  background-color: #f3f2ef; /* LinkedIn's light gray background */
-  font-family: 'Arial', sans-serif;
+  background-color: #f3f2ef; /* Light background for contrast */
+  font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 /* Feed Title */
 .feed__title {
-  font-size: 24px;
-  font-weight: 600;
-  color: #333333;
-  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 700;
+  color: #0073b1;
+  margin-bottom: 30px;
   text-align: center;
-  font-family: 'Helvetica Neue', Arial, sans-serif;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 10px;
 }
 
-/* Feed Post Container */
+/* Feed Post Card */
 .feed__post {
-  background-color: #ffffff; /* White background for posts */
-  border: 1px solid #e0e0e0;
-  border-radius: 8px; /* Rounded corners */
-  padding: 15px;
-  margin-bottom: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s, transform 0.2s;
 }
 
 .feed__post:hover {
-  transform: scale(1.01); /* Slight zoom effect on hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Deeper shadow on hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
 }
 
-/* Profile Info Section */
+/* Profile Section */
 .feed__profile {
   display: flex;
   align-items: center;
@@ -44,8 +44,8 @@
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  border: 2px solid #0073b1;
   margin-right: 10px;
-  border: 2px solid #0095f6; /* Instagram blue border for avatar */
 }
 
 .feed__user-info {
@@ -55,13 +55,18 @@
 
 .feed__post-author {
   font-size: 16px;
-  font-weight: 700;
-  color: #0073b1; /* LinkedIn blue for author name */
+  font-weight: bold;
+  color: #0073b1;
+  text-decoration: none;
+}
+
+.feed__post-author:hover {
+  color: #005582;
 }
 
 .feed__post-time {
   font-size: 12px;
-  color: #999999; /* Light gray timestamp */
+  color: #666666;
 }
 
 /* Post Content */
@@ -75,29 +80,35 @@
 /* Post Image */
 .feed__post-image {
   width: 100%;
-  border-radius: 8px;
+  border-radius: 10px;
   margin-top: 10px;
   max-height: 400px;
-  object-fit: cover; /* Maintains aspect ratio */
+  object-fit: cover;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Like, Comment, and Share Actions */
+.feed__post-image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Post Actions */
 .feed__post-actions {
   display: flex;
   justify-content: space-around;
-  padding-top: 10px;
-  border-top: 1px solid #e0e0e0; /* Divider line */
-  margin-top: 10px;
+  padding-top: 15px;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 15px;
 }
 
 .feed__action {
   font-size: 14px;
-  color: #0073b1; /* LinkedIn blue for actions */
+  color: #0073b1;
   cursor: pointer;
-  transition: color 0.2s ease, transform 0.2s ease;
   display: flex;
   align-items: center;
   gap: 5px;
+  transition: color 0.2s, transform 0.2s;
 }
 
 .feed__action i {
@@ -105,26 +116,48 @@
 }
 
 .feed__action:hover {
-  color: #005582; /* Darker blue on hover */
-  transform: scale(1.05); /* Slight zoom on hover */
+  color: #005582;
+  transform: scale(1.1);
+}
+
+/* Comments Section */
+.feed__comments {
+  margin-top: 15px;
+  padding-top: 10px;
+  border-top: 1px solid #e0e0e0;
+  font-size: 14px;
+  color: #555555;
+}
+
+.feed__comments a {
+  color: #0073b1;
+  text-decoration: none;
+}
+
+.feed__comments a:hover {
+  text-decoration: underline;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .feed {
-    padding: 10px;
+    padding: 15px;
     max-width: 100%;
   }
 
   .feed__title {
-    font-size: 20px;
+    font-size: 24px;
   }
 
   .feed__post-author {
-    font-size: 14px;
+    font-size: 15px;
   }
 
   .feed__post-content {
+    font-size: 14px;
+  }
+
+  .feed__comments {
     font-size: 13px;
   }
 }

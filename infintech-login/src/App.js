@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './components/Homepage/AuthContext';
 import Header from './components/Homepage/Header';
-import Sidebar from './components/Homepage/Sidebar';
 import Feed from './components/Homepage/Feed';
 import CommunityPage from './components/Homepage/CommunityPage';
 import UserActivity from './components/Homepage/UserActivity';
@@ -25,7 +24,7 @@ const AppContent = () => {
     <>
       <Header />
       <div className="app__body">
-        <Sidebar />
+        
         <Routes>
           <Route path="/feed" element={<Feed />} />
           <Route path="/communities" element={<CommunityPage />} />
