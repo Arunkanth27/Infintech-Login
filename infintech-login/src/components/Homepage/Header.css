@@ -1,52 +1,80 @@
-
+/* Header Styling */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  background-color: #fff;
-  border-bottom: 1px solid #dbdbdb;
+  padding: 10px 0; /* Reduced padding */
+  background-color: #ffffff; /* White background */
+  border-bottom: 1px solid #87ceeb; /* Sky blue border */
   position: sticky;
   top: 0;
+  width: 100vw; /* Full viewport width */
   z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+  margin-left: calc(-50vw + 50%); /* Center align to viewport */
 }
 
 .header__logo {
-  font-size: 24px;
-  font-family: 'Helvetica', 'Arial', sans-serif;
-  font-weight: 600;
-  color: #262626;
-  text-transform: capitalize;
+  font-size: 20px; /* Smaller font size */
+  font-family: 'Arial', sans-serif; /* Simpler font */
+  font-weight: 700;
+  color: #87ceeb; /* Sky blue color for text */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-left: 20px; /* Left padding for alignment */
 }
 
 .header__nav {
   display: flex;
-  gap: 25px;
+  gap: 15px; /* Reduced gap between links */
 }
 
 .header__link {
   text-decoration: none;
-  color: #262626;
-  font-size: 16px;
+  color: #87ceeb; /* Sky blue color for links */
+  font-size: 16px; /* Slightly smaller font */
   font-weight: 500;
-  transition: color 0.2s ease;
+  transition: color 0.2s ease, transform 0.2s ease;
+  padding: 6px 10px; /* Reduced padding */
+  border-radius: 3px;
 }
 
 .header__link:hover {
-  color: #0095f6; 
+  color: #4682b4; /* Darker sky blue on hover */
+  background-color: #e6f7ff; /* Light sky blue background on hover */
+  transform: scale(1.05); /* Subtle zoom effect */
 }
 
 .header__right {
   display: flex;
   align-items: center;
+  padding-right: 20px; /* Right padding for alignment */
 }
 
+.header__right > * {
+  margin-left: 10px;
+}
+
+/* Responsive Design for Smaller Screens */
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
+    padding: 8px 0;
   }
   .header__nav {
-    margin-top: 10px;
-    gap: 15px;
+    margin-top: 8px;
+    gap: 10px;
   }
+  .header__logo {
+    font-size: 18px;
+  }
+  .header__link {
+    font-size: 14px;
+  }
+}
+
+/* Offset for body content to avoid overlap with sticky header */
+body {
+  padding-top: 50px; /* Reduced padding-top to match shorter header */
+  margin: 0;
 }

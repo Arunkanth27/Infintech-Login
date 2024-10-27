@@ -1,15 +1,17 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from './Homepage/AuthContext';
 import './Register.css';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import logo from '../images/download.jpg';
 import backgroundImage from '../images/background_pictures.jpg';
-
 
 const Register = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const { login } = useAuth();
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,7 +19,10 @@ const Register = () => {
       alert('Passwords do not match!');
       return;
     }
-    console.log('Name:', name, 'Email:', email, 'Password:', password);
+
+    console.log('Registration successful');
+    login();
+    navigate('/');
   };
 
   return (
@@ -57,18 +62,14 @@ const Register = () => {
             onChange={(e) => setConfirmPassword(e.target.value)}
             required
           />
-          <button type="submit" className="register-button">
-            SIGN UP
-          </button>
+          <button type="submit" className="register-button">SIGN UP</button>
         </form>
         <div className="register-links">
-          <span>
-            Already have an account? <Link to="/login">LOGIN</Link>
-          </span>
+          <span>Already have an account? <a href="/login">LOGIN</a></span>
         </div>
       </div>
       <div className="register-image">
-        <img src= {backgroundImage} alt="Background Design" />
+        <img src={backgroundImage} alt="Background Design" />
       </div>
     </div>
   );

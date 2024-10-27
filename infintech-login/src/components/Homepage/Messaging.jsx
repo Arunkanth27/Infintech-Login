@@ -8,6 +8,7 @@ const Messaging = () => {
       <button className="messaging__button">
         <i className="fas fa-comments"></i> Messages
       </button>
+      <div className="messaging__badge">3</div> {/* Example badge for 3 new messages */}
     </div>
   );
 };

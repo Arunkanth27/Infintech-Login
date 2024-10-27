@@ -1,7 +1,6 @@
-// App.js
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-// Adjusted imports to reflect the new folder structure
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { AuthProvider, useAuth } from './components/Homepage/AuthContext';
 import Header from './components/Homepage/Header';
 import Sidebar from './components/Homepage/Sidebar';
 import Feed from './components/Homepage/Feed';
@@ -10,27 +9,54 @@ import UserActivity from './components/Homepage/UserActivity';
 import ProfilePage from './components/Homepage/ProfilePage';
 import Notifications from './components/Homepage/Notifications';
 import Footer from './components/Homepage/Footer';
-import './App.css';  // Assuming your global styles are in App.css
+import Login from './components/Login';
+import Register from './components/Register';
+import './App.css';
+
+const PrivateRoute = ({ element }) => {
+  const { isLoggedIn } = useAuth();
+  return isLoggedIn ? element : <Navigate to="/login" replace />;
+};
+
+const AppContent = () => {
+  const { isLoggedIn } = useAuth();
+
+  return isLoggedIn ? (
+    <>
+      <Header />
+      <div className="app__body">
+        <Sidebar />
+        <Routes>
+          <Route path="/feed" element={<Feed />} />
+          <Route path="/communities" element={<CommunityPage />} />
+          <Route path="/activity" element={<UserActivity />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/notifications" element={<Notifications />} />
+          <Route path="/" element={<Feed />} /> {/* Default to Feed */}
+        </Routes>
+      </div>
+      <Footer />
+    </>
+  ) : (
+    <Routes>
+      {/* Public Routes for Login and Register */}
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      {/* Redirect to login if the user tries to access any other routes */}
+      <Route path="*" element={<Navigate to="/login" replace />} />
+    </Routes>
+  );
+};
 
 const App = () => {
   return (
-    <Router>
-      <div className="app">
-        <Header />
-        <div className="app__body">
-          <Sidebar />
-          <Routes>
-            <Route path="/feed" element={<Feed />} />
-            <Route path="/communities" element={<CommunityPage />} />
-            <Route path="/activity" element={<UserActivity />} />
-            <Route path="/profile" element={<ProfilePage />} />
-            <Route path="/notifications" element={<Notifications />} />
-            <Route path="/" element={<Feed />} /> {/* Default to Feed */}
-          </Routes>
+    <AuthProvider>
+      <Router>
+        <div className="app">
+          <AppContent />
         </div>
-        <Footer />
-      </div>
-    </Router>
+      </Router>
+    </AuthProvider>
   );
 };
 

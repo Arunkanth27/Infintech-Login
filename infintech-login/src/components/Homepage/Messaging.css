@@ -1,0 +1,65 @@
+/* Messaging Container */
+.messaging {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Messaging Button */
+  .messaging__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0073b1; /* LinkedIn-like blue */
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 50px; /* Rounded button */
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+  }
+  
+  .messaging__button:hover {
+    background-color: #005582; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+  }
+  
+  /* Icon Styling */
+  .messaging__button i {
+    margin-right: 8px;
+    font-size: 18px;
+    color: #ffffff; /* White icon color */
+  }
+  
+  /* Notification Badge for New Messages */
+  .messaging__badge {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background-color: #ff4500; /* Red notification color */
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 6px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* Slight shadow for badge */
+  }
+  
+  /* Responsive Design for Smaller Screens */
+  @media (max-width: 768px) {
+    .messaging__button {
+      padding: 8px 16px;
+      font-size: 14px;
+    }
+  
+    .messaging__badge {
+      font-size: 10px;
+      padding: 3px 5px;
+    }
+  }
+  

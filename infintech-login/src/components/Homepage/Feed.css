@@ -1,50 +1,130 @@
-
-
+/* Feed Container */
 .feed {
-  flex: 0.75;
   padding: 20px;
-  background-color: #fafafa; 
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #f3f2ef; /* LinkedIn's light gray background */
+  font-family: 'Arial', sans-serif;
 }
 
+/* Feed Title */
 .feed__title {
-  font-size: 22px;
-  font-family: 'Helvetica', 'Arial', sans-serif;
-  color: #262626;
+  font-size: 24px;
+  font-weight: 600;
+  color: #333333;
   margin-bottom: 20px;
+  text-align: center;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
+/* Feed Post Container */
 .feed__post {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  border: 1px solid #dbdbdb;
-  margin-bottom: 20px;
-  transition: box-shadow 0.3s ease;
+  background-color: #ffffff; /* White background for posts */
+  border: 1px solid #e0e0e0;
+  border-radius: 8px; /* Rounded corners */
+  padding: 15px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Subtle shadow for depth */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .feed__post:hover {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  transform: scale(1.01); /* Slight zoom effect on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Deeper shadow on hover */
+}
+
+/* Profile Info Section */
+.feed__profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.feed__avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 2px solid #0095f6; /* Instagram blue border for avatar */
+}
+
+.feed__user-info {
+  display: flex;
+  flex-direction: column;
 }
 
 .feed__post-author {
   font-size: 16px;
-  font-weight: 600;
-  color: #0095f6; /* Instagram blue */
-}
-
-.feed__post-content {
-  font-size: 16px;
-  color: #262626;
-  margin: 10px 0;
+  font-weight: 700;
+  color: #0073b1; /* LinkedIn blue for author name */
 }
 
 .feed__post-time {
   font-size: 12px;
-  color: #8e8e8e;
+  color: #999999; /* Light gray timestamp */
 }
 
+/* Post Content */
+.feed__post-content {
+  font-size: 15px;
+  color: #333333;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+/* Post Image */
+.feed__post-image {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 10px;
+  max-height: 400px;
+  object-fit: cover; /* Maintains aspect ratio */
+}
+
+/* Like, Comment, and Share Actions */
+.feed__post-actions {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 10px;
+  border-top: 1px solid #e0e0e0; /* Divider line */
+  margin-top: 10px;
+}
+
+.feed__action {
+  font-size: 14px;
+  color: #0073b1; /* LinkedIn blue for actions */
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.feed__action i {
+  font-size: 16px;
+}
+
+.feed__action:hover {
+  color: #005582; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
   .feed {
     padding: 10px;
+    max-width: 100%;
+  }
+
+  .feed__title {
+    font-size: 20px;
+  }
+
+  .feed__post-author {
+    font-size: 14px;
+  }
+
+  .feed__post-content {
+    font-size: 13px;
   }
 }
