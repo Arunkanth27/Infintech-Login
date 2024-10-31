@@ -7,7 +7,7 @@ import logo from '../images/download.jpg';
 import backgroundImage from '../images/background_pictures.jpg';
 
 const Login = () => {
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState(''); 
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false); // Loading state for loader
   const [message, setMessage] = useState(''); // Message for loader
@@ -31,9 +31,9 @@ const Login = () => {
         }, 2000); // Delay to show message
       } else {
         setMessage('Invalid login credentials');
-        setTimeout(() => setLoading(false), 1500); // Hide loader after 1.5s
+        setTimeout(() => setLoading(false), 1000); // Hide loader after 1.5s
       }
-    }, 1500); // Initial delay to simulate login check
+    }, 1000); // Initial delay to simulate login check
   };
 
   return (

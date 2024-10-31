@@ -1,27 +1,77 @@
-/* Community Page Styles */
+/* Community Page Container */
 .communities {
     padding: 20px;
-  }
-  
-  .communities__title {
-    font-size: 24px;
-    color: #1a1a2e;
-    margin-bottom: 20px;
-  }
-  
-  .community__item {
-    background-color: #fff;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Title Styling */
+.communities__title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0073b1;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* 4x4 Grid Layout for Community Items */
+.communities__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns fixed */
+    gap: 20px;
+    justify-items: center;
+}
+
+/* Community Card Style */
+.community__item {
+    background-color: #ffffff;
+    border-radius: 8px;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-    margin-bottom: 20px;
-  }
-  
-  .community__item h3 {
-    margin: 0 0 10px;
-  }
-  
-  .community__item p {
-    color: #555;
-  }
-  
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.community__item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Community Name */
+.community__name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0073b1;
+    margin-bottom: 10px;
+    transition: color 0.2s;
+}
+
+.community__name:hover {
+    color: #005582;
+}
+
+/* Community Description */
+.community__description {
+    font-size: 14px;
+    color: #555555;
+    line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .communities__grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .communities__grid {
+        grid-template-columns: 1fr; /* Stack items on very small screens */
+    }
+}
