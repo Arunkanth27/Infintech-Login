@@ -4,21 +4,21 @@
     display: inline-block;
   }
   
-  /* Messaging Button */
+  /* Messaging Button (Reduced Size) */
   .messaging__button {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #1565a7; 
+    background-color: #1565a7;
     color: #ffffff;
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 14px; /* Smaller font size */
+    font-weight: 500;
     border: none;
-    border-radius: 50px; /* Rounded button */
-    padding: 10px 20px;
+    border-radius: 30px; /* More compact rounded button */
+    padding: 8px 16px; /* Smaller padding */
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Slightly lighter shadow */
   }
   
   .messaging__button:hover {
@@ -28,9 +28,9 @@
   
   /* Icon Styling */
   .messaging__button i {
-    margin-right: 8px;
-    font-size: 18px;
-    color: #ffffff; /* White icon color */
+    margin-right: 5px;
+    font-size: 16px; /* Smaller icon size */
+    color: #ffffff;
   }
   
   /* Notification Badge for New Messages */
@@ -38,28 +38,23 @@
     position: absolute;
     top: 2px;
     right: 2px;
-    background-color: #ff4500; /* Red notification color */
+    background-color: #ff4500;
     color: #ffffff;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 700;
-    padding: 4px 6px;
+    padding: 3px 5px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15); /* Slight shadow for badge */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   }
   
-  /* Responsive Design for Smaller Screens */
+  /* Responsive Design */
   @media (max-width: 768px) {
     .messaging__button {
-      padding: 8px 16px;
-      font-size: 14px;
-    }
-  
-    .messaging__badge {
-      font-size: 10px;
-      padding: 3px 5px;
+      padding: 6px 12px;
+      font-size: 13px;
     }
   }
   

@@ -10,6 +10,7 @@ import Notifications from './components/Homepage/Notifications';
 import Footer from './components/Homepage/Footer';
 import Login from './components/Login';
 import Register from './components/Register';
+import Chat from './components/Homepage/Chat'; // Import Chat component
 import './App.css';
 
 const PrivateRoute = ({ element }) => {
@@ -24,13 +25,13 @@ const AppContent = () => {
     <>
       <Header />
       <div className="app__body">
-        
         <Routes>
           <Route path="/feed" element={<Feed />} />
           <Route path="/communities" element={<CommunityPage />} />
           <Route path="/activity" element={<UserActivity />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/notifications" element={<Notifications />} />
+          <Route path="/chat" element={<PrivateRoute element={<Chat />} />} /> {/* Protected Chat Route */}
           <Route path="/" element={<Feed />} /> {/* Default to Feed */}
         </Routes>
       </div>

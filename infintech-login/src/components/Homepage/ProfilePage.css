@@ -1,34 +1,200 @@
-/* Profile Page Styles */
+/* Profile Page Container */
 .profile {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-top: 150%;
+  }
+  
+  /* Header with Cover and Profile Info */
+  .profile__header {
+    position: relative;
+    background-color: #f3f4f6;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile__cover {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  /* Move Profile Info below the cover image */
+  .profile__info {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    top: 0; /* Reset top position */
+    transform: translateY(-50px); /* Push down content slightly below cover photo */
+    background-color: #fff; /* Optional background to separate from cover photo */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: -30px; /* Adjust to place under the cover */
     padding: 20px;
   }
   
+  .profile__avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    margin-right: 20px;
+  }
+  
+  .profile__text {
+    flex: 1;
+  }
+  
   .profile__name {
-    font-size: 24px;
-    color: #1a1a2e;
-    margin-bottom: 10px;
+    font-size: 26px;
+    font-weight: bold;
+    color: #0073b1;
   }
   
   .profile__bio {
-    font-size: 18px;
+    font-size: 16px;
     color: #555;
+  }
+  
+  .profile__summary {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #888;
+  }
+  
+  /* Stats */
+  .profile__stats {
+    display: flex;
+    gap: 30px;
+    margin-top: 10px;
+  }
+  
+  .profile__stat {
+    text-align: center;
+  }
+  
+  .profile__stat h3 {
+    font-size: 18px;
+    color: #0073b1;
+    margin-bottom: 5px;
+  }
+  
+  .profile__stat span {
+    font-size: 14px;
+    color: #888;
+  }
+  
+  /* Personal Details */
+  .profile__personal-details {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
     margin-bottom: 20px;
   }
   
-  .profile__details h3 {
+  .profile__personal-details h3 {
+    font-size: 22px;
+    color: #0073b1;
+    margin-bottom: 15px;
+  }
+  
+  .profile__details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .profile__detail h4 {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 5px;
+  }
+  
+  .profile__detail p {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  /* Points and Badges */
+  .profile__points, .profile__badges {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .profile__points h3 {
     font-size: 20px;
+    color: #4CAF50; /* Green color for points */
+    margin-bottom: 5px;
+  }
+  
+  .profile__badges h3 {
+    font-size: 20px;
+    color: #0073b1;
+    margin-bottom: 10px;
+  }
+  
+  .profile__badge-list {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .profile__badge {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+  
+  .profile__badge:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Content Sections */
+  .profile__content {
     margin-top: 20px;
   }
   
-  .profile__details ul {
-    list-style-type: none;
+  .profile__section {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+  }
+  
+  .profile__section h3 {
+    font-size: 20px;
+    color: #0073b1;
+    margin-bottom: 10px;
+  }
+  
+  .profile__skills, .profile__experience {
+    list-style: none;
     padding: 0;
   }
   
-  .profile__details ul li {
-    background-color: #fff;
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
+  .profile__skills li, .profile__experience li {
+    background-color: #f0f4f8;
+    padding: 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+  
+  .profile__skills li:hover, .profile__experience li:hover {
+    background-color: #e0e7ef;
   }
   
