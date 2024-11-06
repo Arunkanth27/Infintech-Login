@@ -423,7 +423,7 @@ body {
   /* Community Page Container */
 .communities {
     padding: 10px;
-    padding-top: 10%;
+    padding-top: 40%;
     max-width: 1200px;
     margin: 120px auto;
     font-family: 'Arial', sans-serif;
@@ -504,6 +504,7 @@ body {
 /* Feed Container */
 .feed {
     padding: 20px;
+    padding-top: 20%;
     max-width: 700px;
     margin: 0 auto;
     background-color: #f3f2ef; /* Light background for contrast */
@@ -863,7 +864,7 @@ body {
   /* Notifications Page Container */
 .notifications {
     padding: 30px;
-    /* padding-top: 80px; */
+    padding-top: 350px; 
     max-width: 700px;
     margin: 100px auto; /* Centered and adjusted for header */
     font-family: 'Arial', sans-serif;
@@ -987,7 +988,7 @@ body {
     max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
-    padding-top: 65%;
+    padding-top: 120%;
   }
   
   /* Header with Cover and Profile Info */
@@ -1186,7 +1187,7 @@ body {
   /* User Activity Container */
 .activity {
     padding: 30px;
-    /* padding-top: 400px; Add extra padding at the top to offset the header */
+    padding-top: 300px; 
     max-width: 800px;
     margin: 0 auto;
     font-family: 'Arial', sans-serif;
@@ -1337,3 +1338,5 @@ body {
     }
   }
   /* End of useractivity css */
+
+  
