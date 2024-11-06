@@ -1,6 +1,6 @@
 // Chat.js
 import React from 'react';
-import './Chat.css';
+import '../../components/Global.css'
 
 const Chat = () => {
   return (

@@ -1,0 +1,1339 @@
+/* Loader Css */
+.loader-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Darker background for contrast */
+    display: flex;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    z-index: 9999;
+  }
+  
+  .loader {
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column; /* Stack spinner above the text */
+    align-items: center;
+  }
+  
+  .spinner {
+    border: 5px solid rgba(255, 255, 255, 0.3);
+    border-top: 5px solid white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px; /* Add space below the spinner */
+  }
+  
+  .loader p {
+    font-size: 1.5rem;   /* Increase font size */
+    font-weight: bold;   /* Make text bold */
+    color: #fff;         /* Set text color to white */
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* End of loader Css */
+
+  /* Login CSS */
+  /* General Body Styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ensure body takes the full height of the viewport */
+    overflow-x: hidden;
+  }
+  
+  /* Main login container */
+  .login-container {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    max-width: 1400px; /* Increased maximum width */
+    height: 90vh; /* Increased height to occupy more vertical space */
+    background-color: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  /* Login form box on the left */
+  .login-box {
+    flex: 1;
+    padding: 40px 40px; /* Reduced top padding */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Aligns content toward the top */
+    overflow-y: auto; /* Allow scrolling if content overflows */
+  }
+  
+  /* Transparent scrollbar styling */
+  .login-box::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .login-box::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2); /* Transparent scrollbar */
+    border-radius: 10px;
+  }
+  
+  .login-box::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  
+  /* Logo styling */
+  .company-logo {
+    margin-bottom: 10px; /* Reduced space below logo */
+    display: flex;
+    justify-content: center; /* Center the logo */
+  }
+  
+  .company-logo img {
+    width: 140px;
+    margin-top: -10px; /* Move logo slightly higher */
+  }
+  
+  /* Title and form description */
+  h2 {
+    margin-top: 5px; /* Reduced top margin */
+    font-size: 28px;
+    color: #333;
+  }
+  
+  p {
+    font-size: 16px;
+    color: #888;
+    margin-bottom: 20px;
+  }
+  
+  /* Form inputs */
+  .login-form input {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  /* Add space between the password input and login button */
+  .login-form input[type="password"] {
+    margin-bottom: 20px; /* Space between password field and login button */
+  }
+  
+  /* Login button */
+  .login-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #006d5b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px; /* Adds space between the button and the forgot password link */
+  }
+  
+  .login-button:hover {
+    background-color: #005b4d;
+  }
+  
+  /* Forgot password and sign up links */
+  .login-links {
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  /* Adding space between the Forgot Password and Sign Up sections */
+  .login-links a {
+    color: #006d5b;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .login-links a:hover {
+    text-decoration: underline;
+  }
+  
+  .login-links > span {
+    margin-top: 10px; /* Adds space between the forgot password and sign up links */
+    display: block;
+  }
+  
+  /* Right side background image */
+  .login-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .login-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .login-container {
+      flex-direction: column;
+      width: 90%;
+      height: auto;
+    }
+  
+    .login-box {
+      padding: 30px 20px;
+    }
+  
+    .login-image {
+      height: 300px;
+    }
+  
+    .login-image img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  
+    /* Adjust font sizes on smaller screens */
+    h2 {
+      font-size: 24px;
+    }
+  
+    .login-form input {
+      padding: 12px;
+    }
+  
+    .login-button {
+      font-size: 16px;
+    }
+  
+    .login-links {
+      font-size: 12px;
+      margin-top: 15px; /* Smaller margin on small screens */
+    }
+  }
+  
+  /* End of login css */
+
+  /* Register CSS */
+  /* Register.css */
+
+.register-container {
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+  }
+  
+  .register-box {
+    flex: 1;
+    max-width: 400px;
+    padding: 40px;
+  }
+  
+  .company-logo img {
+    width: 150px;
+  }
+  
+  h2 {
+    margin-top: 20px;
+    font-size: 26px;
+    color: #333;
+  }
+  
+  p {
+    color: #888;
+    margin-bottom: 20px;
+  }
+  
+  .register-form input {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .register-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #006d5b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .register-button:hover {
+    background-color: #005b4d;
+  }
+  
+  .register-links {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .register-links a {
+    color: #006d5b;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .register-links a:hover {
+    text-decoration: underline;
+  }
+  
+  .register-image img {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+  }
+  /* End of Register CSS */
+
+  /* Chat CSS */
+  /* Chat Container */
+.chat {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  /* Chat Header */
+  .chat__header {
+    background-color: #1565a7;
+    color: #ffffff;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .chat__payment-button {
+    background-color: #ff4500;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 12px;
+  }
+  
+  .chat__payment-button:hover {
+    background-color: #e63900;
+  }
+  
+  /* Chat Messages */
+  .chat__messages {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .chat__message {
+    max-width: 80%;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+  
+  .chat__message--received {
+    align-self: flex-start;
+    background-color: #f0f0f0;
+    color: #333333;
+  }
+  
+  .chat__message--sent {
+    align-self: flex-end;
+    background-color: #0073b1;
+    color: #ffffff;
+  }
+  
+  /* Input Section */
+  .chat__input-container {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+  }
+  
+  .chat__input {
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .chat__send-button {
+    background-color: #0073b1;
+    color: #ffffff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Footer with Call Options */
+  .chat__footer {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+  }
+  
+  .chat__video-button, .chat__audio-button {
+    background-color: #0073b1;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  /* End of Chat Css */
+
+  /* Community page css */
+  /* Community Page Container */
+.communities {
+    padding: 10px;
+    padding-top: 10%;
+    max-width: 1200px;
+    margin: 120px auto;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Title Styling */
+.communities__title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0073b1;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* 4x4 Grid Layout for Community Items */
+.communities__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns fixed */
+    gap: 20px;
+    /* justify-items: center; */
+}
+
+/* Community Card Style */
+.community__item {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.community__item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* Community Name */
+.community__name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0073b1;
+    margin-bottom: 10px;
+    transition: color 0.2s;
+}
+
+.community__name:hover {
+    color: #005582;
+}
+
+/* Community Description */
+.community__description {
+    font-size: 14px;
+    color: #555555;
+    line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .communities__grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .communities__grid {
+        grid-template-columns: 1fr; /* Stack items on very small screens */
+    }
+}
+/* End of community page css */
+
+/* Feed CSS */
+/* Feed Container */
+.feed {
+    padding: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #f3f2ef; /* Light background for contrast */
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin-block-start: 300px;
+  }
+  
+  /* Feed Title */
+  .feed__title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0073b1;
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+  }
+  
+  /* Feed Post Card */
+  .feed__post {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s, transform 0.2s;
+  }
+  
+  .feed__post:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    transform: translateY(-3px);
+  }
+  
+  /* Profile Section */
+  .feed__profile {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .feed__avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #0073b1;
+    margin-right: 10px;
+  }
+  
+  .feed__user-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .feed__post-author {
+    font-size: 16px;
+    font-weight: bold;
+    color: #0073b1;
+    text-decoration: none;
+  }
+  
+  .feed__post-author:hover {
+    color: #005582;
+  }
+  
+  .feed__post-time {
+    font-size: 12px;
+    color: #666666;
+  }
+  
+  /* Post Content */
+  .feed__post-content {
+    font-size: 15px;
+    color: #333333;
+    line-height: 1.6;
+    margin: 10px 0;
+  }
+  
+  /* Post Image */
+  .feed__post-image {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+    max-height: 400px;
+    object-fit: cover;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .feed__post-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Post Actions */
+  .feed__post-actions {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 15px;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 15px;
+  }
+  
+  .feed__action {
+    font-size: 14px;
+    color: #0073b1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s, transform 0.2s;
+  }
+  
+  .feed__action i {
+    font-size: 16px;
+  }
+  
+  .feed__action:hover {
+    color: #005582;
+    transform: scale(1.1);
+  }
+  
+  /* Comments Section */
+  .feed__comments {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #e0e0e0;
+    font-size: 14px;
+    color: #555555;
+  }
+  
+  .feed__comments a {
+    color: #0073b1;
+    text-decoration: none;
+  }
+  
+  .feed__comments a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .feed {
+      padding: 15px;
+      max-width: 100%;
+    }
+  
+    .feed__title {
+      font-size: 24px;
+    }
+  
+    .feed__post-author {
+      font-size: 15px;
+    }
+  
+    .feed__post-content {
+      font-size: 14px;
+    }
+  
+    .feed__comments {
+      font-size: 13px;
+    }
+  }
+  /*  End of fedd css*/
+
+  /* Footer css */
+  /* Footer Container */
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px 0; /* Reduced padding for compact design */
+    background-color: #ffffff; /* Clean white background */
+    border-top: 1px solid #e0e0e0; /* Light gray border */
+    color: #8e8e8e; /* Light gray color for text */
+    font-size: 13px; /* Smaller font size for a subtle look */
+    font-family: 'Arial', sans-serif;
+    width: -webkit-fill-available;
+  }
+  
+  .footer p {
+    margin: 5px 0; /* Reduced margin between paragraphs */
+  }
+  
+  .footer__link {
+    text-decoration: none;
+    color: #0095f6; /* Soft blue color for links */
+    margin: 0 5px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .footer__link:hover {
+    color: #005582; /* Darker blue on hover */
+  }
+  
+  /* Responsive Design for Smaller Screens */
+  @media (max-width: 768px) {
+    .footer {
+      font-size: 11px; /* Even smaller font size for mobile */
+      padding: 8px 0;
+    }
+    .footer__link {
+      margin: 0 3px;
+    }
+  }
+  /*End of footer css  */
+
+  /* header css */
+  /* Header Styling */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0; /* Reduced padding */
+    background-color: #ffffff; /* White background */
+    border-bottom: 1px solid #0073b1; /* Sky blue border */
+    position: sticky;
+    top: 0;
+    width: 100vw; /* Full viewport width */
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+    /* margin-left: calc(-50vw + 50%); Center align to viewport */
+  }
+  
+  .header__logo {
+    font-size: 20px; /* Smaller font size */
+    font-family: 'Arial'; /* Simpler font */
+    font-weight: bold;
+    color: #0073b1; /* Sky blue color for text */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-left: 15px; /* Left padding for alignment */
+  }
+  
+  .header__nav {
+    display: flex;
+    gap: 15px; /* Reduced gap between links */
+  }
+  
+  .header__link {
+    text-decoration: none;
+    color: #0073b1; /* Sky blue color for links */
+    font-size: 16px; /* Slightly smaller font */
+    font-weight: bold;
+    transition: color 0.2s ease, transform 0.2s ease;
+    padding: 6px 10px; /* Reduced padding */
+    border-radius: 3px;
+  }
+  
+  .header__link:hover {
+    color: #0073b1; /* Darker sky blue on hover */
+    background-color: #e6f7ff; /* Light sky blue background on hover */
+    transform: scale(1.05); /* Subtle zoom effect */
+  }
+  
+  .header__right {
+    display: flex;
+    align-items: center;
+    padding-right: 20px; /* Right padding for alignment */
+  }
+  
+  .header__right > * {
+    margin-left: 10px;
+  }
+  
+  /* Responsive Design for Smaller Screens */
+  @media (max-width: 768px) {
+    .header {
+      flex-direction: column;
+      padding: 8px 0;
+    }
+    .header__nav {
+      margin-top: 8px;
+      gap: 10px;
+    }
+    .header__logo {
+      font-size: 18px;
+    }
+    .header__link {
+      font-size: 14px;
+    }
+  }
+  
+  /* Offset for body content to avoid overlap with sticky header */
+  body {
+    padding-top: 50px; /* Reduced padding-top to match shorter header */
+    margin: 0;
+  }
+
+  /*End of header css  */
+
+  /* Messaging css */
+  /* Messaging Container */
+.messaging {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Messaging Button (Reduced Size) */
+  .messaging__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1565a7;
+    color: #ffffff;
+    font-size: 14px; /* Smaller font size */
+    font-weight: 500;
+    border: none;
+    border-radius: 30px; /* More compact rounded button */
+    padding: 8px 16px; /* Smaller padding */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Slightly lighter shadow */
+  }
+  
+  .messaging__button:hover {
+    background-color: #005582; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+  }
+  
+  /* Icon Styling */
+  .messaging__button i {
+    margin-right: 5px;
+    font-size: 16px; /* Smaller icon size */
+    color: #ffffff;
+  }
+  
+  /* Notification Badge for New Messages */
+  .messaging__badge {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background-color: #ff4500;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 5px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .messaging__button {
+      padding: 6px 12px;
+      font-size: 13px;
+    }
+  }
+  
+  /* End of messaging css */
+
+  /* Notification css */
+  /* Notifications Page Container */
+.notifications {
+    padding: 30px;
+    /* padding-top: 80px; */
+    max-width: 700px;
+    margin: 100px auto; /* Centered and adjusted for header */
+    font-family: 'Arial', sans-serif;
+    background-color: #f3f4f6;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Title Styling */
+  .notifications__title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #0073b1;
+    margin-bottom: 25px;
+    text-align: left;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 10px;
+  }
+  
+  /* Notifications List */
+  .notifications__list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* Individual Notification Item */
+  .notification__item {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 15px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  }
+  
+  .notification__item:hover {
+    background-color: #e9f5fb;
+  }
+  
+  /* Avatar Styling */
+  .notification__avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+    border: 2px solid #0073b1;
+  }
+  
+  /* Notification Content */
+  .notification__content {
+    flex: 1;
+  }
+  
+  .notification__user {
+    font-weight: 600;
+    color: #0073b1;
+    font-size: 16px;
+  }
+  
+  .notification__time {
+    font-size: 12px;
+    color: #999;
+    margin-top: 5px;
+  }
+  
+  /* Different Notification Types */
+  .notification__item--mention .notification__user {
+    color: #005582;
+  }
+  
+  .notification__item--comment .notification__user {
+    color: #4a90e2;
+  }
+  
+  .notification__item--badge .notification__user {
+    color: #e67e22;
+  }
+  
+  .notification__item--like .notification__user {
+    color: #d9534f;
+  }
+  
+  .notification__item--follow .notification__user {
+    color: #8e44ad;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .notifications {
+      padding: 15px;
+      max-width: 100%;
+    }
+  
+    .notification__avatar {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .notifications__title {
+      font-size: 24px;
+    }
+  
+    .notification__user {
+      font-size: 14px;
+    }
+  }
+  
+  /* End of notification css */
+
+  /* Profil page css */
+  /* Profile Page Container */
+.profile {
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    padding-top: 65%;
+  }
+  
+  /* Header with Cover and Profile Info */
+  .profile__header {
+    position: relative;
+    background-color: #f3f4f6;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile__cover {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  /* Move Profile Info below the cover image */
+  .profile__info {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    top: 0; /* Reset top position */
+    transform: translateY(-50px); /* Push down content slightly below cover photo */
+    background-color: #fff; /* Optional background to separate from cover photo */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: -30px; /* Adjust to place under the cover */
+    padding: 20px;
+  }
+  
+  .profile__avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    margin-right: 20px;
+  }
+  
+  .profile__text {
+    flex: 1;
+  }
+  
+  .profile__name {
+    font-size: 26px;
+    font-weight: bold;
+    color: #0073b1;
+  }
+  
+  .profile__bio {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  .profile__summary {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #888;
+  }
+  
+  /* Stats */
+  .profile__stats {
+    display: flex;
+    gap: 30px;
+    margin-top: 10px;
+  }
+  
+  .profile__stat {
+    text-align: center;
+  }
+  
+  .profile__stat h3 {
+    font-size: 18px;
+    color: #0073b1;
+    margin-bottom: 5px;
+  }
+  
+  .profile__stat span {
+    font-size: 14px;
+    color: #888;
+  }
+  
+  /* Personal Details */
+  .profile__personal-details {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+  }
+  
+  .profile__personal-details h3 {
+    font-size: 22px;
+    color: #0073b1;
+    margin-bottom: 15px;
+  }
+  
+  .profile__details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .profile__detail h4 {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 5px;
+  }
+  
+  .profile__detail p {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  /* Points and Badges */
+  .profile__points, .profile__badges {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .profile__points h3 {
+    font-size: 20px;
+    color: #4CAF50; /* Green color for points */
+    margin-bottom: 5px;
+  }
+  
+  .profile__badges h3 {
+    font-size: 20px;
+    color: #0073b1;
+    margin-bottom: 10px;
+  }
+  
+  .profile__badge-list {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .profile__badge {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+  
+  .profile__badge:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Content Sections */
+  .profile__content {
+    margin-top: 20px;
+  }
+  
+  .profile__section {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+  }
+  
+  .profile__section h3 {
+    font-size: 20px;
+    color: #0073b1;
+    margin-bottom: 10px;
+  }
+  
+  .profile__skills, .profile__experience {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .profile__skills li, .profile__experience li {
+    background-color: #f0f4f8;
+    padding: 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
+  
+  .profile__skills li:hover, .profile__experience li:hover {
+    background-color: #e0e7ef;
+  }
+  
+  /* end Profile page css */
+
+  /* User activity css */
+  /* User Activity Container */
+.activity {
+    padding: 30px;
+    /* padding-top: 400px; Add extra padding at the top to offset the header */
+    max-width: 800px;
+    margin: 0 auto;
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .activity__title {
+    font-size: 28px;
+    color: #0073b1;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 700;
+  }
+  
+  /* Overview Section Styling */
+  .activity__overview {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  }
+  
+  .overview__item {
+    text-align: center;
+    flex: 1;
+    margin: 0 10px;
+  }
+  
+  .overview__title {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  
+  .overview__points {
+    font-size: 30px;
+    font-weight: 700;
+    color: #0073b1;
+  }
+  
+  .overview__badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+  
+  .badge {
+    background-color: #e0f7fa;
+    color: #0073b1;
+    padding: 5px 10px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Achievements Section */
+  .activity__subtitle {
+    font-size: 24px;
+    color: #0073b1;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-align: center;
+  }
+  
+  .activity__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .activity__list-item {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+  
+  .activity__list-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  }
+  
+  .achievement__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .achievement__title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0073b1;
+  }
+  
+  .achievement__points {
+    font-size: 16px;
+    font-weight: 600;
+    color: #ff9800;
+    background-color: #fff3e0;
+    padding: 5px 10px;
+    border-radius: 8px;
+  }
+  
+  .achievement__description {
+    font-size: 14px;
+    color: #555;
+    margin: 5px 0 10px;
+  }
+  
+  .achievement__badge {
+    font-size: 13px;
+    color: #0073b1;
+    font-weight: 500;
+    background-color: #e0f7fa;
+    padding: 5px 10px;
+    border-radius: 10px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .activity__overview {
+      flex-direction: column;
+      padding: 15px;
+    }
+  
+    .overview__item {
+      margin: 10px 0;
+    }
+  
+    .activity__list-item {
+      padding: 15px;
+    }
+  
+    .activity__title, .activity__subtitle {
+      font-size: 22px;
+    }
+  }
+  /* End of useractivity css */

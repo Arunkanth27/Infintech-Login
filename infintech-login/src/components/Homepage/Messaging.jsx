@@ -1,7 +1,7 @@
 // Messaging.js
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Messaging.css';
+import '../../components/Global.css'
 
 const Messaging = () => {
   const navigate = useNavigate();

@@ -1,5 +1,5 @@
 import React from 'react';
-import './ProfilePage.css';
+import '../../components/Global.css'
 import coverPhoto from  '../../images/OIP.jpg'; // Background Picture
 import avatar from '../../images/OIP.jpg';
 import badgeIcon from '../../images/OIP.jpg'; // Badge Icon Example

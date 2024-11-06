@@ -1,5 +1,5 @@
 import React from 'react';
-import './Loader.css'; // Add some styles for the loader
+import './Global.css'; // Add some styles for the loader
 
 const Loader = ({ message }) => {
   return (

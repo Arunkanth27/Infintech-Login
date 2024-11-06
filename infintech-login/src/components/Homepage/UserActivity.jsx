@@ -1,5 +1,5 @@
 import React from 'react';
-import './UserActivity.css';
+import '../../components/Global.css'
 
 const UserActivity = () => {
   // Mock data for points and achievements

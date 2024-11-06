@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from './Homepage/AuthContext';
 import Loader from './Loader'; // Import the loader component
-import './Login.css';
+import '../components/Global.css'
 import logo from '../images/download.jpg';
 import backgroundImage from '../images/background_pictures.jpg';
 

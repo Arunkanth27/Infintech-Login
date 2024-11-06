@@ -1,11 +1,11 @@
 import React from 'react';
-import './Feed.css';
+import '../../components/Global.css'
 import avatar from '../../images/OIP.jpg';
 
 const Feed = () => {
   return (
     <section className="feed">
-      <h2 className="feed__title">Welcome to Tech Community Feed</h2>
+      <h2 className="feed__title">Welcome to the Tech Family</h2>
 
       <div className="feed__post">
         <div className="feed__profile">
@@ -22,8 +22,8 @@ const Feed = () => {
         
         <div className="feed__post-actions">
           <span className="feed__action"><i className="fas fa-thumbs-up"></i> Like</span>
-          <span className="feed__action"><i className="fas fa-star"></i> Interested</span>
-          <span className="feed__action"><i className="fas fa-comment"></i> Comment</span>
+          <span className="feed__action"><i className="fas fa-star"></i> Comment</span>
+          <span className="feed__action"><i className="fas fa-comment"></i> Message</span>
         </div>
       </div>
 
@@ -41,8 +41,8 @@ const Feed = () => {
         
         <div className="feed__post-actions">
           <span className="feed__action"><i className="fas fa-thumbs-up"></i> Like</span>
-          <span className="feed__action"><i className="fas fa-star"></i> Interested</span>
-          <span className="feed__action"><i className="fas fa-comment"></i> Comment</span>
+          <span className="feed__action"><i className="fas fa-star"></i> Comment</span>
+          <span className="feed__action"><i className="fas fa-comment"></i> Message</span>
         </div>
       </div>
 
@@ -61,8 +61,8 @@ const Feed = () => {
         
         <div className="feed__post-actions">
           <span className="feed__action"><i className="fas fa-thumbs-up"></i> Like</span>
-          <span className="feed__action"><i className="fas fa-star"></i> Interested</span>
-          <span className="feed__action"><i className="fas fa-comment"></i> Comment</span>
+          <span className="feed__action"><i className="fas fa-star"></i> Comment</span>
+          <span className="feed__action"><i className="fas fa-comment"></i> Message</span>
         </div>
       </div>
 
@@ -81,8 +81,8 @@ const Feed = () => {
         
         <div className="feed__post-actions">
           <span className="feed__action"><i className="fas fa-thumbs-up"></i> Like</span>
-          <span className="feed__action"><i className="fas fa-star"></i> Interested</span>
-          <span className="feed__action"><i className="fas fa-comment"></i> Comment</span>
+          <span className="feed__action"><i className="fas fa-star"></i> Comment</span>
+          <span className="feed__action"><i className="fas fa-comment"></i> Message</span>
         </div>
       </div>
 
@@ -101,8 +101,8 @@ const Feed = () => {
         
         <div className="feed__post-actions">
           <span className="feed__action"><i className="fas fa-thumbs-up"></i> Like</span>
-          <span className="feed__action"><i className="fas fa-star"></i> Interested</span>
-          <span className="feed__action"><i className="fas fa-comment"></i> Comment</span>
+          <span className="feed__action"><i className="fas fa-star"></i> Comment</span>
+          <span className="feed__action"><i className="fas fa-comment"></i> Message</span>
         </div>
       </div>
 

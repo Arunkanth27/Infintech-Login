@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from './Homepage/AuthContext';
-import './Register.css';
+import './Global.css';
 import logo from '../images/download.jpg';
 import backgroundImage from '../images/background_pictures.jpg';
 
