@@ -1,111 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Post from './Post';
+import PostCreation from './PostCreation';
 import '../../components/Global.css'
-import avatar from '../../images/OIP.jpg';
 
 const Feed = () => {
+  const [posts, setPosts] = useState([
+    {
+      id: 1,
+      type: 'Question',
+      author: 'John Doe',
+      content: 'Just finished a cool project using React! Check it out and let me know your thoughts.',
+      image: '/sample-post.jpg',
+      time: '10 mins ago',
+    },
+    {
+      id: 2,
+      type: 'Collaboration',
+      author: 'Jane Smith',
+      content: 'Looking for collaborators on a new AI project. Anyone interested? Feel free to message me!',
+      image: null,
+      time: '30 mins ago',
+    },
+  ]);
+
+  const addNewPost = (newPost) => {
+    setPosts([newPost, ...posts]);
+  };
+
   return (
     <section className="feed">
       <h2 className="feed__title">Welcome to the Tech Family</h2>
 
-      <div className="feed__post">
-        <div className="feed__profile">
-          <img src= {avatar} alt="User Avatar" className="feed__avatar" />
-          <div className="feed__user-info">
-            <a href="/profile/john-doe" className="feed__post-author">John Doe</a>
-            <span className="feed__post-time">10 mins ago</span>
-          </div>
-        </div>
-        <p className="feed__post-content">
-          Just finished a cool project using React! Check it out and let me know your thoughts.
-        </p>
-        <img src="/sample-post.jpg" alt="Post content" className="feed__post-image" />
-        
-        <div className="feed__post-actions">
-          <span className="feed__action"><i className="fas fa-thumbs-up"></i> Like</span>
-          <span className="feed__action"><i className="fas fa-star"></i> Comment</span>
-          <span className="feed__action"><i className="fas fa-comment"></i> Message</span>
-        </div>
+      {/* Post Creation Section */}
+      <PostCreation addNewPost={addNewPost} />
+
+      {/* Feed Posts */}
+      <div className="feed__posts">
+        {posts.map((post) => (
+          <Post key={post.id} post={post} />
+        ))}
       </div>
-
-      <div className="feed__post">
-        <div className="feed__profile">
-          <img src={avatar} alt="User Avatar" className="feed__avatar" />
-          <div className="feed__user-info">
-            <a href="/profile/jane-smith" className="feed__post-author">Jane Smith</a>
-            <span className="feed__post-time">30 mins ago</span>
-          </div>
-        </div>
-        <p className="feed__post-content">
-          Looking for collaborators on a new AI project. Anyone interested? Feel free to message me!
-        </p>
-        
-        <div className="feed__post-actions">
-          <span className="feed__action"><i className="fas fa-thumbs-up"></i> Like</span>
-          <span className="feed__action"><i className="fas fa-star"></i> Comment</span>
-          <span className="feed__action"><i className="fas fa-comment"></i> Message</span>
-        </div>
-      </div>
-
-
-      <div className="feed__post">
-        <div className="feed__profile">
-          <img src= {avatar} alt="User Avatar" className="feed__avatar" />
-          <div className="feed__user-info">
-            <a href="/profile/jane-smith" className="feed__post-author">Jane Smith</a>
-            <span className="feed__post-time">30 mins ago</span>
-          </div>
-        </div>
-        <p className="feed__post-content">
-          Looking for collaborators on a new AI project. Anyone interested? Feel free to message me!
-        </p>
-        
-        <div className="feed__post-actions">
-          <span className="feed__action"><i className="fas fa-thumbs-up"></i> Like</span>
-          <span className="feed__action"><i className="fas fa-star"></i> Comment</span>
-          <span className="feed__action"><i className="fas fa-comment"></i> Message</span>
-        </div>
-      </div>
-
-
-      <div className="feed__post">
-        <div className="feed__profile">
-          <img src={avatar} alt="User Avatar" className="feed__avatar" />
-          <div className="feed__user-info">
-            <a href="/profile/jane-smith" className="feed__post-author">Jane Smith</a>
-            <span className="feed__post-time">30 mins ago</span>
-          </div>
-        </div>
-        <p className="feed__post-content">
-          Looking for collaborators on a new AI project. Anyone interested? Feel free to message me!
-        </p>
-        
-        <div className="feed__post-actions">
-          <span className="feed__action"><i className="fas fa-thumbs-up"></i> Like</span>
-          <span className="feed__action"><i className="fas fa-star"></i> Comment</span>
-          <span className="feed__action"><i className="fas fa-comment"></i> Message</span>
-        </div>
-      </div>
-
-
-      <div className="feed__post">
-        <div className="feed__profile">
-          <img src= {avatar} alt="User Avatar" className="feed__avatar" />
-          <div className="feed__user-info">
-            <a href="/profile/jane-smith" className="feed__post-author">Jane Smith</a>
-            <span className="feed__post-time">30 mins ago</span>
-          </div>
-        </div>
-        <p className="feed__post-content">
-          Looking for collaborators on a new AI project. Anyone interested? Feel free to message me!
-        </p>
-        
-        <div className="feed__post-actions">
-          <span className="feed__action"><i className="fas fa-thumbs-up"></i> Like</span>
-          <span className="feed__action"><i className="fas fa-star"></i> Comment</span>
-          <span className="feed__action"><i className="fas fa-comment"></i> Message</span>
-        </div>
-      </div>
-
     </section>
   );
 };
