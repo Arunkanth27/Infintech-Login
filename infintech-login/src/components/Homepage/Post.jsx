@@ -1,6 +1,7 @@
+// Post.js
 import React from 'react';
 import avatar from '../../images/OIP.jpg';
-import '../../components/Global.css'
+import '../../components/Global.css';
 
 const Post = ({ post }) => {
   return (
