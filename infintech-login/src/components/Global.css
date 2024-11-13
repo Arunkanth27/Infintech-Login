@@ -510,26 +510,74 @@ body {
 /* Community Details Page */
 .community-details {
   padding: 20px;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: auto;
+  background-color: #f9f9f9;
+  color: #333;
+  font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 .community-details__title {
-  font-size: 28px;
+  font-size: 36px;
   color: #0073b1;
-  margin-bottom: 20px;
   text-align: center;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
 }
 
+/* Content Layout */
 .community-details__content {
   display: flex;
-  gap: 20px;
+  gap: 30px;
+  margin-top: 20px;
 }
 
 .community-details__feed {
   flex: 2;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
 }
 
+.community-details__feed h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #0073b1;
+}
+
+.community-details__post-form {
+  margin-top: 20px;
+}
+
+.community-details__post-form textarea {
+  width: 100%;
+  padding: 15px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  resize: vertical;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin-bottom: 15px;
+}
+
+.community-details__post-form button {
+  background-color: #0073b1;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.community-details__post-form button:hover {
+  background-color: #005582;
+}
+
+/* Sidebar */
 .community-details__sidebar {
   flex: 1;
   display: flex;
@@ -537,88 +585,36 @@ body {
   gap: 20px;
 }
 
-/* Sidebar Sections Styling */
-.sidebar-section {
-  background-color: #f9f9f9;
-  border: 1px solid #e0e0e0;
+.community-details__info, .community-details__ranking, .community-details__announcements {
+  background-color: #ffffff;
   border-radius: 8px;
-  padding: 15px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
-}
-
-.sidebar-section:hover {
-  transform: translateY(-3px);
-}
-
-.sidebar-section__header {
-  font-size: 18px;
-  font-weight: 600;
-  color: #0073b1;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 10px;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 8px;
-}
-
-.sidebar-section__content {
-  font-size: 14px;
-  color: #555;
-  line-height: 1.6;
-  margin-top: 10px;
-}
-
-.sidebar-section__list {
-  list-style: none;
-  padding: 0;
-  font-size: 14px;
-  color: #333;
-  margin-top: 10px;
-}
-
-.sidebar-section__list li {
-  margin-bottom: 8px;
-}
-
-/* Specific Styles for Announcements */
-.announcements-section p {
-  background-color: #e7f3ff;
-  padding: 10px;
-  border-radius: 5px;
-  color: #005582;
-  font-size: 14px;
-  font-weight: 500;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Post Form */
-.community-details__post-form {
-  margin-top: 20px;
-  background-color: #fff;
-  padding: 15px;
-  border-radius: 8px;
+  padding: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.community-details__post-form textarea {
-  width: 100%;
-  padding: 10px;
-  font-size: 14px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+.community-details__info h4,
+.community-details__ranking h4,
+.community-details__announcements h4 {
+  font-size: 18px;
+  color: #0073b1;
   margin-bottom: 10px;
 }
 
-.community-details__post-form button {
-  background-color: #0073b1;
-  color: white;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.community-details__info p,
+.community-details__announcements p {
   font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.community-details__ranking ul {
+  padding-left: 20px;
+}
+
+.community-details__ranking li {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.5;
 }
 
 .community-details__invite-btn {
@@ -627,13 +623,24 @@ body {
   padding: 10px;
   width: 100%;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
   margin-top: 20px;
-  font-size: 14px;
+  transition: background-color 0.3s ease;
 }
 
+.community-details__invite-btn:hover {
+  background-color: #005582;
+}
 
+/* Responsive Design */
+@media (max-width: 768px) {
+  .community-details__content {
+    flex-direction: column;
+  }
+}
 
 /* Feed Container */
 .feed {

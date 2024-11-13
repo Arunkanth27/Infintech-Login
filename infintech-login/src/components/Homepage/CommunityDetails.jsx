@@ -28,6 +28,23 @@ const CommunityDetails = () => {
       <h2 className="community-details__title">{name} Community</h2>
 
       <div className="community-details__content">
+        {/* Left Side (About and Announcements) */}
+        <div className="community-details__left">
+          <div className="community-details__info">
+            <h4>About This Community</h4>
+            <p>
+              This is the {name} community where members discuss related topics, share knowledge, and
+              collaborate on projects.
+            </p>
+          </div>
+
+          <div className="community-details__announcements">
+            <h4>Announcements</h4>
+            <p>Join our upcoming webinar on advanced React patterns!</p>
+          </div>
+        </div>
+
+        {/* Feed Section */}
         <div className="community-details__feed">
           <h3>Community Feed</h3>
           {posts.map((post) => (
@@ -46,16 +63,8 @@ const CommunityDetails = () => {
           </form>
         </div>
 
-        {/* Right Sidebar */}
-        <aside className="community-details__sidebar">
-          <div className="community-details__info">
-            <h4>About This Community</h4>
-            <p>
-              This is the {name} community where members discuss related topics, share knowledge, and
-              collaborate on projects.
-            </p>
-          </div>
-
+        {/* Right Sidebar (Top Contributors) */}
+        <aside className="community-details__right">
           <div className="community-details__ranking">
             <h4>Top Contributors</h4>
             <ul>
@@ -64,12 +73,6 @@ const CommunityDetails = () => {
               <li>Mary Johnson - 1050 points</li>
             </ul>
           </div>
-
-          <div className="community-details__announcements">
-            <h4>Announcements</h4>
-            <p>Join our upcoming webinar on advanced React patterns!</p>
-          </div>
-
           <button className="community-details__invite-btn">Invite Friends</button>
         </aside>
       </div>
