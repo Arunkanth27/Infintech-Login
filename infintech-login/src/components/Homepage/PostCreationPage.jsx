@@ -1,9 +1,9 @@
-// PostCreation.js
+// PostCreationPage.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../../components/Global.css';
 
-const PostCreation = ({ addNewPost }) => {
+const PostCreationPage = ({ addNewPost }) => { // Accept addNewPost as a prop
   const [type, setType] = useState('Question');
   const [content, setContent] = useState('');
   const [image, setImage] = useState(null);
@@ -27,7 +27,7 @@ const PostCreation = ({ addNewPost }) => {
         image,
         time: 'Just now',
       };
-      addNewPost(newPost); // Call the function to add a new post
+      addNewPost(newPost); // Add the new post to the list
       navigate('/feed'); // Redirect back to the feed
     }
   };
@@ -61,4 +61,4 @@ const PostCreation = ({ addNewPost }) => {
   );
 };
 
-export default PostCreation;
+export default PostCreationPage;

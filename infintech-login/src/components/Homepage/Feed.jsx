@@ -1,28 +1,11 @@
-import React, { useState } from 'react';
+// Feed.js
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Post from './Post';
 import '../../components/Global.css';
 
-const Feed = () => {
+const Feed = ({ posts }) => { // Accept posts as a prop
   const navigate = useNavigate();
-  const [posts, setPosts] = useState([
-    {
-      id: 1,
-      type: 'Question',
-      author: 'John Doe',
-      content: 'Just finished a cool project using React! Check it out and let me know your thoughts.',
-      image: '/sample-post.jpg',
-      time: '10 mins ago',
-    },
-    {
-      id: 2,
-      type: 'Collaboration',
-      author: 'Jane Smith',
-      content: 'Looking for collaborators on a new AI project. Anyone interested? Feel free to message me!',
-      image: null,
-      time: '30 mins ago',
-    },
-  ]);
 
   return (
     <section className="feed">
