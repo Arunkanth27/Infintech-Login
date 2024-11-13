@@ -4,8 +4,9 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 import { AuthProvider, useAuth } from './components/Homepage/AuthContext';
 import Header from './components/Homepage/Header';
 import Feed from './components/Homepage/Feed';
+import PostCreation from './components/Homepage/PostCreationPage';
 import CommunityPage from './components/Homepage/CommunityPage';
-import CommunityDetails from './components/Homepage/CommunityDetails'; // New Component
+import CommunityDetails from './components/Homepage/CommunityDetails'; // Import CommunityDetails
 import UserActivity from './components/Homepage/UserActivity';
 import ProfilePage from './components/Homepage/ProfilePage';
 import Notifications from './components/Homepage/Notifications';
@@ -14,6 +15,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import Chat from './components/Homepage/Chat';
 import './App.css';
+
 
 const PrivateRoute = ({ element }) => {
   const { isLoggedIn } = useAuth();
@@ -29,8 +31,9 @@ const AppContent = () => {
       <div className="app__body">
         <Routes>
           <Route path="/feed" element={<Feed />} />
+          <Route path="/create-post" element={<PostCreation />} />
           <Route path="/communities" element={<CommunityPage />} />
-          <Route path="/community/:name" element={<CommunityDetails />} /> {/* New Community Details Route */}
+          <Route path="/community/:name" element={<CommunityDetails />} /> {/* Community Details Route */}
           <Route path="/activity" element={<UserActivity />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/notifications" element={<Notifications />} />
