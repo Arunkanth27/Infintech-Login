@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './components/Homepage/AuthContext';
 import Header from './components/Homepage/Header';
+import Sidebar from './components/Homepage/SideBar'; // Ensure Sidebar exists
 import Feed from './components/Homepage/Feed';
 import PostCreation from './components/Homepage/PostCreationPage';
 import CommunityPage from './components/Homepage/CommunityPage';
@@ -24,7 +25,6 @@ const PrivateRoute = ({ element }) => {
 const AppContent = () => {
   const { isLoggedIn } = useAuth();
 
-  // Manage posts state in App.js to share between Feed and PostCreation
   const [posts, setPosts] = useState([
     {
       id: 1,
@@ -44,36 +44,42 @@ const AppContent = () => {
     },
   ]);
 
-  // Function to add a new post
   const addNewPost = (newPost) => {
     setPosts([newPost, ...posts]); // Add new post at the beginning of the list
   };
 
-  return isLoggedIn ? (
+  if (!isLoggedIn) {
+    return (
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="*" element={<Navigate to="/login" replace />} />
+      </Routes>
+    );
+  }
+
+  return (
     <>
       <Header />
-      <div className="app__body">
-        <Routes>
-          {/* Pass posts and addNewPost as props */}
-          <Route path="/feed" element={<Feed posts={posts} />} />
-          <Route path="/create-post" element={<PostCreation addNewPost={addNewPost} />} />
-          <Route path="/communities" element={<CommunityPage />} />
-          <Route path="/community/:name" element={<CommunityDetails />} />
-          <Route path="/activity" element={<UserActivity />} />
-          <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/notifications" element={<Notifications />} />
-          <Route path="/chat" element={<PrivateRoute element={<Chat />} />} />
-          <Route path="/" element={<Feed posts={posts} />} /> {/* Default to Feed */}
-        </Routes>
+      <div className="app__layout">
+        {/* Ensure Sidebar renders correctly */}
+        <Sidebar />
+        <div className="app__content">
+          <Routes>
+            <Route path="/feed" element={<Feed posts={posts} />} />
+            <Route path="/create-post" element={<PostCreation addNewPost={addNewPost} />} />
+            <Route path="/communities" element={<CommunityPage />} />
+            <Route path="/community/:name" element={<CommunityDetails />} />
+            <Route path="/activity" element={<UserActivity />} />
+            <Route path="/profile" element={<ProfilePage />} />
+            <Route path="/notifications" element={<Notifications />} />
+            <Route path="/chat" element={<PrivateRoute element={<Chat />} />} />
+            <Route path="/" element={<Feed posts={posts} />} />
+          </Routes>
+        </div>
       </div>
       <Footer />
     </>
-  ) : (
-    <Routes>
-      <Route path="/login" element={<Login />} />
-      <Route path="/register" element={<Register />} />
-      <Route path="*" element={<Navigate to="/login" replace />} />
-    </Routes>
   );
 };
 

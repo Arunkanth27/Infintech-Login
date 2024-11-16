@@ -1,9 +1,8 @@
-// PostCreationPage.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../../components/Global.css';
 
-const PostCreationPage = ({ addNewPost }) => { // Accept addNewPost as a prop
+const PostCreationPage = ({ addNewPost }) => {
   const [type, setType] = useState('Question');
   const [content, setContent] = useState('');
   const [image, setImage] = useState(null);

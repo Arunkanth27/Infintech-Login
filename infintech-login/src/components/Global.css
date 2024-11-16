@@ -309,116 +309,7 @@ body {
   }
   /* End of Register CSS */
 
-  /* Chat CSS */
-  /* Chat Container */
-.chat {
-    display: flex;
-    flex-direction: column;
-    max-width: 600px;
-    margin: 20px auto;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-  }
-  
-  /* Chat Header */
-  .chat__header {
-    background-color: #1565a7;
-    color: #ffffff;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .chat__payment-button {
-    background-color: #ff4500;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    padding: 5px 10px;
-    cursor: pointer;
-    font-size: 12px;
-  }
-  
-  .chat__payment-button:hover {
-    background-color: #e63900;
-  }
-  
-  /* Chat Messages */
-  .chat__messages {
-    padding: 15px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .chat__message {
-    max-width: 80%;
-    padding: 10px 15px;
-    border-radius: 10px;
-    font-size: 14px;
-    line-height: 1.4;
-  }
-  
-  .chat__message--received {
-    align-self: flex-start;
-    background-color: #f0f0f0;
-    color: #333333;
-  }
-  
-  .chat__message--sent {
-    align-self: flex-end;
-    background-color: #0073b1;
-    color: #ffffff;
-  }
-  
-  /* Input Section */
-  .chat__input-container {
-    display: flex;
-    padding: 10px;
-    border-top: 1px solid #ddd;
-  }
-  
-  .chat__input {
-    flex-grow: 1;
-    padding: 10px;
-    font-size: 14px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-right: 10px;
-  }
-  
-  .chat__send-button {
-    background-color: #0073b1;
-    color: #ffffff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  /* Footer with Call Options */
-  .chat__footer {
-    display: flex;
-    justify-content: space-around;
-    padding: 10px;
-    border-top: 1px solid #ddd;
-  }
-  
-  .chat__video-button, .chat__audio-button {
-    background-color: #0073b1;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    padding: 8px 15px;
-    font-size: 14px;
-    cursor: pointer;
-  }
-  /* End of Chat Css */
-
+ 
   /* Community page css */
   /* Community Page Container */
 /* Main Container */
@@ -660,38 +551,6 @@ body {
   .community-details__content {
     grid-template-columns: 1fr;
   }
-}
-
-/* Feed Container */
-.feed {
-  padding: 20px;
-  padding-top: 15%;
-  max-width: 800px;
-  margin: 0 auto;
-  background-color: #f4f4f9;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  color: #333;
-}
-
-/* Feed Title */
-.feed__title {
-  font-size: 32px;
-  font-weight: 700;
-  color: #0073b1;
-  margin-bottom: 20px;
-  text-align: center;
-  border-bottom: 2px solid #e0e0e0;
-  padding-bottom: 10px;
-}
-
-/* Header Actions (Search Bar and Create Post Button) */
-.feed__header-actions {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
-  flex-wrap: wrap; /* Allows wrapping on smaller screens */
 }
 
 /* Search Bar */
@@ -950,69 +809,6 @@ body {
   transform: scale(1.1);
 }
 
-/* Comments Section */
-.feed__comments {
-  margin-top: 15px;
-  padding-top: 10px;
-  border-top: 1px solid #e0e0e0;
-  font-size: 14px;
-  color: #555;
-}
-
-.feed__comments a {
-  color: #0073b1;
-  text-decoration: none;
-}
-
-.feed__comments a:hover {
-  text-decoration: underline;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .feed {
-    padding: 15px;
-    max-width: 100%;
-  }
-
-  .feed__title {
-    font-size: 24px;
-  }
-
-  .feed__header-actions {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .search-bar {
-    margin-left: 0;
-    margin-top: 15px;
-    width: 100%;
-  }
-
-  .create-post-btn {
-    width: 100%;
-    justify-content: center;
-  }
-
-  .post__author {
-    font-size: 15px;
-  }
-
-  .post__content {
-    font-size: 14px;
-  }
-
-  .feed__comments {
-    font-size: 13px;
-  }
-
-  .post-creation textarea,
-  .post-creation select,
-  .post-creation input[type="file"] {
-    font-size: 13px;
-  }
-}
 
 
 
@@ -1062,88 +858,242 @@ body {
   /*End of footer css  */
 
   /* header css */
-  /* Header Styling */
+/* Header Styling */
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0; /* Reduced padding */
-    background-color: #ffffff; /* White background */
-    border-bottom: 1px solid #0073b1; /* Sky blue border */
-    position: sticky;
-    top: 0;
-    width: 100vw; /* Full viewport width */
-    z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lighter shadow */
-    /* margin-left: calc(-50vw + 50%); Center align to viewport */
-  }
-  
-  .header__logo {
-    font-size: 20px; /* Smaller font size */
-    font-family: 'Arial'; /* Simpler font */
-    font-weight: bold;
-    color: #0073b1; /* Sky blue color for text */
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    padding-left: 15px; /* Left padding for alignment */
-  }
-  
-  .header__nav {
-    display: flex;
-    gap: 15px; /* Reduced gap between links */
-  }
-  
-  .header__link {
-    text-decoration: none;
-    color: #0073b1; /* Sky blue color for links */
-    font-size: 16px; /* Slightly smaller font */
-    font-weight: bold;
-    transition: color 0.2s ease, transform 0.2s ease;
-    padding: 6px 10px; /* Reduced padding */
-    border-radius: 3px;
-  }
-  
-  .header__link:hover {
-    color: #0073b1; /* Darker sky blue on hover */
-    background-color: #e6f7ff; /* Light sky blue background on hover */
-    transform: scale(1.05); /* Subtle zoom effect */
-  }
-  
-  .header__right {
-    display: flex;
-    align-items: center;
-    padding-right: 20px; /* Right padding for alignment */
-  }
-  
-  .header__right > * {
-    margin-left: 10px;
-  }
-  
-  /* Responsive Design for Smaller Screens */
-  @media (max-width: 768px) {
-    .header {
-      flex-direction: column;
-      padding: 8px 0;
-    }
-    .header__nav {
-      margin-top: 8px;
-      gap: 10px;
-    }
-    .header__logo {
-      font-size: 18px;
-    }
-    .header__link {
-      font-size: 14px;
-    }
-  }
-  
-  /* Offset for body content to avoid overlap with sticky header */
-  body {
-    padding-top: 50px; /* Reduced padding-top to match shorter header */
-    margin: 0;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0; /* Reduced padding */
+  background-color: #ffffff; /* White background */
+  border-bottom: 1px solid #0073b1; /* Sky blue border */
+  position: sticky;
+  top: 0;
+  width: 100vw; /* Full viewport width */
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+  /* margin-left: calc(-50vw + 50%); Center align to viewport */
+}
 
-  /*End of header css  */
+.header__logo {
+  font-size: 20px; /* Smaller font size */
+  font-family: 'Arial'; /* Simpler font */
+  font-weight: bold;
+  color: #0073b1; /* Sky blue color for text */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-left: 15px; /* Left padding for alignment */
+}
+
+.header__nav {
+  display: flex;
+  gap: 15px; /* Reduced gap between links */
+}
+
+.header__link {
+  text-decoration: none;
+  color: #0073b1; /* Sky blue color for links */
+  font-size: 16px; /* Slightly smaller font */
+  font-weight: bold;
+  transition: color 0.2s ease, transform 0.2s ease;
+  padding: 6px 10px; /* Reduced padding */
+  border-radius: 3px;
+}
+
+.header__link:hover {
+  color: #0073b1; /* Darker sky blue on hover */
+  background-color: #e6f7ff; /* Light sky blue background on hover */
+  transform: scale(1.05); /* Subtle zoom effect */
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+  padding-right: 20px; /* Right padding for alignment */
+}
+
+.header__right > * {
+  margin-left: 10px;
+}
+.header__search-input{
+  width: 100%;
+  padding: 10px 15px;
+  padding-right: 40px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+}
+
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 8px 0;
+  }
+  .header__nav {
+    margin-top: 8px;
+    gap: 10px;
+  }
+  .header__logo {
+    font-size: 18px;
+  }
+  .header__link {
+    font-size: 14px;
+  }
+}
+
+/* General Layout */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #f9f9f9;
+}
+
+.app {
+  display: flex;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  position: fixed;
+  top: 60px; /* Align with the header height */
+  left: 0;
+  width: 200px; /* Reduced width for better alignment */
+  height: calc(100vh - 60px); /* Fill the screen below the header */
+  background-color: #ffffff; /* Polished blue color */
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  overflow-y: auto; /* Add scrolling */
+}
+
+.sidebar::-webkit-scrollbar {
+  width: 6px; /* Thin scrollbar */
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.3); /* Polished transparent thumb */
+  border-radius: 5px;
+}
+
+.sidebar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.5); /* Slightly brighter on hover */
+}
+
+.sidebar__logo {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px 0;
+  color: #fff;
+}
+
+.sidebar__menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar__menu-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.sidebar__menu-item:hover {
+  background-color: #ffffff;
+}
+
+.sidebar__menu-item i {
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+/* Sidebar Footer (User Info and Logout) */
+.sidebar__footer {
+  margin-top: auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.sidebar__footer a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  display: block;
+  margin-top: 10px;
+}
+
+/* Feed Layout */
+.feed {
+  margin-left: 220px; /* Push feed to the right to make space for sidebar */
+  padding: 20px;
+  max-width: 1200px; /* Prevent excessive width */
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.feed__title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: left;
+  color: #0073b1;
+}
+
+/* Header Actions (Search and Create Post) */
+.feed__header-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.feed__header-actions .search-bar {
+  flex: 1;
+  margin-right: 15px;
+  position: relative;
+}
+
+.feed__header-actions .search-bar input {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.feed__header-actions .search-bar i {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #aaa;
+}
+
+.feed__header-actions .create-post-btn {
+  padding: 10px 20px;
+  background-color: #0073b1;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.feed__header-actions .create-post-btn:hover {
+  background-color: #005582;
+}
 
   /* Messaging css */
   /* Messaging Container */
