@@ -62,7 +62,7 @@ const Sidebar = () => {
       {/* User Info */}
       <div className="sidebar__user">
         <i className="fas fa-user-circle"></i>
-        <span>User Full Name</span>
+        <span>Log Out</span>
       </div>
     </div>
   );

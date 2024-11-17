@@ -137,7 +137,7 @@ body {
   .login-button {
     width: 100%;
     padding: 15px;
-    background-color: #006d5b;
+    background-color: #008080;
     color: white;
     border: none;
     border-radius: 4px;
@@ -148,7 +148,7 @@ body {
   }
   
   .login-button:hover {
-    background-color: #005b4d;
+    background-color: #008080;
   }
   
   /* Forgot password and sign up links */
@@ -159,7 +159,7 @@ body {
   
   /* Adding space between the Forgot Password and Sign Up sections */
   .login-links a {
-    color: #006d5b;
+    color: #008080;
     text-decoration: none;
     font-weight: bold;
   }
@@ -274,7 +274,7 @@ body {
   .register-button {
     width: 100%;
     padding: 15px;
-    background-color: #006d5b;
+    background-color: #008080;
     color: white;
     border: none;
     border-radius: 4px;
@@ -283,7 +283,7 @@ body {
   }
   
   .register-button:hover {
-    background-color: #005b4d;
+    background-color: #008080;
   }
   
   .register-links {
@@ -374,7 +374,7 @@ body {
 .community__name {
   font-size: 18px;
   font-weight: bold;
-  color: #0073b1;
+  color: #008080;
   cursor: pointer;
 }
 
@@ -385,7 +385,7 @@ body {
 }
 
 .community__join-btn {
-  background-color: #0073b1;
+  background-color: #008080;
   color: white;
   border: none;
   padding: 8px 16px;
@@ -395,7 +395,7 @@ body {
 }
 
 .community__join-btn:hover {
-  background-color: #005582;
+  background-color: #008080;
 }
 
 //* Community Details Page */
@@ -442,7 +442,7 @@ body {
 .community-details__info h4,
 .community-details__announcements h4 {
   font-size: 18px;
-  color: #0073b1;
+  color: #008080;
   margin-bottom: 10px;
 }
 
@@ -483,7 +483,7 @@ body {
 }
 
 .community-details__post-form button {
-  background-color: #0073b1;
+  background-color: #008080;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -494,7 +494,7 @@ body {
 }
 
 .community-details__post-form button:hover {
-  background-color: #005582;
+  background-color: #008080;
 }
 
 /* Right Sidebar (Top Contributors) */
@@ -513,7 +513,7 @@ body {
 
 .community-details__ranking h4 {
   font-size: 18px;
-  color: #0073b1;
+  color: #008080;
   margin-bottom: 10px;
 }
 
@@ -529,7 +529,7 @@ body {
 
 /* Invite Button */
 .community-details__invite-btn {
-  background-color: #0073b1;
+  background-color: #008080;
   color: white;
   padding: 10px;
   width: 100%;
@@ -543,7 +543,7 @@ body {
 }
 
 .community-details__invite-btn:hover {
-  background-color: #005582;
+  background-color: #008080;
 }
 
 /* Responsive Design */
@@ -572,7 +572,7 @@ body {
 }
 
 .search-bar input:focus {
-  border-color: #0073b1;
+  border-color: #008080;
   outline: none;
 }
 
@@ -581,14 +581,14 @@ body {
   right: 15px;
   top: 50%;
   transform: translateY(-50%);
-  color: #0073b1;
+  color: #008080;
   font-size: 18px;
   cursor: pointer;
 }
 
 /* Create Post Button */
 .create-post-btn {
-  background-color: #0073b1;
+  background-color: #008080;
   color: #fff;
   padding: 10px 20px;
   font-size: 16px;
@@ -679,11 +679,11 @@ body {
 .post-creation textarea:focus,
 .post-creation select:focus,
 .post-creation input[type="file"]:focus {
-  border-color: #0073b1;
+  border-color: #008080;
 }
 
 .post-creation__submit {
-  background-color: #0073b1;
+  background-color: #008080;
   color: #fff;
   padding: 12px;
   border: none;
@@ -695,7 +695,7 @@ body {
 }
 
 .post-creation__submit:hover {
-  background-color: #005582;
+  background-color: #008080;
 }
 
 /* Post Card */
@@ -724,7 +724,7 @@ body {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: 2px solid #0073b1;
+  border: 2px solid #008080;
   margin-right: 12px;
 }
 
@@ -736,7 +736,7 @@ body {
 .post__author {
   font-size: 16px;
   font-weight: bold;
-  color: #0073b1;
+  color: #008080;
   text-decoration: none;
 }
 
@@ -792,7 +792,7 @@ body {
 
 .post__action {
   font-size: 14px;
-  color: #0073b1;
+  color: #008080;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -805,7 +805,7 @@ body {
 }
 
 .post__action:hover {
-  color: #005582;
+  color: #008080;
   transform: scale(1.1);
 }
 
@@ -835,14 +835,14 @@ body {
   
   .footer__link {
     text-decoration: none;
-    color: #0095f6; /* Soft blue color for links */
+    color: #008080; /* Soft blue color for links */
     margin: 0 5px;
     font-weight: 500;
     transition: color 0.3s ease;
   }
   
   .footer__link:hover {
-    color: #005582; /* Darker blue on hover */
+    color: #008080; /* Darker blue on hover */
   }
   
   /* Responsive Design for Smaller Screens */
@@ -857,87 +857,139 @@ body {
   }
   /*End of footer css  */
 
-  /* header css */
-/* Header Styling */
+ /* Header Styling */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 0; /* Reduced padding */
+  padding: 10px 0;
   background-color: #ffffff; /* White background */
   border-bottom: 1px solid #0073b1; /* Sky blue border */
   position: sticky;
   top: 0;
-  width: 100vw; /* Full viewport width */
+  width: 100vw;
   z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Lighter shadow */
-  /* margin-left: calc(-50vw + 50%); Center align to viewport */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
+/* Header Logo */
 .header__logo {
-  font-size: 20px; /* Smaller font size */
-  font-family: 'Arial'; /* Simpler font */
-  font-weight: bold;
-  color: #0073b1; /* Sky blue color for text */
+  font-size: 24px;
+  font-family: 'Arial', sans-serif;
+  color: #333333; /* Softer black for text */
   text-transform: uppercase;
   letter-spacing: 1px;
-  padding-left: 15px; /* Left padding for alignment */
+  padding-left: 15px;
+  transition: color 0.3s ease-in-out;
 }
 
+.header__logo:hover {
+  color: #008080; /* Teal hover effect */
+}
+
+/* Navigation Links */
 .header__nav {
   display: flex;
-  gap: 15px; /* Reduced gap between links */
+  gap: 20px;
 }
 
 .header__link {
   text-decoration: none;
-  color: #0073b1; /* Sky blue color for links */
-  font-size: 16px; /* Slightly smaller font */
-  font-weight: bold;
-  transition: color 0.2s ease, transform 0.2s ease;
-  padding: 6px 10px; /* Reduced padding */
-  border-radius: 3px;
+  color: #333333; /* Softer black text */
+  font-size: 16px;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
 }
 
 .header__link:hover {
-  color: #0073b1; /* Darker sky blue on hover */
-  background-color: #e6f7ff; /* Light sky blue background on hover */
-  transform: scale(1.05); /* Subtle zoom effect */
+  color: #008080; /* Teal text on hover */
+  background-color: rgba(0, 128, 128, 0.1); /* Light teal background */
+  transform: scale(1.05); /* Subtle hover effect */
 }
 
+/* Right Section (Message Button and Other Links) */
 .header__right {
   display: flex;
   align-items: center;
-  padding-right: 20px; /* Right padding for alignment */
+  padding-right: 20px;
 }
 
 .header__right > * {
   margin-left: 10px;
 }
-.header__search-input{
+
+/* Message Button */
+.header__message-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #008080; /* Teal background */
+  color: white;
+  font-size: 14px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.header__message-btn:hover {
+  background-color: #006666; /* Darker teal on hover */
+  transform: scale(1.05); /* Subtle hover effect */
+}
+
+/* Search Bar */
+.header__search {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 300px; /* Adjust width as needed */
+}
+
+.header__search-input {
   width: 100%;
   padding: 10px 15px;
-  padding-right: 40px;
   font-size: 14px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  transition: border-color 0.3s;
+  transition: border-color 0.3s ease;
 }
 
+.header__search-input:focus {
+  border-color: #008080; /* Teal border on focus */
+  outline: none;
+}
 
-/* Responsive Design for Smaller Screens */
+.header__search-icon {
+  position: absolute;
+  right: 10px;
+  font-size: 16px;
+  color: #333333; /* Softer black for default icon */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.header__search-icon:hover {
+  color: #008080; /* Teal on hover */
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
     padding: 8px 0;
   }
+
   .header__nav {
-    margin-top: 8px;
-    gap: 10px;
+    margin-top: 10px;
+    gap: 15px;
   }
+
   .header__logo {
-    font-size: 18px;
+    font-size: 20px;
   }
+
   .header__link {
     font-size: 14px;
   }
@@ -953,7 +1005,6 @@ body {
 .app {
   display: flex;
 }
-
 /* Sidebar Styling */
 .sidebar {
   position: fixed;
@@ -961,8 +1012,8 @@ body {
   left: 0;
   width: 200px; /* Reduced width for better alignment */
   height: calc(100vh - 60px); /* Fill the screen below the header */
-  background-color: #ffffff; /* Polished blue color */
-  color: #fff;
+  background-color: #ffffff; /* White background */
+  color: #444; /* Light black font color */
   display: flex;
   flex-direction: column;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
@@ -974,63 +1025,117 @@ body {
 }
 
 .sidebar::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 255, 255, 0.3); /* Polished transparent thumb */
+  background-color: rgba(0, 128, 128, 0.2); /* Teal transparent scrollbar */
   border-radius: 5px;
 }
 
 .sidebar::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(255, 255, 255, 0.5); /* Slightly brighter on hover */
+  background-color: rgba(0, 128, 128, 0.4); /* Darker teal on hover */
 }
 
 .sidebar__logo {
   text-align: center;
   font-size: 20px;
-  font-weight: bold;
   margin: 20px 0;
-  color: #fff;
+  color: #008080; /* Teal color for the logo text */
 }
 
-.sidebar__menu {
+.sidebar__nav {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.sidebar__menu-item {
+.sidebar__nav-item {
+  margin: 10px 0;
+}
+
+.sidebar__link {
   display: flex;
   align-items: center;
   padding: 10px 15px;
-  color: #fff;
+  color: #444; /* Light black font color for links */
   text-decoration: none;
   font-size: 14px;
-  transition: background-color 0.3s ease;
-  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 5px;
 }
 
-.sidebar__menu-item:hover {
-  background-color: #ffffff;
-}
-
-.sidebar__menu-item i {
+.sidebar__link i {
   margin-right: 10px;
   font-size: 16px;
 }
 
-/* Sidebar Footer (User Info and Logout) */
-.sidebar__footer {
-  margin-top: auto;
-  padding: 20px;
-  text-align: center;
-  background-color: #ffffff;
+.sidebar__link:hover {
+  background-color: #e0f7f7; /* Light teal hover background */
+  color: #008080; /* Teal font color on hover */
 }
 
-.sidebar__footer a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 14px;
-  display: block;
-  margin-top: 10px;
+.sidebar__link--active {
+  background-color: #e0f7f7; /* Light teal background for active link */
+  color: #008080; /* Teal color for active text */
 }
+
+/* Tips Section */
+.sidebar__tips {
+  background-color: #f9f9f9; /* Light gray background for tips */
+  margin: 20px 10px;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  color: #444; /* Light black font color */
+  text-align: center;
+}
+
+.sidebar__tips h4 {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #008080; /* Teal color for tips heading */
+}
+
+.sidebar__tips p {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #666; /* Subtle font color for text */
+}
+
+.sidebar__learn-more {
+  background-color: #008080; /* Teal color for button */
+  color: #ffffff; /* White text */
+  padding: 8px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar__learn-more:hover {
+  background-color: #006666; /* Darker teal on hover */
+}
+
+/* User Info Section */
+.sidebar__user {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+  padding: 20px;
+  background-color: #f9f9f9; /* Light gray background */
+  color: #444; /* Light black font color */
+  font-size: 14px;
+  border-top: 1px solid #ddd;
+}
+
+.sidebar__user i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.sidebar__user span {
+  font-size: 14px;
+ 
+}
+
 
 /* Feed Layout */
 .feed {
@@ -1047,7 +1152,7 @@ body {
   font-weight: 700;
   margin-bottom: 20px;
   text-align: left;
-  color: #0073b1;
+  color: #008080;
 }
 
 /* Header Actions (Search and Create Post) */
@@ -1083,7 +1188,7 @@ body {
 
 .feed__header-actions .create-post-btn {
   padding: 10px 20px;
-  background-color: #0073b1;
+  background-color: #008080;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -1107,7 +1212,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #1565a7;
+    background-color: #008080;
     color: #ffffff;
     font-size: 14px; /* Smaller font size */
     font-weight: 500;
@@ -1120,7 +1225,7 @@ body {
   }
   
   .messaging__button:hover {
-    background-color: #005582; /* Darker blue on hover */
+    background-color: #008080; /* Darker blue on hover */
     transform: scale(1.05); /* Slight zoom effect */
   }
   
