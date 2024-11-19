@@ -1736,3 +1736,137 @@ align-items: center;
   }
 }
 /* End of useractivity css */
+
+/* Global Layout */
+.app__layout {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding: 20px;
+  gap: 20px; /* Adds space between content and sidebars */
+}
+
+/* Content Section (Feed and other content) */
+.app__content {
+  flex: 1; /* Ensure the content (feed) takes up the remaining space */
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-right: 0; /* Remove margin between content and right sidebars */
+}
+
+/* Fixed Right Sidebars Section */
+.app__sidebars {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between the sidebars */
+  position: fixed; /* Fix the sidebars to the right of the page */
+  top: 20px; /* Position the top of the sidebars 20px from the top of the page */
+  right: 20px; /* Position the sidebars 20px from the right edge of the page */
+  width: 280px; /* Fixed width for the right sidebars container */
+  z-index: 10; /* Ensure sidebars stay above other content */
+  margin-top: 20px; /* Adds spacing at the top */
+}
+
+/* Common Sidebar Styles */
+.sidebar {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sidebar:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* News & Announcements Sidebar */
+.news-navbar {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 15px;
+  padding-top: 30%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.news-navbar ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.news-navbar li {
+  padding: 8px 0;
+  border-bottom: 1px solid #e2e2e2;
+  color: #555;
+}
+
+.news-navbar li:last-child {
+  border-bottom: none;
+}
+
+.news-navbar li:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+/* Top Rankers Sidebar */
+.top-rankers-navbar {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.top-rankers-navbar ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.top-rankers-navbar li {
+  padding: 8px 0;
+  border-bottom: 1px solid #e2e2e2;
+  color: #555;
+}
+
+.top-rankers-navbar li:last-child {
+  border-bottom: none;
+}
+
+.top-rankers-navbar li:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+/* Additional Styling for the Right Sidebar Container */
+.app__sidebars {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Adds spacing between the two sidebars */
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 280px;
+  z-index: 10;
+  margin-top: 20px;
+}
+
+.sidebar__list-item {
+  margin-bottom: 10px;
+}
+
+.sidebar__list-item:hover {
+  background-color: #e0f2f1; /* Slight background color change on hover */
+  cursor: pointer;
+}

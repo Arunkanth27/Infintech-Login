@@ -1,9 +1,8 @@
-// App.js
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate, useLocation } from 'react-router-dom';
 import { AuthProvider, useAuth } from './components/Homepage/AuthContext';
 import Header from './components/Homepage/Header';
-import Sidebar from './components/Homepage/SideBar'; // Ensure Sidebar exists
+import Sidebar from './components/Homepage/SideBar'; // Your existing Sidebar
 import Feed from './components/Homepage/Feed';
 import PostCreation from './components/Homepage/PostCreationPage';
 import CommunityPage from './components/Homepage/CommunityPage';
@@ -15,6 +14,11 @@ import Footer from './components/Homepage/Footer';
 import Login from './components/Login';
 import Register from './components/Register';
 import Chat from './components/Homepage/Chat';
+
+// Import your new sidebar components
+import NewsNavbar from './components/Homepage/NewsNavbar';
+import OverallRankers from './components/Homepage/OverallRankers';
+
 import './App.css';
 
 const PrivateRoute = ({ element }) => {
@@ -24,6 +28,7 @@ const PrivateRoute = ({ element }) => {
 
 const AppContent = () => {
   const { isLoggedIn } = useAuth();
+  const location = useLocation(); // Access the current route
 
   const [posts, setPosts] = useState([
     {
@@ -62,8 +67,10 @@ const AppContent = () => {
     <>
       <Header />
       <div className="app__layout">
-        {/* Ensure Sidebar renders correctly */}
+        {/* Left Sidebar */}
         <Sidebar />
+
+        {/* Main Content */}
         <div className="app__content">
           <Routes>
             <Route path="/feed" element={<Feed posts={posts} />} />
@@ -77,6 +84,14 @@ const AppContent = () => {
             <Route path="/" element={<Feed posts={posts} />} />
           </Routes>
         </div>
+
+        {/* Conditionally Render the Right Sidebars */}
+        {location.pathname === '/feed' || location.pathname === '/' ? (
+          <div className="app__sidebars">
+            <NewsNavbar />
+            <OverallRankers />
+          </div>
+        ) : null}
       </div>
       <Footer />
     </>
