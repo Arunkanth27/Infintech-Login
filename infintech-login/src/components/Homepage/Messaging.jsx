@@ -1,13 +1,11 @@
-// Messaging.js
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../../components/Global.css'
 
 const Messaging = () => {
   const navigate = useNavigate();
 
   const handleButtonClick = () => {
-    navigate('/chat'); // Navigate to the chat page on click
+    navigate('/chat'); // Navigate to the chat page on button click
   };
 
   return (

@@ -1,12 +1,22 @@
-// Sidebar.jsx
-import React from 'react';
+import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import '../../components/Global.css';
 
-
 const Sidebar = () => {
+  const [isSidebarVisible, setSidebarVisible] = useState(true);
+
+  // Function to toggle sidebar visibility
+  const toggleSidebar = () => {
+    setSidebarVisible(!isSidebarVisible);
+  };
+
   return (
-    <div className="sidebar">
+    <div className={`sidebar ${isSidebarVisible ? 'sidebar--visible' : 'sidebar--hidden'}`}>
+      {/* Close Button */}
+      <div className="sidebar__close-btn" onClick={toggleSidebar}>
+        <i className="fas fa-times"></i> {/* "X" icon */}
+      </div>
+
       {/* Company Logo */}
       <div className="sidebar__logo">
         <h2>COMPANY</h2>
