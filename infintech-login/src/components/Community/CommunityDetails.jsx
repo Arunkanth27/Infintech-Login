@@ -1,7 +1,7 @@
 // src/components/Homepage/CommunityDetails.js
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Post from './Post';
+import Post from '../Post/Post';
 import '../../components/Global.css';
 
 const CommunityDetails = () => {

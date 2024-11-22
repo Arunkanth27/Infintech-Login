@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from './Homepage/AuthContext';
-import './Global.css';
-import logo from '../images/download.jpg';
-import backgroundImage from '../images/background_pictures.jpg';
+import { useAuth } from './AuthContext';
+import '../../components/Global.css';
+import logo from '../../images/download.jpg';
+import backgroundImage from '../../images/background_pictures.jpg';
 
 const Register = () => {
   const [name, setName] = useState('');

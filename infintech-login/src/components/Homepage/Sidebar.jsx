@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import '../../components/Global.css';
 
-const Sidebar = () => {
+const SideBar = () => {
   const [isSidebarVisible, setSidebarVisible] = useState(false); // Start with sidebar hidden
 
   // Function to toggle sidebar visibility
@@ -88,4 +88,4 @@ const Sidebar = () => {
   );
 };
 
-export default Sidebar;
+export default SideBar;

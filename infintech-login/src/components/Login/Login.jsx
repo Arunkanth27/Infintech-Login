@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from './Homepage/AuthContext';
+import { useAuth } from './AuthContext';
 import Loader from './Loader'; // Import the loader component
-import '../components/Global.css'
-import logo from '../images/download.jpg';
-import backgroundImage from '../images/background_pictures.jpg';
+import '../../components/Global.css';
+import logo from '../../images/download.jpg';
+import backgroundImage from '../../images/background_pictures.jpg';
 
 const Login = () => {
   const [email, setEmail] = useState(''); 

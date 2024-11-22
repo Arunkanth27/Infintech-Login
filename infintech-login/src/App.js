@@ -1,25 +1,25 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate, useLocation } from 'react-router-dom';
-import { AuthProvider, useAuth } from './components/Homepage/AuthContext';
+import { AuthProvider, useAuth } from './components/Login/AuthContext';
 import Header from './components/Homepage/Header';
 import Sidebar from './components/Homepage/SideBar'; // Your existing Sidebar
-import Feed from './components/Homepage/Feed';
-import PostCreation from './components/Homepage/PostCreationPage';
+import Feed from './components/Feed/Feed';
+import PostCreation from './components/Post/PostCreationPage';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import Chat from './components/Homepage/Chat';
-import CommunityPage from './components/Homepage/CommunityPage';
-import CommunityDetails from './components/Homepage/CommunityDetails';
-import UserActivity from './components/Homepage/UserActivity';
-import ProfilePage from './components/Homepage/ProfilePage';
-import Notifications from './components/Homepage/Notifications';
+import Chat from './components/Chat/Chat';
+import CommunityPage from './components/Community/CommunityPage';
+import CommunityDetails from './components/Community/CommunityDetails';
+import UserActivity from './components/UserActivity/UserActivity';
+import ProfilePage from './components/Profile/ProfilePage';
+import Notifications from './components/Notification/Notifications';
 import Footer from './components/Homepage/Footer';
-import Login from './components/Login';
-import Register from './components/Register';
+import Login from './components/Login/Login';
+import Register from './components/Login/Register';
 
 
 // Import your new sidebar components
-import NewsNavbar from './components/Homepage/NewsNavbar';
-import OverallRankers from './components/Homepage/OverallRankers';
+import NewsNavbar from './components/Feed/NewsNavbar';
+import OverallRankers from './components/Feed/OverallRankers';
 
 import './App.css';
 
@@ -68,7 +68,7 @@ const AppContent = () => {
   return (
     <>
       <Header />
-      <div className="app__layout">
+      
         {/* Left Sidebar */}
         <Sidebar />
 
@@ -94,7 +94,7 @@ const AppContent = () => {
             <OverallRankers />
           </div>
         ) : null}
-      </div>
+     
       <Footer />
     </>
   );

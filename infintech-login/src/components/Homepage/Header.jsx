@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../../components/Global.css';
-import Messaging from './Messaging';
+import Messaging from '../Chat/Messaging';
 
 const Header = () => {
   const [searchTerm, setSearchTerm] = useState('');
