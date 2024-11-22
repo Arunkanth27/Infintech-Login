@@ -57,26 +57,27 @@ body {
 }
 
 /* Main login container */
+/* Base Styles (Large Screen Default) */
 .login-container {
   display: flex;
   flex-direction: row;
-  width: 90%;
-  max-width: 1400px; /* Increased maximum width */
-  height: 90vh; /* Increased height to occupy more vertical space */
+  max-width: 1400px;
+  height: 90vh;
   background-color: white;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   overflow: hidden;
+  margin-block-start: 40px;
 }
 
 /* Login form box on the left */
 .login-box {
   flex: 1;
-  padding: 40px 40px; /* Reduced top padding */
+  padding: 40px 40px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Aligns content toward the top */
-  overflow-y: auto; /* Allow scrolling if content overflows */
+  justify-content: flex-start;
+  overflow-y: auto;
 }
 
 /* Transparent scrollbar styling */
@@ -85,7 +86,7 @@ body {
 }
 
 .login-box::-webkit-scrollbar-thumb {
-  background-color: rgba(0, 0, 0, 0.2); /* Transparent scrollbar */
+  background-color: rgba(0, 0, 0, 0.2);
   border-radius: 10px;
 }
 
@@ -95,19 +96,19 @@ body {
 
 /* Logo styling */
 .company-logo {
-  margin-bottom: 10px; /* Reduced space below logo */
+  margin-bottom: 10px;
   display: flex;
-  justify-content: center; /* Center the logo */
+  justify-content: center;
 }
 
 .company-logo img {
   width: 140px;
-  margin-top: -10px; /* Move logo slightly higher */
+  margin-top: -10px;
 }
 
 /* Title and form description */
 h2 {
-  margin-top: 5px; /* Reduced top margin */
+  margin-top: 5px;
   font-size: 28px;
   color: #333;
 }
@@ -120,7 +121,7 @@ p {
 
 /* Form inputs */
 .login-form input {
-  width: 100%;
+  width: -webkit-fill-available;
   padding: 15px;
   margin: 10px 0;
   border: 1px solid #ccc;
@@ -128,9 +129,8 @@ p {
   font-size: 16px;
 }
 
-/* Add space between the password input and login button */
 .login-form input[type="password"] {
-  margin-bottom: 20px; /* Space between password field and login button */
+  margin-bottom: 20px;
 }
 
 /* Login button */
@@ -144,20 +144,19 @@ p {
   cursor: pointer;
   font-size: 18px;
   font-weight: bold;
-  margin-bottom: 20px; /* Adds space between the button and the forgot password link */
+  margin-bottom: 20px;
 }
 
 .login-button:hover {
-  background-color: #008080;
+  background-color: #006666;
 }
 
-/* Forgot password and sign up links */
+/* Forgot password and sign-up links */
 .login-links {
   text-align: center;
   font-size: 14px;
 }
 
-/* Adding space between the Forgot Password and Sign Up sections */
 .login-links a {
   color: #008080;
   text-decoration: none;
@@ -169,7 +168,7 @@ p {
 }
 
 .login-links > span {
-  margin-top: 10px; /* Adds space between the forgot password and sign up links */
+  margin-top: 10px;
   display: block;
 }
 
@@ -189,19 +188,52 @@ p {
 }
 
 /* Responsive Design */
+
+/* Medium Screen (Tablets and Smaller Laptops) */
+@media (max-width: 1024px) {
+  .login-container {
+    max-width: 1000px;
+    height: 80vh;
+    margin-block-start: 20px;
+  }
+
+  .login-box {
+    padding: 30px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  .login-form input {
+    padding: 14px;
+  }
+
+  .login-button {
+    font-size: 16px;
+    padding: 14px;
+  }
+
+  .login-links {
+    font-size: 13px;
+  }
+}
+
+/* Small Screens (Mobile Devices) */
 @media (max-width: 768px) {
   .login-container {
     flex-direction: column;
     width: 90%;
     height: auto;
+    margin-block-start: 10px;
   }
 
   .login-box {
-    padding: 30px 20px;
+    padding: 20px;
   }
 
   .login-image {
-    height: 300px;
+    height: 250px;
   }
 
   .login-image img {
@@ -210,24 +242,57 @@ p {
     object-fit: cover;
   }
 
-  /* Adjust font sizes on smaller screens */
   h2 {
-    font-size: 24px;
+    font-size: 22px;
   }
 
   .login-form input {
     padding: 12px;
+    font-size: 14px;
   }
 
   .login-button {
-    font-size: 16px;
+    font-size: 14px;
+    padding: 12px;
   }
 
   .login-links {
     font-size: 12px;
-    margin-top: 15px; /* Smaller margin on small screens */
+    margin-top: 10px;
   }
 }
+
+/* Extra Small Screens (Portrait Phones) */
+@media (max-width: 480px) {
+  .login-container {
+    width: min-content;
+    height: auto;
+  }
+
+  .login-box {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .login-form input {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .login-button {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .login-links {
+    font-size: 10px;
+    margin-top: 5px;
+  }
+}
+
 
 /* End of login css */
 
@@ -236,41 +301,80 @@ p {
 
 .register-container {
   display: flex;
-  height: 100vh;
-  align-items: center;
-  justify-content: center;
+  flex-direction: row;
+  max-width: 1400px;
+  height: 90vh;
   background-color: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-block-start: 40px;
 }
 
+/* Register form box on the left */
 .register-box {
   flex: 1;
-  max-width: 400px;
-  padding: 40px;
+  padding: 40px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  overflow-y: auto;
+}
+
+/* Transparent scrollbar styling */
+.register-box::-webkit-scrollbar {
+  width: 8px;
+}
+
+.register-box::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+
+.register-box::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+/* Logo styling */
+.company-logo {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .company-logo img {
-  width: 150px;
+  width: 140px;
+  margin-top: -10px;
 }
 
+/* Title and form description */
 h2 {
-  margin-top: 20px;
-  font-size: 26px;
+  margin-top: 5px;
+  font-size: 28px;
   color: #333;
 }
 
 p {
+  font-size: 16px;
   color: #888;
   margin-bottom: 20px;
 }
 
+/* Form inputs */
 .register-form input {
-  width: 100%;
+  width: -webkit-fill-available;
   padding: 15px;
   margin: 10px 0;
   border: 1px solid #ccc;
   border-radius: 4px;
+  font-size: 16px;
 }
 
+.register-form input[type="password"] {
+  margin-bottom: 20px;
+}
+
+/* Register button */
 .register-button {
   width: 100%;
   padding: 15px;
@@ -279,20 +383,23 @@ p {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
 }
 
 .register-button:hover {
-  background-color: #008080;
+  background-color: #006666;
 }
 
+/* Forgot password and sign-up links */
 .register-links {
-  margin-top: 20px;
   text-align: center;
+  font-size: 14px;
 }
 
 .register-links a {
-  color: #006d5b;
+  color: #008080;
   text-decoration: none;
   font-weight: bold;
 }
@@ -301,12 +408,132 @@ p {
   text-decoration: underline;
 }
 
-.register-image img {
+.register-links > span {
+  margin-top: 10px;
   display: block;
-  width: 100%;
-  height: 100vh;
-  object-fit: cover;
 }
+
+/* Right side background image */
+.register-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Responsive Design */
+
+/* Medium Screen (Tablets and Smaller Laptops) */
+@media (max-width: 1024px) {
+  .register-container {
+    max-width: 1000px;
+    height: 80vh;
+    margin-block-start: 20px;
+  }
+
+  .register-box {
+    padding: 30px;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  .register-form input {
+    padding: 14px;
+  }
+
+  .register-button {
+    font-size: 16px;
+    padding: 14px;
+  }
+
+  .register-links {
+    font-size: 13px;
+  }
+}
+
+/* Small Screens (Mobile Devices) */
+@media (max-width: 768px) {
+  .register-container {
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+    margin-block-start: 10px;
+  }
+
+  .register-box {
+    padding: 20px;
+  }
+
+  .register-image {
+    height: 250px;
+  }
+
+  .register-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  .register-form input {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .register-button {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .register-links {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+}
+
+/* Extra Small Screens (Portrait Phones) */
+@media (max-width: 480px) {
+  .register-container {
+    width: min-content;
+    height: auto;
+  }
+
+  .register-box {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  .register-form input {
+    padding: 10px;
+    font-size: 12px;
+  }
+
+  .register-button {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .register-links {
+    font-size: 10px;
+    margin-top: 5px;
+  }
+}
+
 /* End of Register CSS */
 
 
@@ -400,7 +627,7 @@ transition: background-color 0.3s;
 background-color: #008080;
 }
 
-//* Community Details Page */
+/* Community Details Page */
 .community-details {
 padding: 20px;
 max-width: 1200px;
@@ -454,6 +681,99 @@ font-size: 14px;
 color: #666;
 line-height: 1.6;
 }
+/* media queery */
+/* Base styles (your existing CSS) */
+
+/* Responsive Adjustments */
+@media screen and (max-width: 1200px) {
+  /* Adjust grid layout for medium screens */
+  .communities__grid {
+    grid-template-columns: repeat(2, 1fr);
+    margin-inline-start: 50px; /* Reduce left margin */
+    gap: 15px;
+  }
+  
+  .communities__search-bar,
+  .communities__sort-select {
+    width: 100%; /* Full width on smaller screens */
+  }
+  
+  .community-details__content {
+    grid-template-columns: 1fr 1fr; /* Reduce to two columns */
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* Stack controls vertically */
+  .communities__controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .communities__grid {
+    grid-template-columns: 1fr; /* Single column */
+    margin-inline-start: 20px; /* Further reduce left margin */
+    gap: 10px;
+  }
+  
+  .community-details__content {
+    grid-template-columns: 1fr; /* Stack sections vertically */
+    gap: 15px;
+  }
+  
+  .community-details__title {
+    font-size: 28px; /* Smaller title for narrow screens */
+  }
+}
+
+@media screen and (max-width: 576px) {
+  /* Reduce paddings and font sizes for small screens */
+  .communities__title {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+  
+  .community__item {
+    padding: 15px;
+  }
+  
+  .community__name {
+    font-size: 16px;
+  }
+  
+  .community__stats {
+    font-size: 12px;
+  }
+  
+  .community__join-btn {
+    padding: 6px 12px;
+  }
+  
+  .community-details__content {
+    padding: 15px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  /* Further reduce for very small screens */
+  .communities__title {
+    font-size: 20px;
+  }
+  
+  .community__name {
+    font-size: 14px;
+  }
+  
+  .community__stats {
+    font-size: 11px;
+  }
+  
+  .community__join-btn {
+    font-size: 12px;
+  }
+}
+
 
 /* Feed Section */
 .community-details__feed {
@@ -643,6 +963,7 @@ border-radius: 12px;
 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 display: flex;
 flex-direction: column;
+align-items: center;
 gap: 15px;
 transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -669,9 +990,9 @@ margin-top: 10px;
 .post-creation textarea,
 .post-creation select,
 .post-creation input[type="file"] {
-width: 100%;
+width: -webkit-fill-available;
 padding: 12px;
-margin-top: 5px;
+margin-block-start: 10pxs;
 border: 1px solid #ddd;
 border-radius: 4px;
 font-size: 14px;
@@ -694,6 +1015,8 @@ font-size: 16px;
 font-weight: 600;
 cursor: pointer;
 transition: background-color 0.3s;
+margin-block-start: 10px;
+width: -webkit-fill-available;
 }
 
 .post-creation__submit:hover {
@@ -811,125 +1134,6 @@ color: #008080;
 transform: scale(1.1);
 }
 
-/* Style for liked posts */
-.post__actions .liked {
-  color: #007bff;
-}
-/* Style for comment input field */
-.comment-form,
-.reply-form {
-  display: flex;
-  margin-top: 10px;
-}
-
-.comment-form input,
-.reply-form input {
-  flex: 1;
-  padding: 8px;
-  margin-right: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-}
-
-.comment-form button,
-.reply-form button {
-  padding: 8px 15px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.comment-form button:disabled,
-.reply-form button:disabled {
-  background-color: #ccc;
-}
-
-/* Style for comments section */
-.post__comments {
-  margin-top: 20px;
-}
-
-.comment {
-  margin-bottom: 15px;
-  border-bottom: 1px solid #ddd;
-  padding: 10px 0;
-}
-
-.comment-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.comment-actions i {
-  cursor: pointer;
-  margin-left: 10px;
-}
-
-.replies {
-  margin-left: 20px;
-  margin-top: 10px;
-}
-
-.reply {
-  margin-bottom: 5px;
-}
-
-.reply-form input {
-  margin-top: 5px;
-}
-
-.reply-form button {
-  padding: 6px 12px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.reply-form button:disabled {
-  background-color: #ccc;
-}
-
-.comment-actions i.liked {
-  color: #007bff;
-}
-
-.comment-actions i.liked {
-  color: #007bff;
-}
-
-.comment-form input, .reply-form input {
-  width: 80%;
-  padding: 6px;
-  margin-right: 5px;
-}
-
-.comment-form button, .reply-form button {
-  padding: 6px 12px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.comment-actions i {
-  cursor: pointer;
-  margin-left: 10px;
-}
-
-.replies {
-  margin-left: 20px;
-}
-
-.reply {
-  font-size: 14px;
-  margin-bottom: 5px;
-}
 
 
 
@@ -1126,7 +1330,6 @@ background-color: #f9f9f9;
 .app {
 display: flex;
 }
-
 /* Sidebar Styling */
 .sidebar {
   position: fixed;
@@ -1910,11 +2113,10 @@ align-items: center;
   flex-direction: column;
   gap: 20px; /* Space between the sidebars */
   position: fixed; /* Fix the sidebars to the right of the page */
-  top: 20px; /* Position the top of the sidebars 20px from the top of the page */
+  padding: 20px;
   right: 20px; /* Position the sidebars 20px from the right edge of the page */
   width: 280px; /* Fixed width for the right sidebars container */
   z-index: 10; /* Ensure sidebars stay above other content */
-  margin-top: 20px; /* Adds spacing at the top */
 }
 
 /* Common Sidebar Styles */
@@ -1943,7 +2145,6 @@ align-items: center;
   background-color: #ffffff;
   border-radius: 10px;
   padding: 15px;
-  padding-top: 30%;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -1995,18 +2196,6 @@ align-items: center;
   cursor: pointer;
 }
 
-/* Additional Styling for the Right Sidebar Container */
-.app__sidebars {
-  display: flex;
-  flex-direction: column;
-  gap: 20px; /* Adds spacing between the two sidebars */
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  width: 280px;
-  z-index: 10;
-  margin-top: 20px;
-}
 
 .sidebar__list-item {
   margin-bottom: 10px;
@@ -2022,7 +2211,6 @@ align-items: center;
   display: flex;
   height: 100vh;
   background-color: #f1f1f1;
-  font-family: Arial, sans-serif;
 }
 
 /* Left Sidebar: Contact list */
@@ -2032,31 +2220,17 @@ align-items: center;
   padding: 20px;
   border-right: 1px solid #ddd;
   overflow-y: auto;
-  display: flex;
-  flex-direction: column;
 }
 
-/* Search bar */
-.search-bar input {
-  width: 100%;
-  padding: 10px;
-  border-radius: 20px;
-  border: 1px solid #ddd;
-  margin-bottom: 20px;
-}
-
-/* Chat list */
 .chat-list h3 {
   margin-bottom: 20px;
   font-size: 20px;
   font-weight: bold;
-  color: #333;
 }
 
 .chat-list ul {
   list-style-type: none;
   padding: 0;
-  margin: 0;
 }
 
 .chat-list li {
@@ -2067,7 +2241,6 @@ align-items: center;
   border-radius: 5px;
   margin-bottom: 10px;
   transition: background-color 0.3s ease;
-  align-items: center;
 }
 
 .chat-list li:hover {
@@ -2088,7 +2261,6 @@ align-items: center;
 .chat-list .contact-info {
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 .chat-list .contact-info strong {
@@ -2098,45 +2270,6 @@ align-items: center;
 .chat-list .contact-info p {
   font-size: 14px;
   color: #888;
-}
-
-.chat-list .status {
-  font-size: 12px;
-  color: #888;
-}
-
-.chat-list .status.online {
-  color: green;
-}
-
-.chat-list .status.away {
-  color: orange;
-}
-
-.chat-list .status.offline {
-  color: red;
-}
-
-/* Sidebar options */
-.sidebar-options {
-  margin-top: 30px;
-}
-
-.sidebar-options button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  background-color: #4db8b4; /* Light Teal */
-  color: white;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.sidebar-options button:hover {
-  background-color: #3a9996; /* Darker Teal */
 }
 
 /* Right Sidebar: Active chat */
@@ -2155,7 +2288,6 @@ align-items: center;
   display: flex;
   align-items: center;
   margin-bottom: 20px;
-  justify-content: space-between;
 }
 
 .chat-header .avatar {
@@ -2170,26 +2302,6 @@ align-items: center;
   font-weight: bold;
 }
 
-.chat-header p {
-  font-size: 14px;
-  color: #888;
-}
-
-.call-buttons button {
-  padding: 8px 15px;
-  margin-left: 10px;
-  border-radius: 20px;
-  cursor: pointer;
-  background-color: #4db8b4; /* Light Teal */
-  color: white;
-  border: none;
-  transition: background-color 0.3s ease;
-}
-
-.call-buttons button:hover {
-  background-color: #3a9996; /* Darker Teal */
-}
-
 .messages {
   flex-grow: 1;
   padding: 10px;
@@ -2198,7 +2310,7 @@ align-items: center;
 }
 
 .message {
-  background-color: #439e51;
+  background-color: #f1f1f1;
   padding: 10px;
   margin-bottom: 15px;
   border-radius: 5px;
@@ -2206,14 +2318,13 @@ align-items: center;
 }
 
 .message.you {
-  background-color: #4db8b4; /* Light Teal */
+  background-color: #007bff;
   color: white;
   margin-left: auto;
 }
 
 .message .message-text {
   font-size: 14px;
-  color: white;
 }
 
 .message .message-time {
@@ -2237,7 +2348,7 @@ align-items: center;
 }
 
 .message-input button {
-  background-color: #4db8b4; /* Light Teal */
+  background-color: #007bff;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -2247,5 +2358,5 @@ align-items: center;
 }
 
 .message-input button:hover {
-  background-color: #3a9996; /* Darker Teal */
+  background-color: #0056b3;
 }

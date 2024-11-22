@@ -1,9 +1,8 @@
-// App.js
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate, useLocation } from 'react-router-dom';
 import { AuthProvider, useAuth } from './components/Homepage/AuthContext';
 import Header from './components/Homepage/Header';
-import Sidebar from './components/Homepage/SideBar';
+import Sidebar from './components/Homepage/SideBar'; // Your existing Sidebar
 import Feed from './components/Homepage/Feed';
 import PostCreation from './components/Homepage/PostCreationPage';
 import CommunityPage from './components/Homepage/CommunityPage';
@@ -14,10 +13,15 @@ import Notifications from './components/Homepage/Notifications';
 import Footer from './components/Homepage/Footer';
 import Login from './components/Login';
 import Register from './components/Register';
+<<<<<<< HEAD
 import Chat from './components/Homepage/Chat'; // Chat component
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
+=======
+import Chat from './components/Homepage/Chat';
+>>>>>>> ec55efad0d83fc88ab5661a542b2b9b81fd4e9d8
 
+// Import your new sidebar components
 import NewsNavbar from './components/Homepage/NewsNavbar';
 import OverallRankers from './components/Homepage/OverallRankers';
 
@@ -30,7 +34,7 @@ const PrivateRoute = ({ element }) => {
 
 const AppContent = () => {
   const { isLoggedIn } = useAuth();
-  const location = useLocation();
+  const location = useLocation(); // Access the current route
 
   const [posts, setPosts] = useState([
     {
@@ -82,10 +86,7 @@ const AppContent = () => {
             <Route path="/activity" element={<UserActivity />} />
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/notifications" element={<Notifications />} />
-            
-            {/* Private Route for Chat */}
             <Route path="/chat" element={<PrivateRoute element={<Chat />} />} />
-
             <Route path="/" element={<Feed posts={posts} />} />
           </Routes>
         </div>
