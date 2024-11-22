@@ -5,6 +5,8 @@ import Header from './components/Homepage/Header';
 import Sidebar from './components/Homepage/SideBar'; // Your existing Sidebar
 import Feed from './components/Homepage/Feed';
 import PostCreation from './components/Homepage/PostCreationPage';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import Chat from './components/Homepage/Chat';
 import CommunityPage from './components/Homepage/CommunityPage';
 import CommunityDetails from './components/Homepage/CommunityDetails';
 import UserActivity from './components/Homepage/UserActivity';
@@ -13,13 +15,7 @@ import Notifications from './components/Homepage/Notifications';
 import Footer from './components/Homepage/Footer';
 import Login from './components/Login';
 import Register from './components/Register';
-<<<<<<< HEAD
-import Chat from './components/Homepage/Chat'; // Chat component
-import '@fortawesome/fontawesome-free/css/all.min.css';
 
-=======
-import Chat from './components/Homepage/Chat';
->>>>>>> ec55efad0d83fc88ab5661a542b2b9b81fd4e9d8
 
 // Import your new sidebar components
 import NewsNavbar from './components/Homepage/NewsNavbar';
