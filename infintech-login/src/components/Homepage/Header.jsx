@@ -32,7 +32,7 @@ const Header = () => {
     <header className="header">
       {/* Left Section - Logo */}
       <div className="header__left">
-        <h2 className="header__logo">Tech Community</h2>
+        <h2 className="header__logo">Infintech</h2>
       </div>
 
       {/* Center Section - Search Bar */}

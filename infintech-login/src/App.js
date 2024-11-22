@@ -15,6 +15,8 @@ import Footer from './components/Homepage/Footer';
 import Login from './components/Login';
 import Register from './components/Register';
 import Chat from './components/Homepage/Chat'; // Chat component
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 import NewsNavbar from './components/Homepage/NewsNavbar';
 import OverallRankers from './components/Homepage/OverallRankers';
