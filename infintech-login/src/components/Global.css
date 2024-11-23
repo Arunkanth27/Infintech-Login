@@ -1183,141 +1183,143 @@ transform: scale(1.1);
 /*End of footer css  */
 
 /* Header Styling */
+/* Header */
+/* Header Styles */
 .header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 10px 0;
-background-color: #ffffff; /* White background */
-border-bottom: 1px solid #0073b1; /* Sky blue border */
-position: sticky;
-top: 0;
-width: 100vw;
-z-index: 1000;
-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  background-color: #ffffff; /* White background */
+  border-bottom: 1px solid #0073b1; /* Sky blue border */
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-/* Header Logo */
+/* Logo */
 .header__logo {
-font-size: 24px;
-font-family: 'Arial', sans-serif;
-color: #333333; /* Softer black for text */
-text-transform: uppercase;
-letter-spacing: 1px;
-padding-left: 65px;
-transition: color 0.3s ease-in-out;
+  margin-inline: 50px;
+  font-size: 24px;
+  font-family: 'Arial', sans-serif;
+  color: #333333; /* Softer black for text */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-left: 15px;
+  transition: color 0.3s ease-in-out;
 }
 
 .header__logo:hover {
-color: #008080; /* Teal hover effect */
+  color: #008080; /* Teal hover effect */
 }
 
 /* Navigation Links */
 .header__nav {
-display: flex;
-gap: 20px;
+  display: flex;
+  gap: 20px;
+  transition: all 0.3s ease-in-out; /* Smooth transition */
 }
 
 .header__link {
-text-decoration: none;
-color: #333333; /* Softer black text */
-font-size: 16px;
-padding: 8px 15px;
-border-radius: 5px;
-transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+  color: #333333; /* Softer black text */
+  font-size: 16px;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
 }
 
 .header__link:hover {
-color: #008080; /* Teal text on hover */
-background-color: rgba(0, 128, 128, 0.1); /* Light teal background */
-transform: scale(1.05); /* Subtle hover effect */
-}
-
-/* Right Section (Message Button and Other Links) */
-.header__right {
-display: flex;
-align-items: center;
-padding-right: 20px;
-}
-
-.header__right > * {
-margin-left: 10px;
-}
-
-/* Message Button */
-.header__message-btn {
-display: flex;
-align-items: center;
-justify-content: center;
-background-color: #008080; /* Teal background */
-color: white;
-font-size: 14px;
-padding: 8px 15px;
-border: none;
-border-radius: 5px;
-cursor: pointer;
-transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.header__message-btn:hover {
-background-color: #006666; /* Darker teal on hover */
-transform: scale(1.05); /* Subtle hover effect */
+  color: #008080; /* Teal text on hover */
+  background-color: rgba(0, 128, 128, 0.1); /* Light teal background */
+  transform: scale(1.05); /* Subtle hover effect */
 }
 
 /* Search Bar */
 .header__search {
-display: flex;
-align-items: center;
-position: relative;
-width: 300px; /* Adjust width as needed */
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 300px; /* Adjust width as needed */
 }
 
 .header__search-input {
-width: 100%;
-padding: 10px 15px;
-font-size: 14px;
-border: 1px solid #ddd;
-border-radius: 5px;
-transition: border-color 0.3s ease;
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
 }
 
 .header__search-input:focus {
-border-color: #008080; /* Teal border on focus */
-outline: none;
+  border-color: #008080; /* Teal border on focus */
+  outline: none;
 }
 
 .header__search-icon {
-position: absolute;
-right: 10px;
-font-size: 16px;
-color: #333333; /* Softer black for default icon */
-cursor: pointer;
-transition: color 0.3s ease;
+  position: absolute;
+  right: 10px;
+  font-size: 16px;
+  color: #333333; /* Softer black for default icon */
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
 .header__search-icon:hover {
-color: #008080; /* Teal on hover */
+  color: #008080; /* Teal on hover */
+}
+
+/* Hamburger Menu Icon */
+.header__menu-icon {
+  display: none; /* Hidden on larger screens */
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  width: 30px;
+  height: 20px;
+}
+
+.header__menu-bar {
+  width: 100%;
+  height: 3px;
+  background-color: #333333; /* Softer black */
+  border-radius: 2px;
+  transition: background-color 0.3s ease;
+}
+
+.header_menu-icon.active .header_menu-bar {
+  background-color: #008080; /* Teal when active */
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-.header {
-  flex-direction: column;
-  padding: 8px 0;
+
+/* Hide Header on Screens Smaller than Laptops (1024px) */
+@media (max-width: 1024px) {
+  .header {
+    display: none; /* Remove header */
+  }
 }
 
-.header__nav {
-  margin-top: 10px;
-  gap: 15px;
-}
+/* Extra Small Screens (480px and below) */
+@media (max-width: 480px) {
+  .header__logo {
+    font-size: 18px;
+  }
 
-.header__logo {
-  font-size: 20px;
-}
+  .header__search {
+    width: 100%; /* Full width on small screens */
+  }
 
-.header__link {
-  font-size: 14px;
-}
+  .header__search-input {
+    font-size: 12px;
+  }
+
+  .header__search-icon {
+    font-size: 14px;
+  }
 }
 
 /* General Layout */
@@ -1331,68 +1333,77 @@ background-color: #f9f9f9;
 display: flex;
 }
 /* Sidebar Styling */
+/* Sidebar Styles */
 .sidebar {
   position: fixed;
-  top: 60px; /* Align with the header height */
+  top: 0;
   left: 0;
-  width: 200px; /* Reduced width for better alignment */
-  height: calc(100vh - 60px); /* Fill the screen below the header */
-  background-color: #ffffff; /* White background */
-  color: #444; /* Light black font color */
+  width: 200px;
+  height: 100vh;
+  background-color: #ffffff;
+  color: #444;
   display: flex;
   flex-direction: column;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  overflow-y: auto; /* Add scrolling */
-  transition: transform 0.3s ease-in-out; /* Smooth transition for opening and closing */
+  overflow-y: auto;
+  transition: transform 0.3s ease-in-out;
+  z-index: 1000;
 }
 
-/* Hide sidebar when not visible */
-.sidebar--hidden {
-  transform: translateX(-100%); /* Move the sidebar off-screen */
+.sidebar--open {
+  transform: translateX(0);
 }
 
-/* Make sidebar visible */
-.sidebar--visible {
-  transform: translateX(0); /* Keep the sidebar in place */
+.sidebar--closed {
+  transform: translateX(-100%);
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+.hamburger__line {
+  width: 30px;
+  height: 3px;
+  background-color: #444;
+  margin: 6px 0;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.hamburger__line.open:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger__line.open:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger__line.open:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
 /* Close Button */
 .sidebar__close-btn {
-  position: absolute;
-  top: 25px;
-  right: 10px;
-  font-size: 30px;
-  color: #333; /* Darker color for visibility */
+  align-self: flex-end;
+  padding: 10px;
   cursor: pointer;
+  font-size: 16px;
 }
 
-.sidebar__close-btn i {
-  font-size: 30px;
-}
-
-/* Button to open Sidebar (Hamburger Icon) */
-.sidebar__open-btn {
-  position: fixed;
-  top: 23px; /* 20px from the top */
-  left: 20px; /* 20px from the left */
-  font-size: 30px;
-  color: #333; /* Dark color for visibility */
-  cursor: pointer;
-  z-index: 1000; /* Ensure it appears on top */
-}
-
-.sidebar__open-btn i {
-  font-size: 30px;
-}
-
-/* Sidebar Links */
+/* Logo */
 .sidebar__logo {
   text-align: center;
   font-size: 20px;
   margin: 20px 0;
-  color: #008080; /* Teal color for the logo text */
+  color: #008080;
 }
 
+/* Navigation Links */
 .sidebar__nav {
   list-style: none;
   padding: 0;
@@ -1407,7 +1418,7 @@ display: flex;
   display: flex;
   align-items: center;
   padding: 10px 15px;
-  color: #444; /* Light black font color for links */
+  color: #444;
   text-decoration: none;
   font-size: 14px;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -1420,41 +1431,41 @@ display: flex;
 }
 
 .sidebar__link:hover {
-  background-color: #e0f7f7; /* Light teal hover background */
-  color: #008080; /* Teal font color on hover */
+  background-color: #e0f7f7;
+  color: #008080;
 }
 
 .sidebar__link--active {
-  background-color: #e0f7f7; /* Light teal background for active link */
-  color: #008080; /* Teal color for active text */
+  background-color: #e0f7f7;
+  color: #008080;
 }
 
 /* Tips Section */
 .sidebar__tips {
-  background-color: #f9f9f9; /* Light gray background for tips */
+  background-color: #f9f9f9;
   margin: 20px 10px;
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  color: #444; /* Light black font color */
+  color: #444;
   text-align: center;
 }
 
 .sidebar__tips h4 {
   font-size: 16px;
   margin-bottom: 10px;
-  color: #008080; /* Teal color for tips heading */
+  color: #008080;
 }
 
 .sidebar__tips p {
   font-size: 14px;
   margin-bottom: 10px;
-  color: #666; /* Subtle font color for text */
+  color: #666;
 }
 
 .sidebar__learn-more {
-  background-color: #008080; /* Teal color for button */
-  color: #ffffff; /* White text */
+  background-color: #008080;
+  color: #ffffff;
   padding: 8px 15px;
   font-size: 14px;
   border: none;
@@ -1464,17 +1475,17 @@ display: flex;
 }
 
 .sidebar__learn-more:hover {
-  background-color: #006666; /* Darker teal on hover */
+  background-color: #006666;
 }
 
-/* User Info Section */
+/* User Info */
 .sidebar__user {
   display: flex;
   align-items: center;
   margin-top: auto;
   padding: 20px;
-  background-color: #f9f9f9; /* Light gray background */
-  color: #444; /* Light black font color */
+  background-color: #f9f9f9;
+  color: #444;
   font-size: 14px;
   border-top: 1px solid #ddd;
 }
@@ -1487,6 +1498,8 @@ display: flex;
 .sidebar__user span {
   font-size: 14px;
 }
+
+
 
 /* Feed Layout */
 .feed {
@@ -2204,236 +2217,4 @@ align-items: center;
 .sidebar__list-item:hover {
   background-color: #e0f2f1; /* Slight background color change on hover */
   cursor: pointer;
-}
-
-/* Chat container */
-.chat-container {
-  display: flex;
-  height: 100vh;
-  background-color: #f1f1f1;
-  font-family: Arial, sans-serif;
-}
-
-/* Left Sidebar: Contact list */
-.chat-list {
-  width: 300px;
-  background-color: #fff;
-  padding: 20px;
-  border-right: 1px solid #ddd;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Search bar */
-.search-bar input {
-  width: 100%;
-  padding: 10px;
-  border-radius: 20px;
-  border: 1px solid #ddd;
-  margin-bottom: 20px;
-}
-
-/* Chat list */
-.chat-list h3 {
-  margin-bottom: 20px;
-  font-size: 20px;
-  font-weight: bold;
-  color: #333;
-}
-
-.chat-list ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.chat-list li {
-  display: flex;
-  align-items: center;
-  padding: 15px;
-  cursor: pointer;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  transition: background-color 0.3s ease;
-  align-items: center;
-}
-
-.chat-list li:hover {
-  background-color: #f5f5f5;
-}
-
-.chat-list li.active {
-  background-color: #e8f5fe;
-}
-
-.chat-list .avatar {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  margin-right: 15px;
-}
-
-.chat-list .contact-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.chat-list .contact-info strong {
-  font-size: 16px;
-}
-
-.chat-list .contact-info p {
-  font-size: 14px;
-  color: #888;
-}
-
-.chat-list .status {
-  font-size: 12px;
-  color: #888;
-}
-
-.chat-list .status.online {
-  color: green;
-}
-
-.chat-list .status.away {
-  color: orange;
-}
-
-.chat-list .status.offline {
-  color: red;
-}
-
-/* Sidebar options */
-.sidebar-options {
-  margin-top: 30px;
-}
-
-.sidebar-options button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  background-color: #4db8b4; /* Light Teal */
-  color: white;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.sidebar-options button:hover {
-  background-color: #3a9996; /* Darker Teal */
-}
-
-/* Right Sidebar: Active chat */
-.chat-box {
-  flex-grow: 1;
-  background-color: #fff;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: calc(100% - 320px); /* Reduce the width of chat-box to make space for the sidebar */
-  margin-left: 20px; /* Move the chat window slightly to the right */
-}
-
-.chat-header {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  justify-content: space-between;
-}
-
-.chat-header .avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  margin-right: 15px;
-}
-
-.chat-header h3 {
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.chat-header p {
-  font-size: 14px;
-  color: #888;
-}
-
-.call-buttons button {
-  padding: 8px 15px;
-  margin-left: 10px;
-  border-radius: 20px;
-  cursor: pointer;
-  background-color: #4db8b4; /* Light Teal */
-  color: white;
-  border: none;
-  transition: background-color 0.3s ease;
-}
-
-.call-buttons button:hover {
-  background-color: #3a9996; /* Darker Teal */
-}
-
-.messages {
-  flex-grow: 1;
-  padding: 10px;
-  overflow-y: auto;
-  margin-bottom: 20px;
-}
-
-.message {
-  background-color: #f1f1f1;
-  padding: 10px;
-  margin-bottom: 15px;
-  border-radius: 5px;
-  max-width: 80%;
-}
-
-.message.you {
-  background-color: #4db8b4; /* Light Teal */
-  color: white;
-  margin-left: auto;
-}
-
-.message .message-text {
-  font-size: 14px;
-}
-
-.message .message-time {
-  font-size: 12px;
-  color: #888;
-  text-align: right;
-}
-
-.message-input {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.message-input input {
-  width: 85%;
-  padding: 10px;
-  border-radius: 20px;
-  border: 1px solid #ddd;
-  margin-right: 10px;
-}
-
-.message-input button {
-  background-color: #4db8b4; /* Light Teal */
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.message-input button:hover {
-  background-color: #3a9996; /* Darker Teal */
 }

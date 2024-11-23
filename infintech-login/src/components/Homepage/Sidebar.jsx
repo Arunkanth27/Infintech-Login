@@ -2,28 +2,29 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import '../../components/Global.css';
 
-const SideBar = () => {
-  const [isSidebarVisible, setSidebarVisible] = useState(false); // Start with sidebar hidden
+const Sidebar = () => {
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
 
-  // Function to toggle sidebar visibility
   const toggleSidebar = () => {
-    setSidebarVisible(!isSidebarVisible);
+    setSidebarOpen(!isSidebarOpen);
   };
 
   return (
     <>
-      {/* Button to open Sidebar */}
-      {!isSidebarVisible && (
-        <div className="sidebar__open-btn" onClick={toggleSidebar}>
-          <i className="fas fa-bars"></i> {/* Hamburger icon to open sidebar */}
-        </div>
-      )}
+     {/* Hamburger Menu Icon */}
+<div className="hamburger" onClick={toggleSidebar}>
+  <div className={`hamburger__line ${isSidebarOpen ? 'open' : ''}`}></div>
+  <div className={`hamburger__line ${isSidebarOpen ? 'open' : ''}`}></div>
+  <div className={`hamburger__line ${isSidebarOpen ? 'open' : ''}`}></div>
+</div>
+
 
       {/* Sidebar */}
-      <div className={`sidebar ${isSidebarVisible ? 'sidebar--visible' : 'sidebar--hidden'}`}>
+      <div className={`sidebar ${isSidebarOpen ? 'sidebar--open' : 'sidebar--closed'}`}>
+
         {/* Close Button */}
         <div className="sidebar__close-btn" onClick={toggleSidebar}>
-          <i className="fas fa-times"></i> {/* "X" icon */}
+          <i className="fas fa-times"></i>
         </div>
 
         {/* Company Logo */}
@@ -34,37 +35,37 @@ const SideBar = () => {
         {/* Navigation Links */}
         <ul className="sidebar__nav">
           <li className="sidebar__nav-item">
-            <NavLink to="/feed" activeClassName="sidebar__link--active" className="sidebar__link">
+            <NavLink to="/feed" activeClassName="sidebar_link--active" className="sidebar_link">
               <i className="fas fa-home"></i>
               Home
             </NavLink>
           </li>
           <li className="sidebar__nav-item">
-            <NavLink to="/create-post" activeClassName="sidebar__link--active" className="sidebar__link">
+            <NavLink to="/create-post" activeClassName="sidebar_link--active" className="sidebar_link">
               <i className="fas fa-edit"></i>
               Post a Query
             </NavLink>
           </li>
           <li className="sidebar__nav-item">
-            <NavLink to="/explore" activeClassName="sidebar__link--active" className="sidebar__link">
+            <NavLink to="/explore" activeClassName="sidebar_link--active" className="sidebar_link">
               <i className="fas fa-compass"></i>
               Explore
             </NavLink>
           </li>
           <li className="sidebar__nav-item">
-            <NavLink to="/messages" activeClassName="sidebar__link--active" className="sidebar__link">
+            <NavLink to="/messages" activeClassName="sidebar_link--active" className="sidebar_link">
               <i className="fas fa-envelope"></i>
               Messages
             </NavLink>
           </li>
           <li className="sidebar__nav-item">
-            <NavLink to="/community-feed" activeClassName="sidebar__link--active" className="sidebar__link">
+            <NavLink to="/community-feed" activeClassName="sidebar_link--active" className="sidebar_link">
               <i className="fas fa-users"></i>
               Community Feed
             </NavLink>
           </li>
           <li className="sidebar__nav-item">
-            <NavLink to="/courses" activeClassName="sidebar__link--active" className="sidebar__link">
+            <NavLink to="/courses" activeClassName="sidebar_link--active" className="sidebar_link">
               <i className="fas fa-book"></i>
               Courses
             </NavLink>
@@ -88,4 +89,4 @@ const SideBar = () => {
   );
 };
 
-export default SideBar;
+export default Sidebar;
