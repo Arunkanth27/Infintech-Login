@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../../components/Global.css';
-import Messaging from '../Chat/Messaging';
-
+import Messaging from './Messaging';
 
 const Header = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [suggestions, setSuggestions] = useState([]);
-  const [menuOpen, setMenuOpen] = useState(false); // State to manage menu toggle
 
   // Sample data for search suggestions
   const sampleSuggestions = [
-    // Add your sample suggestion items here
+
   ];
 
   // Handle search input
@@ -28,11 +26,6 @@ const Header = () => {
     } else {
       setSuggestions([]); // Clear suggestions if input is empty
     }
-  };
-
-  // Handle menu toggle
-  const toggleMenu = () => {
-    setMenuOpen((prev) => !prev);
   };
 
   return (
@@ -67,20 +60,13 @@ const Header = () => {
       </div>
 
       {/* Right Section - Navigation */}
-<div className={`header__menu-icon ${menuOpen ? 'active' : ''}`} onClick={toggleMenu}>
-  <div className="header__menu-bar"></div>
-  <div className="header__menu-bar"></div>
-  <div className="header__menu-bar"></div>
-</div>
-
-      <nav className={`header__nav ${menuOpen ? 'active' : ''}`}>
-
-        <Link to="/feed" className="header__link" onClick={toggleMenu}>Home</Link>
-        <Link to="/communities" className="header__link" onClick={toggleMenu}>Communities</Link>
-        <Link to="/activity" className="header__link" onClick={toggleMenu}>Projects</Link>
-        <Link to="/notifications" className="header__link" onClick={toggleMenu}>Notifications</Link>
-        <Link to="/profile" className="header__link" onClick={toggleMenu}>Profile</Link>
-        <Messaging />
+      <nav className="header__right">
+        <Link to="/feed" className="header__link">Home</Link>
+        <Link to="/communities" className="header__link">Communities</Link>
+        <Link to="/activity" className="header__link">Projects</Link>
+        <Link to="/notifications" className="header__link">Notifications</Link>
+        <Link to="/profile" className="header__link">Profile</Link>
+        <Messaging/>
       </nav>
     </header>
   );

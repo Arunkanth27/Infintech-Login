@@ -1,25 +1,20 @@
+// App.js
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Routes, Navigate, useLocation } from 'react-router-dom';
-import { AuthProvider, useAuth } from './components/Login/AuthContext';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { AuthProvider, useAuth } from './components/Homepage/AuthContext';
 import Header from './components/Homepage/Header';
-import Sidebar from './components/Homepage/SideBar'; // Your existing Sidebar
-import Feed from './components/Feed/Feed';
-import PostCreation from './components/Post/PostCreationPage';
-import '@fortawesome/fontawesome-free/css/all.min.css';
-import Chat from './components/Chat/Chat';
-import CommunityPage from './components/Community/CommunityPage';
-import CommunityDetails from './components/Community/CommunityDetails';
-import UserActivity from './components/UserActivity/UserActivity';
-import ProfilePage from './components/Profile/ProfilePage';
-import Notifications from './components/Notification/Notifications';
-import Login from './components/Login/Login';
-import Register from './components/Login/Register';
-
-
-// Import your new sidebar components
-import NewsNavbar from './components/Feed/NewsNavbar';
-import OverallRankers from './components/Feed/OverallRankers';
-
+import Sidebar from './components/Homepage/SideBar'; // Ensure Sidebar exists
+import Feed from './components/Homepage/Feed';
+import PostCreation from './components/Homepage/PostCreationPage';
+import CommunityPage from './components/Homepage/CommunityPage';
+import CommunityDetails from './components/Homepage/CommunityDetails';
+import UserActivity from './components/Homepage/UserActivity';
+import ProfilePage from './components/Homepage/ProfilePage';
+import Notifications from './components/Homepage/Notifications';
+import Footer from './components/Homepage/Footer';
+import Login from './components/Login';
+import Register from './components/Register';
+import Chat from './components/Homepage/Chat';
 import './App.css';
 
 const PrivateRoute = ({ element }) => {
@@ -29,7 +24,6 @@ const PrivateRoute = ({ element }) => {
 
 const AppContent = () => {
   const { isLoggedIn } = useAuth();
-  const location = useLocation(); // Access the current route
 
   const [posts, setPosts] = useState([
     {
@@ -37,36 +31,9 @@ const AppContent = () => {
       type: 'Question',
       author: 'John Doe',
       content: 'Just finished a cool project using React! Check it out and let me know your thoughts.',
-      image: null,
+      image: '/sample-post.jpg',
       time: '10 mins ago',
     },
-    {
-      id: 2,
-      type: 'Collaboration',
-      author: 'Jane Smith',
-      content: 'Looking for collaborators on a new AI project. Anyone interested? Feel free to message me!',
-      image: null,
-      time: '30 mins ago',
-    },
-
-    {
-      id: 2,
-      type: 'Collaboration',
-      author: 'Jane Smith',
-      content: 'Looking for collaborators on a new AI project. Anyone interested? Feel free to message me!',
-      image: null,
-      time: '30 mins ago',
-    },
-
-    {
-      id: 2,
-      type: 'Collaboration',
-      author: 'Jane Smith',
-      content: 'Looking for collaborators on a new AI project. Anyone interested? Feel free to message me!',
-      image: null,
-      time: '30 mins ago',
-    },
-
     {
       id: 2,
       type: 'Collaboration',
@@ -94,11 +61,9 @@ const AppContent = () => {
   return (
     <>
       <Header />
-      
-        {/* Left Sidebar */}
+      <div className="app__layout">
+        {/* Ensure Sidebar renders correctly */}
         <Sidebar />
-
-        {/* Main Content */}
         <div className="app__content">
           <Routes>
             <Route path="/feed" element={<Feed posts={posts} />} />
@@ -112,16 +77,8 @@ const AppContent = () => {
             <Route path="/" element={<Feed posts={posts} />} />
           </Routes>
         </div>
-
-        {/* Conditionally Render the Right Sidebars */}
-        {location.pathname === '/feed' || location.pathname === '/' ? (
-          <div className="app__sidebars">
-            <NewsNavbar />
-            <OverallRankers />
-          </div>
-        ) : null}
-     
-      
+      </div>
+      <Footer />
     </>
   );
 };
