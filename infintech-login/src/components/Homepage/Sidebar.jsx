@@ -28,7 +28,7 @@ const SideBar = () => {
 
         {/* Company Logo */}
         <div className="sidebar__logo">
-          <h2>COMPANY</h2>
+       
         </div>
 
         {/* Navigation Links */}

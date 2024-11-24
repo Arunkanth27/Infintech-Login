@@ -536,6 +536,1003 @@ p {
 
 /* End of Register CSS */
 
+/* header CSS */
+.header {
+  position: fixed; /* Fix the header to the top without affecting layout */
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px; /* Set a fixed height for the header */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ffffff; /* White background */
+  border-bottom: 1px solid #0073b1; /* Sky blue border */
+  z-index: 1000; /* Ensure it stays above other elements */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  box-sizing: border-box; /* Include padding in the header's width */
+  width: 100vw; /* Spans the full width of the viewport */
+}
+
+
+.header__logo {
+  font-size: 24px;
+  font-family: 'Arial', sans-serif;
+  color: #008080;; /* Softer black for text */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 30px; /* Ensure no excessive top margin */
+  margin-left: 35px;
+  transition: color 0.3s ease-in-out;
+}
+
+
+.header__logo:hover {
+  color: #008080; /* Teal hover effect */
+}
+
+/* Navigation Links */
+.header__nav {
+  display: flex;
+  gap: 20px;
+}
+
+.header__link {
+  text-decoration: none;
+  color: #333333; /* Softer black text */
+  font-size: 16px;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+}
+
+.header__link:hover {
+  color: #008080; /* Teal text on hover */
+  background-color: rgba(0, 128, 128, 0.1); /* Light teal background */
+  transform: scale(1.05); /* Subtle hover effect */
+}
+
+/* Right Section (Message Button and Other Links) */
+.header__right {
+  display: flex;
+  align-items: center;
+}
+
+.header__right > * {
+  margin-left: 10px;
+  transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.header__right > *:hover {
+  color: teal; /* Change color to teal on hover */
+}
+
+/* Message Button */
+.header__message-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #008080; /* Teal background */
+  color: white;
+  font-size: 14px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.header__message-btn:hover {
+  background-color: #006666; /* Darker teal on hover */
+  transform: scale(1.05); /* Subtle hover effect */
+}
+
+/* Search Bar */
+.header__search {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin-top: 15px;
+  right: 85px;
+  max-width: 300px; /* Adjust width as needed */
+  flex: 1; /* Allow the search bar to grow in width */
+}
+
+.header__search-input {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.header__search-input:focus {
+  border-color: #008080; /* Teal border on focus */
+  outline: none;
+}
+
+.header__search-icon {
+  position: absolute;
+  right: 10px;
+  font-size: 16px;
+  color: #333333; /* Softer black for default icon */
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.header__search-icon:hover {
+  color: #008080; /* Teal on hover */
+}
+
+/* Fix padding/margin for the outermost container */
+.app {
+  margin: 0; /* Remove gaps around the content */
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 8px 10px; /* Adjust padding for smaller screens */
+  }
+
+  .header__nav {
+    margin-top: 10px;
+    gap: 15px;
+  }
+
+  .header__logo {
+    font-size: 20px;
+    text-align: center; /* Center align logo */
+  }
+
+  .header__link {
+    font-size: 14px;
+  }
+
+  .header__search {
+    width: 100%;
+  }
+}
+
+
+/* General Layout */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #f9f9f9;
+  }
+  
+  .app {
+  display: flex;
+  }
+  /* Sidebar Styling */
+  .sidebar {
+    position: fixed;
+    top: 60px; /* Align with the header height */
+    left: 0;
+    width: 200px; /* Reduced width for better alignment */
+    height: calc(100vh - 60px); /* Fill the screen below the header */
+    background-color: #ffffff; /* White background */
+    color: #444; /* Light black font color */
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Add scrolling */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for opening and closing */
+  }
+  
+  /* Hide sidebar when not visible */
+  .sidebar--hidden {
+    transform: translateX(-100%); /* Move the sidebar off-screen */
+  }
+  
+  /* Make sidebar visible */
+  .sidebar--visible {
+    transform: translateX(0); /* Keep the sidebar in place */
+  }
+  
+  /* Close Button */
+  .sidebar__close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: #333; /* Darker color for visibility */
+    cursor: pointer;
+  }
+  
+  .sidebar__close-btn i {
+    font-size: 30px;
+  }
+  
+  /* Button to open Sidebar (Hamburger Icon) */
+  .sidebar__open-btn {
+    position: fixed;
+    top: 14px; /* 20px from the top */
+    left: 20px; /* 20px from the left */
+    font-size: 30px;
+    color: #008080;; /* Dark color for visibility */
+    cursor: pointer;
+    z-index: 1000; /* Ensure it appears on top */
+  }
+  
+  .sidebar__open-btn i {
+    font-size: 30px;
+  }
+  
+  /* Sidebar Links */
+  .sidebar__logo {
+    text-align: center;
+    font-size: 20px;
+    margin: 20px 0;
+    color: #008080; /* Teal color for the logo text */
+  }
+  
+  .sidebar__nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .sidebar__nav-item {
+    margin: 10px 0;
+  }
+  
+  .sidebar__link {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    color: #444; /* Light black font color for links */
+    text-decoration: none;
+    font-size: 14px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 5px;
+  }
+  
+  .sidebar__link i {
+    margin-right: 10px;
+    font-size: 16px;
+  }
+  
+  .sidebar__link:hover {
+    background-color: #e0f7f7; /* Light teal hover background */
+    color: #008080; /* Teal font color on hover */
+  }
+  
+  .sidebar__link--active {
+    background-color: #e0f7f7; /* Light teal background for active link */
+    color: #008080; /* Teal color for active text */
+  }
+  
+  /* Tips Section */
+  .sidebar__tips {
+    background-color: #f9f9f9; /* Light gray background for tips */
+    margin: 20px 10px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color: #444; /* Light black font color */
+    text-align: center;
+  }
+  
+  .sidebar__tips h4 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #008080; /* Teal color for tips heading */
+  }
+  
+  .sidebar__tips p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #666; /* Subtle font color for text */
+  }
+  
+  .sidebar__learn-more {
+    background-color: #008080; /* Teal color for button */
+    color: #ffffff; /* White text */
+    padding: 8px 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .sidebar__learn-more:hover {
+    background-color: #006666; /* Darker teal on hover */
+  }
+
+
+  
+/* Feed Layout */
+.feed {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #ffffff;
+  padding: 20px;
+  margin-left: 5%; /* Reduced left margin to increase width */
+  margin-right: 5%; /* Added right margin to balance */
+  margin-top: 60px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 90%; /* Increased feed width for more screen space */
+  box-sizing: border-box;
+}
+
+/* Feed Title and Header Actions */
+.feed__header {
+  display: flex;
+  justify-content: space-between; /* Spread title and button */
+  align-items: center; /* Align vertically */
+  width: 100%; /* Full width */
+  margin-top: 20px;
+
+}
+
+.feed__title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #008080;
+  margin-left: 80px; /* Adjusted for slight alignment */
+  flex: 1; /* Allow the title to take available space */
+}
+
+/* Header Actions (Search and Create Post) */
+.feed__header-actions {
+  display: flex;
+  justify-content: center; /* Center align the entire header actions */
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%; /* Ensure the container spans the full width */
+}
+
+/* Centering Search Bar in Feed Page */
+.feed__header-actions .search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 50%; /* Adjust width of the search bar */
+}
+
+.feed__header-actions .search-bar input {
+  width: 100%;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  box-sizing: border-box; /* Ensure padding doesn't exceed the width */
+}
+
+.feed__header-actions .search-bar i {
+  position: absolute;
+  top: 35%;
+  right: 15px;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #aaa;
+}
+
+/* Create Post Button */
+.feed__header-actions .create-post-btn {
+  padding: 10px 20px;
+  background-color: #008080;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  margin-left: 20px; /* Added margin for spacing */
+  white-space: nowrap; /* Prevent wrapping */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.feed__header-actions .create-post-btn:hover {
+  background-color: #005582;
+  transform: scale(1.05);
+}
+
+/* Fixed Right Sidebars Section */
+.app__sidebars {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: fixed;
+  padding: 20px;
+  right: 20px;
+  top: 80px; /* Positioned below the header */
+  width: 200px; /* Reduced width of the right sidebar */
+  z-index: 10;
+}
+
+
+/* Common Sidebar Styles */
+.sidebar {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sidebar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* News Sidebar */
+.news-navbar ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.news-navbar li {
+  padding: 8px 0;
+  border-bottom: 1px solid #e2e2e2;
+  color: #555;
+}
+
+.news-navbar li:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+/* Top Rankers Sidebar */
+.top-rankers-navbar ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.top-rankers-navbar li {
+  padding: 8px 0;
+  border-bottom: 1px solid #e2e2e2;
+  color: #555;
+}
+
+.top-rankers-navbar li:hover {
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+/* Sidebar List Items */
+.sidebar__list-item {
+  margin-bottom: 10px;
+}
+
+.sidebar__list-item:hover {
+  background-color: #e0f2f1; /* Slight background color change on hover */
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .header__nav {
+    gap: 10px;
+  }
+
+  .app__sidebars {
+    width: 180px; /* Further reduced width for medium screens */
+  }
+
+  .feed {
+    width: calc(100% - 200px); /* Adjust feed width to match sidebar */
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 8px 20px;
+  }
+
+  .header__logo {
+    margin: 0;
+    text-align: center;
+  }
+
+  .app__sidebars {
+    display: none; /* Hide sidebars for smaller screens */
+  }
+
+  .feed {
+    width: 100%; /* Feed occupies full width */
+    margin: 0;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .header__nav {
+    gap: 10px;
+  }
+
+  .app__sidebars {
+    width: 240px; /* Adjusted for smaller screens */
+  }
+
+  .feed {
+    width: calc(100% - 260px); /* Adjusted for sidebar width */
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    padding: 8px 20px;
+  }
+
+  .header__logo {
+    margin: 0;
+    text-align: center;
+  }
+
+  .app__sidebars {
+    display: none; /* Hide sidebars for smaller screens */
+  }
+
+  .feed {
+    width: 100%;
+    margin: 0;
+  }
+}
+
+
+/* User Info Section */
+.sidebar__user {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+  padding: 20px;
+  background-color: #f9f9f9; /* Light gray background */
+  color: #444; /* Light black font color */
+  font-size: 14px;
+  border-top: 1px solid #ddd;
+}
+
+.sidebar__user i {
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+.sidebar__user span {
+  font-size: 14px;
+}
+
+
+/* Messaging css */
+/* Messaging Container */
+.messaging {
+  position: relative;
+  display: inline-block;
+}
+
+/* Messaging Button (Reduced Size) */
+.messaging__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #008080;
+  color: #ffffff;
+  font-size: 14px; /* Smaller font size */
+  font-weight: 500;
+  border: none;
+  border-radius: 30px; /* More compact rounded button */
+  padding: 8px 16px; /* Smaller padding */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Slightly lighter shadow */
+}
+
+.messaging__button:hover {
+  background-color: #008080; /* Darker blue on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Icon Styling */
+.messaging__button i {
+  margin-right: 5px;
+  font-size: 16px; /* Smaller icon size */
+  color: #ffffff;
+}
+
+/* Notification Badge for New Messages */
+.messaging__badge {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  background-color: #ff4500;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 5px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .messaging__button {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+}
+
+/* End of messaging css */
+  
+/* Create Post Button */
+.create-post-btn {
+  background-color: #008080;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 8px rgba(0, 115, 177, 0.3);
+  white-space: nowrap; /* Prevents text wrapping */
+  }
+  
+  .create-post-btn i {
+  font-size: 18px;
+  }
+  
+  .create-post-btn:hover {
+  background-color: #005582;
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 115, 177, 0.4);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+  .feed__header-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .search-bar {
+    margin-bottom: 10px;
+    max-width: 100%;
+  }
+  
+  .create-post-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  }
+  
+  /* Post Creation Section */
+  .post-creation {
+  background-color: #ffffff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .post-creation:hover {
+  transform: scale(1.01);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  }
+  
+  .post-creation h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+  }
+  
+  .post-creation label {
+  font-size: 14px;
+  color: #333;
+  font-weight: 600;
+  margin-top: 10px;
+  }
+  
+  .post-creation textarea,
+  .post-creation select,
+  .post-creation input[type="file"] {
+  width: -webkit-fill-available;
+  padding: 12px;
+  margin-block-start: 10pxs;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+  }
+  
+  .post-creation textarea:focus,
+  .post-creation select:focus,
+  .post-creation input[type="file"]:focus {
+  border-color: #008080;
+  }
+  
+  .post-creation__submit {
+  background-color: #008080;
+  color: #fff;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-block-start: 10px;
+  width: -webkit-fill-available;
+  }
+  
+  .post-creation__submit:hover {
+  background-color: #008080;
+  }
+  
+  /* Post Card */
+.post {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s, transform 0.2s;
+  position: relative; /* Allow positioning of menu options */
+}
+
+.post:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+}
+
+/* Post Header */
+.post__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  position: relative; /* Ensure relative positioning for inner elements */
+}
+
+/* Post Avatar */
+.post__avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #008080;
+  margin-right: 10px; /* Slightly reduced margin for tighter spacing */
+}
+
+/* Post User Info (Author & Time) */
+.post__user-info {
+  display: flex;
+  flex-direction: column; /* Stack author and time vertically */
+  gap: 3px; /* Reduced spacing between author and time */
+}
+
+.post__author {
+  font-size: 14px; /* Reduced font size for compact alignment */
+  font-weight: bold;
+  color: #008080;
+  text-decoration: none;
+}
+
+.post__author:hover {
+  color: #005582;
+}
+
+.post__time {
+  font-size: 12px; /* Slightly smaller font size for the time */
+  color: #666;
+}
+
+/* Post Menu (Three-Dot Options) */
+.post__menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.post__menu-icon {
+  font-size: 20px;
+  color: #888;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.post__menu-icon:hover {
+  color: #005582;
+}
+
+
+/* Dropdown Menu */
+.post__menu-options {
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  padding: 10px 0;
+  margin: 0;
+  display: none; /* Initially hidden */
+  z-index: 10; /* Ensure menu is above other content */
+}
+
+.post__menu:hover .post__menu-options {
+  display: block; /* Show menu on hover */
+}
+
+.post__menu-options li {
+  padding: 10px 20px;
+  color: #444;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.post__menu-options li:hover {
+  background-color: #f0f8f8;
+  color: #008080; /* Teal text color on hover */
+}
+
+/* Post Type */
+.post__type {
+  font-size: 14px;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+/* Post Content */
+.post__content {
+  font-size: 15px;
+  color: #333;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+/* Post Image */
+.post__image {
+  width: 100%;
+  border-radius: 10px;
+  margin-top: 10px;
+  max-height: 400px;
+  object-fit: cover;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.post__image:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Post Actions */
+.post__actions {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 15px;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 15px;
+}
+
+.post__action {
+  font-size: 14px;
+  color: #008080;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.post__action i {
+  font-size: 16px;
+}
+
+.post__action:hover {
+  color: #005582;
+  transform: scale(1.1);
+}
+
+/* Comment Section */
+.post__comments {
+  margin-top: 20px;
+  padding: 10px 0;
+  border-top: 1px solid #e0e0e0;
+}
+
+.comment {
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.comment-actions {
+  display: flex;
+  gap: 10px;
+  font-size: 12px;
+  color: #555;
+}
+
+.comment-actions i {
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.comment-actions i:hover {
+  color: #008080;
+  transform: scale(1.2);
+}
+
+.reply-form input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-top: 5px;
+}
+
+.reply-form button {
+  padding: 8px 12px;
+  background-color: #008080;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.reply-form button:hover {
+  background-color: #005582;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .post__header {
+    flex-wrap: wrap;
+  }
+
+  .post__menu-options {
+    right: 10px;
+  }
+
+  .post__actions {
+    flex-wrap: wrap;
+  }
+}
+
 
 /* Community page css */
 /* Community Page Container */
@@ -908,709 +1905,8 @@ font-size: 18px;
 cursor: pointer;
 }
 
-/* Create Post Button */
-.create-post-btn {
-background-color: #008080;
-color: #fff;
-padding: 10px 20px;
-font-size: 16px;
-font-weight: 600;
-border: none;
-border-radius: 5px;
-cursor: pointer;
-transition: background-color 0.3s, transform 0.2s;
-display: flex;
-align-items: center;
-gap: 8px;
-box-shadow: 0 4px 8px rgba(0, 115, 177, 0.3);
-white-space: nowrap; /* Prevents text wrapping */
-}
 
-.create-post-btn i {
-font-size: 18px;
-}
 
-.create-post-btn:hover {
-background-color: #005582;
-transform: scale(1.05);
-box-shadow: 0 6px 12px rgba(0, 115, 177, 0.4);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-.feed__header-actions {
-  flex-direction: column;
-  align-items: stretch;
-}
-
-.search-bar {
-  margin-bottom: 10px;
-  max-width: 100%;
-}
-
-.create-post-btn {
-  width: 100%;
-  justify-content: center;
-}
-}
-
-/* Post Creation Section */
-.post-creation {
-background-color: #ffffff;
-padding: 20px;
-margin-bottom: 20px;
-border-radius: 12px;
-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-display: flex;
-flex-direction: column;
-align-items: center;
-gap: 15px;
-transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.post-creation:hover {
-transform: scale(1.01);
-box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-}
-
-.post-creation h3 {
-font-size: 20px;
-font-weight: bold;
-color: #333;
-margin-bottom: 15px;
-}
-
-.post-creation label {
-font-size: 14px;
-color: #333;
-font-weight: 600;
-margin-top: 10px;
-}
-
-.post-creation textarea,
-.post-creation select,
-.post-creation input[type="file"] {
-width: -webkit-fill-available;
-padding: 12px;
-margin-block-start: 10pxs;
-border: 1px solid #ddd;
-border-radius: 4px;
-font-size: 14px;
-transition: border-color 0.3s;
-}
-
-.post-creation textarea:focus,
-.post-creation select:focus,
-.post-creation input[type="file"]:focus {
-border-color: #008080;
-}
-
-.post-creation__submit {
-background-color: #008080;
-color: #fff;
-padding: 12px;
-border: none;
-border-radius: 4px;
-font-size: 16px;
-font-weight: 600;
-cursor: pointer;
-transition: background-color 0.3s;
-margin-block-start: 10px;
-width: -webkit-fill-available;
-}
-
-.post-creation__submit:hover {
-background-color: #008080;
-}
-
-/* Post Card */
-.post {
-background-color: #ffffff;
-border-radius: 12px;
-padding: 20px;
-margin-bottom: 20px;
-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-transition: box-shadow 0.3s, transform 0.2s;
-}
-
-.post:hover {
-box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-transform: translateY(-3px);
-}
-
-/* Profile Section */
-.post__header {
-display: flex;
-align-items: center;
-margin-bottom: 15px;
-}
-
-.post__avatar {
-width: 50px;
-height: 50px;
-border-radius: 50%;
-border: 2px solid #008080;
-margin-right: 12px;
-}
-
-.post__user-info {
-display: flex;
-flex-direction: column;
-}
-
-.post__author {
-font-size: 16px;
-font-weight: bold;
-color: #008080;
-text-decoration: none;
-}
-
-.post__author:hover {
-color: #005582;
-}
-
-.post__time {
-font-size: 12px;
-color: #666;
-margin-top: 2px;
-}
-
-/* Post Type */
-.post__type {
-font-size: 14px;
-font-weight: bold;
-color: #555;
-margin-bottom: 10px;
-}
-
-/* Post Content */
-.post__content {
-font-size: 15px;
-color: #333;
-line-height: 1.6;
-margin: 10px 0;
-}
-
-/* Post Image */
-.post__image {
-width: 100%;
-border-radius: 10px;
-margin-top: 10px;
-max-height: 400px;
-object-fit: cover;
-transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.post__image:hover {
-transform: scale(1.02);
-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* Post Actions */
-.post__actions {
-display: flex;
-justify-content: space-around;
-padding-top: 15px;
-border-top: 1px solid #e0e0e0;
-margin-top: 15px;
-}
-
-.post__action {
-font-size: 14px;
-color: #008080;
-cursor: pointer;
-display: flex;
-align-items: center;
-gap: 5px;
-transition: color 0.2s, transform 0.2s;
-}
-
-.post__action i {
-font-size: 16px;
-}
-
-.post__action:hover {
-color: #008080;
-transform: scale(1.1);
-}
-
-
-
-
-/* Footer css */
-/* Footer Container */
-.footer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 10px 0; /* Reduced padding for compact design */
-  background-color: #ffffff; /* Clean white background */
-  border-top: 1px solid #e0e0e0; /* Light gray border */
-  color: #8e8e8e; /* Light gray color for text */
-  font-size: 13px; /* Smaller font size for a subtle look */
-  font-family: 'Arial', sans-serif;
-  width: -webkit-fill-available;
-}
-
-.footer p {
-  margin: 5px 0; /* Reduced margin between paragraphs */
-}
-
-.footer__link {
-  text-decoration: none;
-  color: #008080; /* Soft blue color for links */
-  margin: 0 5px;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.footer__link:hover {
-  color: #008080; /* Darker blue on hover */
-}
-
-/* Responsive Design for Smaller Screens */
-@media (max-width: 768px) {
-  .footer {
-    font-size: 11px; /* Even smaller font size for mobile */
-    padding: 8px 0;
-  }
-  .footer__link {
-    margin: 0 3px;
-  }
-}
-/*End of footer css  */
-
-/* Header Styling */
-.header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 10px 0;
-background-color: #ffffff; /* White background */
-border-bottom: 1px solid #0073b1; /* Sky blue border */
-position: sticky;
-top: 0;
-width: 100vw;
-z-index: 1000;
-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-
-/* Header Logo */
-.header__logo {
-font-size: 24px;
-font-family: 'Arial', sans-serif;
-color: #333333; /* Softer black for text */
-text-transform: uppercase;
-letter-spacing: 1px;
-padding-left: 65px;
-transition: color 0.3s ease-in-out;
-}
-
-.header__logo:hover {
-color: #008080; /* Teal hover effect */
-}
-
-/* Navigation Links */
-.header__nav {
-display: flex;
-gap: 20px;
-}
-
-.header__link {
-text-decoration: none;
-color: #333333; /* Softer black text */
-font-size: 16px;
-padding: 8px 15px;
-border-radius: 5px;
-transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
-}
-
-.header__link:hover {
-color: #008080; /* Teal text on hover */
-background-color: rgba(0, 128, 128, 0.1); /* Light teal background */
-transform: scale(1.05); /* Subtle hover effect */
-}
-
-/* Right Section (Message Button and Other Links) */
-.header__right {
-display: flex;
-align-items: center;
-padding-right: 20px;
-}
-
-.header__right > * {
-margin-left: 10px;
-}
-
-/* Message Button */
-.header__message-btn {
-display: flex;
-align-items: center;
-justify-content: center;
-background-color: #008080; /* Teal background */
-color: white;
-font-size: 14px;
-padding: 8px 15px;
-border: none;
-border-radius: 5px;
-cursor: pointer;
-transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.header__message-btn:hover {
-background-color: #006666; /* Darker teal on hover */
-transform: scale(1.05); /* Subtle hover effect */
-}
-
-/* Search Bar */
-.header__search {
-display: flex;
-align-items: center;
-position: relative;
-width: 300px; /* Adjust width as needed */
-}
-
-.header__search-input {
-width: 100%;
-padding: 10px 15px;
-font-size: 14px;
-border: 1px solid #ddd;
-border-radius: 5px;
-transition: border-color 0.3s ease;
-}
-
-.header__search-input:focus {
-border-color: #008080; /* Teal border on focus */
-outline: none;
-}
-
-.header__search-icon {
-position: absolute;
-right: 10px;
-font-size: 16px;
-color: #333333; /* Softer black for default icon */
-cursor: pointer;
-transition: color 0.3s ease;
-}
-
-.header__search-icon:hover {
-color: #008080; /* Teal on hover */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-.header {
-  flex-direction: column;
-  padding: 8px 0;
-}
-
-.header__nav {
-  margin-top: 10px;
-  gap: 15px;
-}
-
-.header__logo {
-  font-size: 20px;
-}
-
-.header__link {
-  font-size: 14px;
-}
-}
-
-/* General Layout */
-body {
-margin: 0;
-font-family: 'Segoe UI', Arial, sans-serif;
-background-color: #f9f9f9;
-}
-
-.app {
-display: flex;
-}
-/* Sidebar Styling */
-.sidebar {
-  position: fixed;
-  top: 60px; /* Align with the header height */
-  left: 0;
-  width: 200px; /* Reduced width for better alignment */
-  height: calc(100vh - 60px); /* Fill the screen below the header */
-  background-color: #ffffff; /* White background */
-  color: #444; /* Light black font color */
-  display: flex;
-  flex-direction: column;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
-  overflow-y: auto; /* Add scrolling */
-  transition: transform 0.3s ease-in-out; /* Smooth transition for opening and closing */
-}
-
-/* Hide sidebar when not visible */
-.sidebar--hidden {
-  transform: translateX(-100%); /* Move the sidebar off-screen */
-}
-
-/* Make sidebar visible */
-.sidebar--visible {
-  transform: translateX(0); /* Keep the sidebar in place */
-}
-
-/* Close Button */
-.sidebar__close-btn {
-  position: absolute;
-  top: 25px;
-  right: 10px;
-  font-size: 30px;
-  color: #333; /* Darker color for visibility */
-  cursor: pointer;
-}
-
-.sidebar__close-btn i {
-  font-size: 30px;
-}
-
-/* Button to open Sidebar (Hamburger Icon) */
-.sidebar__open-btn {
-  position: fixed;
-  top: 23px; /* 20px from the top */
-  left: 20px; /* 20px from the left */
-  font-size: 30px;
-  color: #333; /* Dark color for visibility */
-  cursor: pointer;
-  z-index: 1000; /* Ensure it appears on top */
-}
-
-.sidebar__open-btn i {
-  font-size: 30px;
-}
-
-/* Sidebar Links */
-.sidebar__logo {
-  text-align: center;
-  font-size: 20px;
-  margin: 20px 0;
-  color: #008080; /* Teal color for the logo text */
-}
-
-.sidebar__nav {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.sidebar__nav-item {
-  margin: 10px 0;
-}
-
-.sidebar__link {
-  display: flex;
-  align-items: center;
-  padding: 10px 15px;
-  color: #444; /* Light black font color for links */
-  text-decoration: none;
-  font-size: 14px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-  border-radius: 5px;
-}
-
-.sidebar__link i {
-  margin-right: 10px;
-  font-size: 16px;
-}
-
-.sidebar__link:hover {
-  background-color: #e0f7f7; /* Light teal hover background */
-  color: #008080; /* Teal font color on hover */
-}
-
-.sidebar__link--active {
-  background-color: #e0f7f7; /* Light teal background for active link */
-  color: #008080; /* Teal color for active text */
-}
-
-/* Tips Section */
-.sidebar__tips {
-  background-color: #f9f9f9; /* Light gray background for tips */
-  margin: 20px 10px;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  color: #444; /* Light black font color */
-  text-align: center;
-}
-
-.sidebar__tips h4 {
-  font-size: 16px;
-  margin-bottom: 10px;
-  color: #008080; /* Teal color for tips heading */
-}
-
-.sidebar__tips p {
-  font-size: 14px;
-  margin-bottom: 10px;
-  color: #666; /* Subtle font color for text */
-}
-
-.sidebar__learn-more {
-  background-color: #008080; /* Teal color for button */
-  color: #ffffff; /* White text */
-  padding: 8px 15px;
-  font-size: 14px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.sidebar__learn-more:hover {
-  background-color: #006666; /* Darker teal on hover */
-}
-
-/* User Info Section */
-.sidebar__user {
-  display: flex;
-  align-items: center;
-  margin-top: auto;
-  padding: 20px;
-  background-color: #f9f9f9; /* Light gray background */
-  color: #444; /* Light black font color */
-  font-size: 14px;
-  border-top: 1px solid #ddd;
-}
-
-.sidebar__user i {
-  font-size: 20px;
-  margin-right: 10px;
-}
-
-.sidebar__user span {
-  font-size: 14px;
-}
-
-/* Feed Layout */
-.feed {
-display: flex;
-flex-direction: column;
-align-items: center;
-background-color: #ffffff;
-}
-
-.feed__title {
-font-size: 28px;
-font-weight: 700;
-margin-bottom: 20px;
-text-align: left;
-color: #008080;
-}
-
-/* Header Actions (Search and Create Post) */
-.feed__header-actions {
-display: flex;
-justify-content: space-between;
-align-items: center;
-margin-bottom: 20px;
-}
-
-.feed__header-actions .search-bar {
-flex: 1;
-margin-right: 15px;
-position: relative;
-}
-
-.feed__header-actions .search-bar input {
-width: 100%;
-padding: 10px 15px;
-font-size: 14px;
-border-radius: 8px;
-border: 1px solid #ddd;
-}
-
-.feed__header-actions .search-bar i {
-position: absolute;
-top: 50%;
-right: 15px;
-transform: translateY(-50%);
-font-size: 18px;
-color: #aaa;
-}
-
-.feed__header-actions .create-post-btn {
-padding: 10px 20px;
-background-color: #008080;
-color: #fff;
-border: none;
-border-radius: 5px;
-cursor: pointer;
-font-size: 14px;
-}
-
-.feed__header-actions .create-post-btn:hover {
-background-color: #005582;
-}
-
-/* Messaging css */
-/* Messaging Container */
-.messaging {
-  position: relative;
-  display: inline-block;
-}
-
-/* Messaging Button (Reduced Size) */
-.messaging__button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #008080;
-  color: #ffffff;
-  font-size: 14px; /* Smaller font size */
-  font-weight: 500;
-  border: none;
-  border-radius: 30px; /* More compact rounded button */
-  padding: 8px 16px; /* Smaller padding */
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Slightly lighter shadow */
-}
-
-.messaging__button:hover {
-  background-color: #008080; /* Darker blue on hover */
-  transform: scale(1.05); /* Slight zoom effect */
-}
-
-/* Icon Styling */
-.messaging__button i {
-  margin-right: 5px;
-  font-size: 16px; /* Smaller icon size */
-  color: #ffffff;
-}
-
-/* Notification Badge for New Messages */
-.messaging__badge {
-  position: absolute;
-  top: 2px;
-  right: 2px;
-  background-color: #ff4500;
-  color: #ffffff;
-  font-size: 10px;
-  font-weight: 700;
-  padding: 3px 5px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .messaging__button {
-    padding: 6px 12px;
-    font-size: 13px;
-  }
-}
-
-/* End of messaging css */
 
 /* Notification css */
 /* Notifications Page Container */
@@ -2086,125 +2382,7 @@ align-items: center;
 }
 /* End of useractivity css */
 
-/* Global Layout */
-.app__layout {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
-  padding: 20px;
-  gap: 20px; /* Adds space between content and sidebars */
-}
 
-/* Content Section (Feed and other content) */
-.app__content {
-  flex: 1; /* Ensure the content (feed) takes up the remaining space */
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  background-color: #f9f9f9;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  margin-right: 0; /* Remove margin between content and right sidebars */
-}
-
-/* Fixed Right Sidebars Section */
-.app__sidebars {
-  display: flex;
-  flex-direction: column;
-  gap: 20px; /* Space between the sidebars */
-  position: fixed; /* Fix the sidebars to the right of the page */
-  padding: 20px;
-  right: 20px; /* Position the sidebars 20px from the right edge of the page */
-  width: 280px; /* Fixed width for the right sidebars container */
-  z-index: 10; /* Ensure sidebars stay above other content */
-}
-
-/* Common Sidebar Styles */
-.sidebar {
-  background-color: #ffffff;
-  border-radius: 10px;
-  padding: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.sidebar:hover {
-  transform: scale(1.05); /* Slight zoom effect on hover */
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-}
-
-.sidebar h3 {
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #333;
-  margin-bottom: 15px;
-}
-
-/* News & Announcements Sidebar */
-.news-navbar {
-  background-color: #ffffff;
-  border-radius: 10px;
-  padding: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.news-navbar ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.news-navbar li {
-  padding: 8px 0;
-  border-bottom: 1px solid #e2e2e2;
-  color: #555;
-}
-
-.news-navbar li:last-child {
-  border-bottom: none;
-}
-
-.news-navbar li:hover {
-  background-color: #f0f0f0;
-  cursor: pointer;
-}
-
-/* Top Rankers Sidebar */
-.top-rankers-navbar {
-  background-color: #ffffff;
-  border-radius: 10px;
-  padding: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.top-rankers-navbar ul {
-  list-style-type: none;
-  padding-left: 0;
-}
-
-.top-rankers-navbar li {
-  padding: 8px 0;
-  border-bottom: 1px solid #e2e2e2;
-  color: #555;
-}
-
-.top-rankers-navbar li:last-child {
-  border-bottom: none;
-}
-
-.top-rankers-navbar li:hover {
-  background-color: #f0f0f0;
-  cursor: pointer;
-}
-
-
-.sidebar__list-item {
-  margin-bottom: 10px;
-}
-
-.sidebar__list-item:hover {
-  background-color: #e0f2f1; /* Slight background color change on hover */
-  cursor: pointer;
-}
 
 /* Chat container */
 .chat-container {

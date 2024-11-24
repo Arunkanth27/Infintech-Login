@@ -12,7 +12,6 @@ import CommunityDetails from './components/Community/CommunityDetails';
 import UserActivity from './components/UserActivity/UserActivity';
 import ProfilePage from './components/Profile/ProfilePage';
 import Notifications from './components/Notification/Notifications';
-import Footer from './components/Homepage/Footer';
 import Login from './components/Login/Login';
 import Register from './components/Login/Register';
 
@@ -38,9 +37,36 @@ const AppContent = () => {
       type: 'Question',
       author: 'John Doe',
       content: 'Just finished a cool project using React! Check it out and let me know your thoughts.',
-      image: '/sample-post.jpg',
+      image: null,
       time: '10 mins ago',
     },
+    {
+      id: 2,
+      type: 'Collaboration',
+      author: 'Jane Smith',
+      content: 'Looking for collaborators on a new AI project. Anyone interested? Feel free to message me!',
+      image: null,
+      time: '30 mins ago',
+    },
+
+    {
+      id: 2,
+      type: 'Collaboration',
+      author: 'Jane Smith',
+      content: 'Looking for collaborators on a new AI project. Anyone interested? Feel free to message me!',
+      image: null,
+      time: '30 mins ago',
+    },
+
+    {
+      id: 2,
+      type: 'Collaboration',
+      author: 'Jane Smith',
+      content: 'Looking for collaborators on a new AI project. Anyone interested? Feel free to message me!',
+      image: null,
+      time: '30 mins ago',
+    },
+
     {
       id: 2,
       type: 'Collaboration',
@@ -95,7 +121,7 @@ const AppContent = () => {
           </div>
         ) : null}
      
-      <Footer />
+      
     </>
   );
 };
