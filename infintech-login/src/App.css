@@ -9,7 +9,9 @@
   flex: 1;
   padding: 20px;
 }
-
+.app__content{
+  margin-block-start: 80px;
+}
 @media screen and (max-width: 768px) {
   .app__body {
     flex-direction: column;
