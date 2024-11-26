@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Post from './Post';
+import Post from '../Post/Post';
 import '../../components/Global.css';
 
 const Feed = ({ posts }) => { // Accept posts as a prop
