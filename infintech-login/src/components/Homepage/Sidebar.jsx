@@ -64,9 +64,9 @@ const SideBar = () => {
             </NavLink>
           </li>
           <li className="sidebar__nav-item">
-            <NavLink to="/courses" activeClassName="sidebar__link--active" className="sidebar__link">
+            <NavLink to="/activity" activeClassName="sidebar__link--active" className="sidebar__link">
               <i className="fas fa-book"></i>
-              Courses
+              Activity
             </NavLink>
           </li>
         </ul>

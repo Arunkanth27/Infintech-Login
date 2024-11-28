@@ -14,7 +14,7 @@ import ProfilePage from './components/Profile/ProfilePage';
 import Notifications from './components/Notification/Notifications';
 import Login from './components/Login/Login';
 import Register from './components/Login/Register';
-
+import Opportunity from './components/Homepage/Opportunity';
 
 // Import your new sidebar components
 import NewsNavbar from './components/Feed/NewsNavbar';
@@ -109,6 +109,7 @@ const AppContent = () => {
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/notifications" element={<Notifications />} />
             <Route path="/chat" element={<PrivateRoute element={<Chat />} />} />
+            <Route path="/opportunity" element={<Opportunity />} />
             <Route path="/" element={<Feed posts={posts} />} />
           </Routes>
         </div>

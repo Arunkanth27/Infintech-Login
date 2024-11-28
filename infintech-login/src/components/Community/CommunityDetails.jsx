@@ -1,4 +1,3 @@
-// src/components/Homepage/CommunityDetails.js
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Post from '../Post/Post';
@@ -33,14 +32,51 @@ const CommunityDetails = () => {
           <div className="community-details__info">
             <h4>About This Community</h4>
             <p>
-              This is the {name} community where members discuss related topics, share knowledge, and
-              collaborate on projects.
+              Welcome to the {name} community! This is where members collaborate, share knowledge,
+              and discuss ideas to help each other grow.
             </p>
+            <ul className="community-details__list">
+              <li>
+                <span role="img" aria-label="Light bulb">
+                  💡
+                </span>{' '}
+                Discuss industry insights and trends.
+              </li>
+              <li>
+                <span role="img" aria-label="Laptop">
+                  👩‍💻
+                </span>{' '}
+                Collaborate on exciting projects.
+              </li>
+              <li>
+                <span role="img" aria-label="Graduation cap">
+                  🎓
+                </span>{' '}
+                Learn and grow with fellow members.
+              </li>
+            </ul>
           </div>
 
           <div className="community-details__announcements">
             <h4>Announcements</h4>
-            <p>Join our upcoming webinar on advanced React patterns!</p>
+            <div className="announcement">
+              <strong>
+                <span role="img" aria-label="Calendar">
+                  📅
+                </span>{' '}
+                Event:
+              </strong>{' '}
+              React Patterns Webinar on Nov 30, 6 PM.
+            </div>
+            <div className="announcement">
+              <strong>
+                <span role="img" aria-label="Party popper">
+                  🎉
+                </span>{' '}
+                Update:
+              </strong>{' '}
+              Dark Mode is now live for all users!
+            </div>
           </div>
         </div>
 
@@ -54,7 +90,7 @@ const CommunityDetails = () => {
           {/* Post Creation Form */}
           <form className="community-details__post-form" onSubmit={handlePostSubmit}>
             <textarea
-              placeholder="Write something..."
+              placeholder="Write something for the community..."
               value={newPostContent}
               onChange={(e) => setNewPostContent(e.target.value)}
               required
@@ -67,11 +103,32 @@ const CommunityDetails = () => {
         <aside className="community-details__right">
           <div className="community-details__ranking">
             <h4>Top Contributors</h4>
-            <ul>
-              <li>John Doe - 1200 points</li>
-              <li>Jane Smith - 1100 points</li>
-              <li>Mary Johnson - 1050 points</li>
-            </ul>
+            <table className="contributors-table">
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Name</th>
+                  <th>Points</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>John Doe</td>
+                  <td>1200</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>Jane Smith</td>
+                  <td>1100</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>Mary Johnson</td>
+                  <td>1050</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
           <button className="community-details__invite-btn">Invite Friends</button>
         </aside>

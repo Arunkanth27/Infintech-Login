@@ -63,7 +63,7 @@ const Header = () => {
       <nav className="header__right">
         <Link to="/feed" className="header__link">Home</Link>
         <Link to="/communities" className="header__link">Communities</Link>
-        <Link to="/activity" className="header__link">Projects</Link>
+        <Link to="/opportunity" className="header__link">Projects</Link>
         <Link to="/notifications" className="header__link">Notifications</Link>
         <Link to="/profile" className="header__link">Profile</Link>
         <Messaging/>
