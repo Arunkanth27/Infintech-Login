@@ -2034,7 +2034,7 @@ align-items: center;
   background-color: #fff;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 1;
+  
 }
 
 .profile__avatar {
@@ -2840,25 +2840,26 @@ align-items: center;
 /* General Container */
 .opportunities-container {
   display: flex;
-  height: 100vh;
+  height: 100vh; /* Full viewport height */
   font-family: "Segoe UI", Arial, sans-serif;
-  background-color: #f9f9f9;
+  background-color: #f9f9f9; /* Light background */
+  overflow: hidden; /* Prevent overflow scrolling */
 }
 
 /* Sidebar */
 .opportunities-sidebar {
-  width: 25%;
-  max-width: 300px;
-  background-color: #ffffff;
+  width: 35%; /* Sidebar takes 35% of the width */
+  background-color: #ffffff; /* White background */
   padding: 20px;
-  border-right: 1px solid #ddd;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border-right: 1px solid #ddd; /* Divider */
+  overflow-y: auto; /* Allow vertical scrolling */
 }
 
 .opportunities-sidebar h3 {
   font-size: 20px;
-  margin-bottom: 15px;
-  color: #0073b1;
+  margin-bottom: 20px;
+  color: #008080; /* Teal heading */
 }
 
 .filter-group {
@@ -2868,8 +2869,8 @@ align-items: center;
 .filter-group label {
   display: block;
   font-size: 14px;
-  color: #333;
-  margin-bottom: 5px;
+  color: #333; /* Dark gray text for labels */
+  margin-bottom: 8px;
 }
 
 .filter-group input,
@@ -2880,36 +2881,40 @@ align-items: center;
   border: 1px solid #ddd;
   border-radius: 4px;
   outline: none;
+  transition: border-color 0.3s ease;
 }
 
 .filter-group input:focus,
 .filter-group select:focus {
-  border-color: #0073b1;
+  border-color: #008080; /* Teal border on focus */
 }
 
-/* Main Section */
+/* Main Content */
 .opportunities-main {
-  flex: 1;
+  width: 65%; /* Main content takes 65% of the width */
   padding: 20px;
-  overflow-y: auto;
+  overflow-y: auto; /* Enable vertical scrolling */
+  background-color: #f9f9f9; /* Light gray background */
 }
 
+/* Header in Main Section */
 .opportunities-header h1 {
   font-size: 28px;
-  color: #0073b1;
-  margin-bottom: 5px;
+  color: #008080; /* Teal color for main heading */
+  margin-bottom: 10px;
 }
 
 .opportunities-header p {
   font-size: 16px;
-  color: #555;
+  color: #555; /* Subtle gray for subheading */
   margin-bottom: 20px;
 }
 
+/* Opportunities Grid */
 .opportunities-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
+  gap: 20px; /* Space between cards */
 }
 
 /* Opportunity Card */
@@ -2922,24 +2927,24 @@ align-items: center;
 }
 
 .opportunity-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Increase shadow on hover */
 }
 
 .opportunity-card h2 {
   font-size: 20px;
-  color: #0073b1;
+  color: #008080; /* Teal color for title */
   margin-bottom: 5px;
 }
 
 .opportunity-card h4 {
   font-size: 16px;
-  color: #555;
+  color: #555; /* Subtle gray */
   margin-bottom: 15px;
 }
 
 .opportunity-card p {
   font-size: 14px;
-  color: #666;
+  color: #666; /* Lighter gray */
 }
 
 .opportunity-card .description {
@@ -2955,15 +2960,15 @@ align-items: center;
 }
 
 .opportunity-card .skill {
-  background-color: #e8f4f9;
-  color: #0073b1;
+  background-color: #e0f7f7; /* Light teal background */
+  color: #008080; /* Teal text */
   font-size: 12px;
   padding: 5px 10px;
   border-radius: 20px;
 }
 
 .apply-btn {
-  background-color: #0073b1;
+  background-color: #008080; /* Teal button */
   color: white;
   padding: 10px 15px;
   border: none;
@@ -2975,5 +2980,24 @@ align-items: center;
 }
 
 .apply-btn:hover {
-  background-color: #005582;
+  background-color: #005582; /* Darker teal on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .opportunities-container {
+    flex-direction: column; /* Stack sidebar and main content vertically */
+  }
+
+  .opportunities-sidebar {
+    width: 100%; /* Full width for sidebar on smaller screens */
+    height: 40%; /* Adjust height for smaller screens */
+    border-right: none; /* Remove right border */
+    border-bottom: 1px solid #ddd; /* Add bottom border */
+  }
+
+  .opportunities-main {
+    width: 100%; /* Full width for main content */
+    height: 60%; /* Adjust height for smaller screens */
+  }
 }
