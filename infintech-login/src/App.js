@@ -27,9 +27,34 @@ const PrivateRoute = ({ element }) => {
   return isLoggedIn ? element : <Navigate to="/login" replace />;
 };
 
-const AppContent = () => {
+const AppLayout = ({ children }) => {
   const { isLoggedIn } = useAuth();
   const location = useLocation(); // Access the current route
+
+  return (
+    <>
+      {/* Only show the Header and Sidebar if the user is logged in */}
+      {isLoggedIn && (
+        <>
+          <Header />
+          <Sidebar />
+        </>
+      )}
+      <div className="app__content">{children}</div>
+
+      {/* Conditionally Render the Right Sidebars */}
+      {location.pathname === '/feed' || location.pathname === '/' ? (
+        <div className="app__sidebars">
+          <NewsNavbar />
+          <OverallRankers />
+        </div>
+      ) : null}
+    </>
+  );
+};
+
+const AppContent = () => {
+  const { isLoggedIn } = useAuth();
 
   const [posts, setPosts] = useState([
     {
@@ -48,33 +73,7 @@ const AppContent = () => {
       image: null,
       time: '30 mins ago',
     },
-
-    {
-      id: 2,
-      type: 'Collaboration',
-      author: 'Jane Smith',
-      content: 'Looking for collaborators on a new AI project. Anyone interested? Feel free to message me!',
-      image: null,
-      time: '30 mins ago',
-    },
-
-    {
-      id: 2,
-      type: 'Collaboration',
-      author: 'Jane Smith',
-      content: 'Looking for collaborators on a new AI project. Anyone interested? Feel free to message me!',
-      image: null,
-      time: '30 mins ago',
-    },
-
-    {
-      id: 2,
-      type: 'Collaboration',
-      author: 'Jane Smith',
-      content: 'Looking for collaborators on a new AI project. Anyone interested? Feel free to message me!',
-      image: null,
-      time: '30 mins ago',
-    },
+    // Add more posts here
   ]);
 
   const addNewPost = (newPost) => {
@@ -92,38 +91,20 @@ const AppContent = () => {
   }
 
   return (
-    <>
-      <Header />
-      
-        {/* Left Sidebar */}
-        <Sidebar />
-
-        {/* Main Content */}
-        <div className="app__content">
-          <Routes>
-            <Route path="/feed" element={<Feed posts={posts} />} />
-            <Route path="/create-post" element={<PostCreation addNewPost={addNewPost} />} />
-            <Route path="/communities" element={<CommunityPage />} />
-            <Route path="/community/:name" element={<CommunityDetails />} />
-            <Route path="/activity" element={<UserActivity />} />
-            <Route path="/profile" element={<ProfilePage />} />
-            <Route path="/notifications" element={<Notifications />} />
-            <Route path="/chat" element={<PrivateRoute element={<Chat />} />} />
-            <Route path="/opportunity" element={<Opportunity />} />
-            <Route path="/" element={<Feed posts={posts} />} />
-          </Routes>
-        </div>
-
-        {/* Conditionally Render the Right Sidebars */}
-        {location.pathname === '/feed' || location.pathname === '/' ? (
-          <div className="app__sidebars">
-            <NewsNavbar />
-            <OverallRankers />
-          </div>
-        ) : null}
-     
-      
-    </>
+    <AppLayout>
+      <Routes>
+        <Route path="/feed" element={<Feed posts={posts} />} />
+        <Route path="/create-post" element={<PostCreation addNewPost={addNewPost} />} />
+        <Route path="/communities" element={<CommunityPage />} />
+        <Route path="/community/:name" element={<CommunityDetails />} />
+        <Route path="/activity" element={<UserActivity />} />
+        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/notifications" element={<Notifications />} />
+        <Route path="/chat" element={<PrivateRoute element={<Chat />} />} />
+        <Route path="/opportunity" element={<Opportunity />} />
+        <Route path="/" element={<Feed posts={posts} />} />
+      </Routes>
+    </AppLayout>
   );
 };
 

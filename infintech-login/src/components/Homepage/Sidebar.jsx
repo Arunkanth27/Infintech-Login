@@ -1,13 +1,22 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useAuth } from '../../components/Login/AuthContext'; // Import useAuth to check if user is logged in
 import '../../components/Global.css';
 
 const SideBar = () => {
   const [isSidebarVisible, setSidebarVisible] = useState(false); // Start with sidebar hidden
+  const navigate = useNavigate(); // Initialize navigate hook
+  const { logout } = useAuth(); // Assuming useAuth provides a logout function
 
   // Function to toggle sidebar visibility
   const toggleSidebar = () => {
     setSidebarVisible(!isSidebarVisible);
+  };
+
+  // Function to handle log out
+  const handleLogout = () => {
+    logout(); // Call the logout function (clears user state)
+    navigate('/login'); // Navigate to the login page
   };
 
   return (
@@ -28,7 +37,7 @@ const SideBar = () => {
 
         {/* Company Logo */}
         <div className="sidebar__logo">
-       
+          {/* Optional: Add your company logo here */}
         </div>
 
         {/* Navigation Links */}
@@ -80,8 +89,9 @@ const SideBar = () => {
 
         {/* User Info */}
         <div className="sidebar__user">
-          <i className="fas fa-user-circle"></i>
-          <span>Log Out</span>
+          <button className="sidebar__logout-btn" onClick={handleLogout}> {/* Log Out button */}
+            <i className="fas fa-user-circle"></i> Log Out
+          </button>
         </div>
       </div>
     </>

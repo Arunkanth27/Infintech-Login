@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from './AuthContext';
 import '../../components/Global.css';
 import logo from '../../images/download.jpg';
 import backgroundImage from '../../images/background_pictures.jpg';
@@ -10,7 +9,6 @@ const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
-  const { login } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -20,9 +18,10 @@ const Register = () => {
       return;
     }
 
-    console.log('Registration successful');
-    login();
-    navigate('/');
+    const newUser = { name, email, password };
+    localStorage.setItem('user', JSON.stringify(newUser)); // Store user in localStorage
+    alert('Registration successful');
+    navigate('/login'); // Redirect to login page
   };
 
   return (

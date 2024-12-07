@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../components/Global.css'
 import Header from './Header';
-import Sidebar from './Sidebar';
+import Sidebar from './SideBar';
 import Feed from './Feed';
 import Widgets from './Widgets';
 import Footer from './Footer';
