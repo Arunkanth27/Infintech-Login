@@ -37,6 +37,11 @@ const CommunityPage = () => {
       }
     });
 
+  const handleNavigateToPostCreation = () => {
+    // Pass communities to the PostCreationPage
+    navigate('/create-post', { state: { communities } });
+  };
+
   return (
     <section className="communities">
       <h2 className="communities__title">Explore Communities</h2>
@@ -79,6 +84,13 @@ const CommunityPage = () => {
           </div>
         ))}
       </div>
+
+      <button
+        className="create-post-btn"
+        onClick={handleNavigateToPostCreation}
+      >
+        Create a Post
+      </button>
     </section>
   );
 };

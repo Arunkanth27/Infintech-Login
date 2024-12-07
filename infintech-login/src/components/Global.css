@@ -1204,54 +1204,8 @@ body {
 
 /* End of messaging css */
   
-/* Create Post Button */
-.create-post-btn {
-  background-color: #008080;
-  color: #fff;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: 600;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  box-shadow: 0 4px 8px rgba(0, 115, 177, 0.3);
-  white-space: nowrap; /* Prevents text wrapping */
-  }
-  
-  .create-post-btn i {
-  font-size: 18px;
-  }
-  
-  .create-post-btn:hover {
-  background-color: #005582;
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 115, 177, 0.4);
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
-  .feed__header-actions {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .search-bar {
-    margin-bottom: 10px;
-    max-width: 100%;
-  }
-  
-  .create-post-btn {
-    width: 100%;
-    justify-content: center;
-  }
-  }
-  
-  /* Post Creation Section */
-  .post-creation {
+/* Post Creation Section */
+.post-creation {
   background-color: #ffffff;
   padding: 20px;
   margin-bottom: 20px;
@@ -1262,46 +1216,87 @@ body {
   align-items: center;
   gap: 15px;
   transition: transform 0.3s, box-shadow 0.3s;
-  }
-  
-  .post-creation:hover {
+}
+
+.post-creation:hover {
   transform: scale(1.01);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
-  }
-  
-  .post-creation h3 {
+}
+
+.post-creation h3 {
   font-size: 20px;
   font-weight: bold;
   color: #333;
   margin-bottom: 15px;
-  }
-  
-  .post-creation label {
+}
+
+.post-creation label {
   font-size: 14px;
   color: #333;
   font-weight: 600;
   margin-top: 10px;
-  }
-  
-  .post-creation textarea,
-  .post-creation select,
-  .post-creation input[type="file"] {
+}
+
+.post-creation textarea,
+.post-creation select,
+.post-creation input[type="file"] {
   width: -webkit-fill-available;
   padding: 12px;
-  margin-block-start: 10pxs;
+  margin-block-start: 10px;
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 14px;
   transition: border-color 0.3s;
-  }
-  
-  .post-creation textarea:focus,
-  .post-creation select:focus,
-  .post-creation input[type="file"]:focus {
+}
+
+.post-creation textarea:focus,
+.post-creation select:focus,
+.post-creation input[type="file"]:focus {
   border-color: #008080;
-  }
-  
-  .post-creation__submit {
+}
+
+/* Tags input field */
+.post-creation input[type="text"] {
+  width: -webkit-fill-available;
+  padding: 12px;
+  margin-block-start: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+.post-creation input[type="text"]:focus {
+  border-color: #008080;
+}
+
+/* Tags input display */
+.tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.tags-container .tag {
+  background-color: #008080;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 15px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.tags-container .tag i {
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+
+
+/* Submit Button */
+.post-creation__submit {
   background-color: #008080;
   color: #fff;
   padding: 12px;
@@ -1313,12 +1308,25 @@ body {
   transition: background-color 0.3s;
   margin-block-start: 10px;
   width: -webkit-fill-available;
+}
+
+.post-creation__submit:hover {
+  background-color: #006666;
+}
+
+/* Responsive Design for Tags input */
+@media (max-width: 768px) {
+  .post-creation input[type="text"] {
+    font-size: 12px;
+    padding: 10px;
   }
-  
-  .post-creation__submit:hover {
-  background-color: #008080;
+
+  .tags-container {
+    flex-wrap: wrap;
+    gap: 6px;
   }
-  
+}
+
   /* Post Card */
 .post {
   background-color: #ffffff;
@@ -1574,7 +1582,7 @@ align-items: center;
 .communities__title {
 font-size: 28px;
 font-weight: 700;
-color: #0073b1;
+color: #008080;
 text-align: center;
 margin-bottom: 20px;
 }
