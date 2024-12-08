@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import '../../components/Global.css';
 
 const PostCreationPage = ({ addNewPost }) => {
@@ -8,7 +8,19 @@ const PostCreationPage = ({ addNewPost }) => {
   const [image, setImage] = useState(null);
   const [tags, setTags] = useState(''); // State for tags input
   const [tagList, setTagList] = useState([]); // State to hold the tags as an array
+  const [communities, setCommunities] = useState([]); // Communities passed from the CommunityPage
+  const [filteredCommunities, setFilteredCommunities] = useState([]); // For storing suggestions based on input
+  const [noMatchFound, setNoMatchFound] = useState(false); // State to track if no matching community was found
   const navigate = useNavigate();
+
+  // Get the communities passed from the CommunityPage
+  const location = useLocation();
+  useEffect(() => {
+    if (location.state && location.state.communities) {
+      setCommunities(location.state.communities);
+      setFilteredCommunities(location.state.communities); // Initially set all communities as suggestions
+    }
+  }, [location.state]);
 
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
@@ -18,13 +30,32 @@ const PostCreationPage = ({ addNewPost }) => {
   };
 
   const handleTagsChange = (e) => {
-    setTags(e.target.value); // Update tags input state
+    const value = e.target.value;
+    setTags(value); // Update tags input state
+
+    // Filter the community names based on the user input (case-insensitive)
+    if (value) {
+      const filtered = communities.filter(community =>
+        community.name.toLowerCase().includes(value.toLowerCase()) // Case insensitive match
+      );
+      setFilteredCommunities(filtered);
+
+      // If no communities match the input, set noMatchFound to true
+      setNoMatchFound(filtered.length === 0);
+    } else {
+      setFilteredCommunities(communities); // Reset to show all if the input is empty
+      setNoMatchFound(false); // Reset 'no match found'
+    }
   };
 
-  const handleAddTag = () => {
-    if (tags.trim() && !tagList.includes(tags.trim())) {
-      setTagList([...tagList, tags.trim()]);
+  const handleAddTag = (tag) => {
+    const trimmedTag = tag.trim();
+    if (trimmedTag && !tagList.includes(trimmedTag)) {
+      // Add the tag to the list
+      setTagList([...tagList, trimmedTag]);
       setTags(''); // Clear the input field
+      setFilteredCommunities(communities); // Reset suggestions after adding the tag
+      setNoMatchFound(false); // Reset 'no match found'
     }
   };
 
@@ -80,13 +111,34 @@ const PostCreationPage = ({ addNewPost }) => {
           />
           <button
             type="button"
-            onClick={handleAddTag}
+            onClick={() => handleAddTag(tags)}
             className="add-tag-btn"
             disabled={!tags.trim()}
           >
             Add Tag
           </button>
         </div>
+
+        {/* Display Suggestions or "Not Found" */}
+        {tags && (
+          <div className="suggestions-container">
+            {noMatchFound ? (
+              <p className="no-match">No communities found for "{tags}"</p>
+            ) : (
+              <ul>
+                {filteredCommunities.map((community, index) => (
+                  <li
+                    key={index}
+                    onClick={() => handleAddTag(community.name)} // Add the community name as tag
+                    className="suggestion-item"
+                  >
+                    {community.name}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        )}
 
         {/* Display Tags */}
         <div className="tags-container">

@@ -1314,6 +1314,31 @@ body {
   background-color: #006666;
 }
 
+.suggestions-container {
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.suggestion-item {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.suggestion-item:hover {
+  background-color: #e2e2e2;
+}
+
+.no-match {
+  color: red;
+  font-size: 14px;
+  padding: 8px;
+}
+
+
 /* Responsive Design for Tags input */
 @media (max-width: 768px) {
   .post-creation input[type="text"] {
