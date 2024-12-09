@@ -65,7 +65,7 @@ const PostCreationPage = ({ addNewPost }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (content) {
+    if (content && tagList.length > 0) {
       const newPost = {
         id: Date.now(),
         type,

@@ -22,11 +22,13 @@ import OverallRankers from './components/Feed/OverallRankers';
 
 import './App.css';
 
+// PrivateRoute component to protect private routes and only allow logged-in users
 const PrivateRoute = ({ element }) => {
   const { isLoggedIn } = useAuth();
   return isLoggedIn ? element : <Navigate to="/login" replace />;
 };
 
+// AppLayout component for conditional rendering of header and sidebar
 const AppLayout = ({ children }) => {
   const { isLoggedIn } = useAuth();
   const location = useLocation(); // Access the current route
@@ -42,7 +44,7 @@ const AppLayout = ({ children }) => {
       )}
       <div className="app__content">{children}</div>
 
-      {/* Conditionally Render the Right Sidebars */}
+      {/* Conditionally Render the Right Sidebars on specific pages */}
       {location.pathname === '/feed' || location.pathname === '/' ? (
         <div className="app__sidebars">
           <NewsNavbar />
@@ -53,9 +55,11 @@ const AppLayout = ({ children }) => {
   );
 };
 
+// AppContent handles routing logic based on login state
 const AppContent = () => {
   const { isLoggedIn } = useAuth();
 
+  // State for storing posts
   const [posts, setPosts] = useState([
     {
       id: 1,
@@ -73,13 +77,15 @@ const AppContent = () => {
       image: null,
       time: '30 mins ago',
     },
-    // Add more posts here
+    // Add more posts as needed
   ]);
 
+  // Function to add a new post
   const addNewPost = (newPost) => {
     setPosts([newPost, ...posts]); // Add new post at the beginning of the list
   };
 
+  // If not logged in, redirect to login page
   if (!isLoggedIn) {
     return (
       <Routes>
@@ -96,7 +102,7 @@ const AppContent = () => {
         <Route path="/feed" element={<Feed posts={posts} />} />
         <Route path="/create-post" element={<PostCreation addNewPost={addNewPost} />} />
         <Route path="/communities" element={<CommunityPage />} />
-        <Route path="/community/:name" element={<CommunityDetails />} />
+        <Route path="/community/:name" element={<CommunityDetails posts={posts} setPosts={setPosts} />} />
         <Route path="/activity" element={<UserActivity />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/notifications" element={<Notifications />} />
@@ -108,6 +114,7 @@ const AppContent = () => {
   );
 };
 
+// Main App component with routing and context setup
 const App = () => {
   return (
     <AuthProvider>

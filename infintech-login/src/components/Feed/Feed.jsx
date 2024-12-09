@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Post from '../Post/Post';
+import Post from '../Post/Post';  // Assuming you have a Post component for individual posts
 import '../../components/Global.css';
 
-const Feed = ({ posts }) => { 
+const Feed = ({ posts }) => {
+  const [searchTerm, setSearchTerm] = useState('');
   const navigate = useNavigate();
+
+  // Filter posts based on search term
+  const filteredPosts = posts.filter((post) => {
+    return post.content.toLowerCase().includes(searchTerm.toLowerCase());
+  });
 
   return (
     <section className="feed">
@@ -13,7 +19,12 @@ const Feed = ({ posts }) => {
       {/* Header Actions with Search and Create Post */}
       <div className="feed__header-actions">
         <div className="search-bar">
-          <input type="text" placeholder="Search posts..." />
+          <input
+            type="text"
+            placeholder="Search posts..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
           <i className="fas fa-search"></i>
         </div>
         <button className="create-post-btn" onClick={() => navigate('/create-post')}>
@@ -23,9 +34,13 @@ const Feed = ({ posts }) => {
 
       {/* Feed Posts */}
       <div className="feed__posts">
-        {posts.map((post) => (
-          <Post key={post.id} post={post} />
-        ))}
+        {filteredPosts.length === 0 ? (
+          <p>No posts available matching your search.</p>
+        ) : (
+          filteredPosts.map((post) => (
+            <Post key={post.id} post={post} />
+          ))
+        )}
       </div>
     </section>
   );

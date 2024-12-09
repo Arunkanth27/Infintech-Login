@@ -1,25 +1,39 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Post from '../Post/Post';
+import Post from '../Post/Post';  // Assuming you have a Post component
 import '../../components/Global.css';
 
-const CommunityDetails = () => {
-  const { name } = useParams();
-  const [posts, setPosts] = useState([
-    { id: 1, author: 'John Doe', content: 'Welcome to the community!', time: '1 day ago' },
-    { id: 2, author: 'Jane Smith', content: 'I have a question about React hooks.', time: '2 days ago' },
-  ]);
+const CommunityDetails = ({ posts, setPosts }) => {
+  const { name } = useParams();  // Get the community name from the URL
   const [newPostContent, setNewPostContent] = useState('');
 
+  // Filter posts based on tags (the current community's name)
+  const filteredPosts = posts.filter(post => post.tags && post.tags.includes(name));
+
+  // Handle submitting a new post
   const handlePostSubmit = (e) => {
     e.preventDefault();
     if (newPostContent.trim()) {
-      setPosts([
-        ...posts,
-        { id: posts.length + 1, author: 'You', content: newPostContent, time: 'Just now' },
-      ]);
-      setNewPostContent('');
+      const newPost = {
+        id: Date.now(),  // Generate a unique ID for the new post
+        author: 'You', // Replace with dynamic user data if available
+        content: newPostContent,
+        time: 'Just now', // For simplicity, set the time as "Just now"
+        tags: [name], // The post will be tagged with the current community name
+        likes: 0, // Initialize likes for the new post
+        comments: [], // Initialize an empty comments array
+      };
+      setPosts([ ...posts, newPost ]);  // Add the new post to the state
+      setNewPostContent('');  // Clear the post content input field
     }
+  };
+
+  // Render posts for the current community
+  const renderPosts = () => {
+    if (filteredPosts.length === 0) {
+      return <p>No posts available for this community.</p>;
+    }
+    return filteredPosts.map((post) => <Post key={post.id} post={post} />);
   };
 
   return (
@@ -27,7 +41,7 @@ const CommunityDetails = () => {
       <h2 className="community-details__title">{name} Community</h2>
 
       <div className="community-details__content">
-        {/* Left Side (About and Announcements) */}
+        {/* Left Side (About the Community) */}
         <div className="community-details__left">
           <div className="community-details__info">
             <h4>About This Community</h4>
@@ -80,12 +94,10 @@ const CommunityDetails = () => {
           </div>
         </div>
 
-        {/* Feed Section */}
+        {/* Feed Section (Posts within the community) */}
         <div className="community-details__feed">
           <h3>Community Feed</h3>
-          {posts.map((post) => (
-            <Post key={post.id} post={post} />
-          ))}
+          {renderPosts()}
 
           {/* Post Creation Form */}
           <form className="community-details__post-form" onSubmit={handlePostSubmit}>
