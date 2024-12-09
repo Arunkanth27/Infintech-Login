@@ -1986,7 +1986,7 @@ align-items: center;
 .notifications__title {
   font-size: 28px;
   font-weight: 700;
-  color: #0073b1;
+  color: #008080;
   margin-bottom: 25px;
   text-align: left;
   border-bottom: 2px solid #e0e0e0;
@@ -2026,7 +2026,7 @@ align-items: center;
   height: 50px;
   border-radius: 50%;
   margin-right: 15px;
-  border: 2px solid #0073b1;
+  border: 2px solid #008080;
 }
 
 /* Notification Content */
@@ -2036,7 +2036,7 @@ align-items: center;
 
 .notification__user {
   font-weight: 600;
-  color: #0073b1;
+  color: #008080;
   font-size: 16px;
 }
 
@@ -2048,11 +2048,11 @@ align-items: center;
 
 /* Different Notification Types */
 .notification_item--mention .notification_user {
-  color: #005582;
+  color: #008080;
 }
 
 .notification_item--comment .notification_user {
-  color: #4a90e2;
+  color:#008080;
 }
 
 .notification_item--badge .notification_user {
@@ -2149,7 +2149,7 @@ align-items: center;
 .profile__name {
   font-size: 26px;
   font-weight: bold;
-  color: #0073b1;
+  color: #008080;
 }
 
 .profile__bio {
@@ -2180,7 +2180,7 @@ align-items: center;
 
 .profile__stat h3 {
   font-size: 18px;
-  color: #0073b1;
+  color: #008080;
   margin-bottom: 5px;
 }
 
@@ -2207,7 +2207,7 @@ align-items: center;
 .profile_badges h3,
 .profile__section h3 {
   font-size: 20px;
-  color: #0073b1;
+  color: #008080;
   margin-bottom: 15px;
 }
 
@@ -2392,7 +2392,7 @@ align-items: center;
 
 .activity__title {
   font-size: 28px;
-  color: #0073b1;
+  color: #008080;
   text-align: center;
   font-weight: 700;
   margin-bottom: 20px;
@@ -2428,7 +2428,7 @@ align-items: center;
 .overview__points {
   font-size: 30px;
   font-weight: 700;
-  color: #0073b1;
+  color:#008080;
 }
 
 .overview__badges {
@@ -2440,7 +2440,7 @@ align-items: center;
 
 .badge {
   background-color: #e0f7fa;
-  color: #0073b1;
+  color: #008080;
   padding: 5px 10px;
   border-radius: 12px;
   font-size: 14px;
@@ -2451,7 +2451,7 @@ align-items: center;
 /* Achievements Section */
 .activity__subtitle {
   font-size: 24px;
-  color: #0073b1;
+  color: #008080;
   text-align: center;
   margin-bottom: 15px;
 }
@@ -2487,7 +2487,7 @@ align-items: center;
 .achievement__title {
   font-size: 18px;
   font-weight: 600;
-  color: #0073b1;
+  color: #008080;
 }
 
 .achievement__points {
@@ -2507,7 +2507,7 @@ align-items: center;
 
 .achievement__badge {
   font-size: 13px;
-  color: #0073b1;
+  color: #008080;
   font-weight: 500;
   background-color: #e0f7fa;
   padding: 5px 10px;

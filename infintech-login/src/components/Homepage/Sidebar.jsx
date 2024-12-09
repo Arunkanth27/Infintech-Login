@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from 'react-router-dom'; // Import useNavigate
 import { useAuth } from '../../components/Login/AuthContext'; // Import useAuth to check if user is logged in
 import '../../components/Global.css';
 
+
 const SideBar = () => {
   const [isSidebarVisible, setSidebarVisible] = useState(false); // Start with sidebar hidden
   const navigate = useNavigate(); // Initialize navigate hook
@@ -18,6 +19,7 @@ const SideBar = () => {
     logout(); // Call the logout function (clears user state)
     navigate('/login'); // Navigate to the login page
   };
+
 
   return (
     <>
@@ -97,5 +99,6 @@ const SideBar = () => {
     </>
   );
 };
+
 
 export default SideBar;
