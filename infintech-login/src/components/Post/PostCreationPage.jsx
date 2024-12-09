@@ -36,9 +36,9 @@ const PostCreationPage = ({ addNewPost }) => {
     setTags(value); // Update tags input state
 
     if (value) {
-      // Filter the community names based on the user input (exact match with the start of the community name)
+      // Filter the community names based on the user input (case-insensitive)
       const filtered = communities.filter(community =>
-        community.name.toLowerCase().startsWith(value.toLowerCase()) // Exact match from the beginning
+        community.name.toLowerCase().includes(value.toLowerCase()) // Case insensitive match
       );
       setFilteredCommunities(filtered);
 
@@ -53,12 +53,8 @@ const PostCreationPage = ({ addNewPost }) => {
   // Handle adding a new tag
   const handleAddTag = (tag) => {
     const trimmedTag = tag.trim();
-    const matchingCommunity = communities.find(
-      (community) => community.name.toLowerCase() === trimmedTag.toLowerCase() // Exact match with the community name
-    );
-
-    if (trimmedTag && matchingCommunity && !tagList.includes(trimmedTag)) {
-      // Add the tag to the list if it matches exactly
+    if (trimmedTag && !tagList.includes(trimmedTag)) {
+      // Add the tag to the list
       setTagList([...tagList, trimmedTag]);
       setTags(''); // Clear the input field
       setFilteredCommunities(communities); // Reset suggestions after adding the tag
