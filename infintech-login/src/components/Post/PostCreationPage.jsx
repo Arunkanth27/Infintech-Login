@@ -22,6 +22,7 @@ const PostCreationPage = ({ addNewPost }) => {
     }
   }, [location.state]);
 
+  // Handle image upload
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -29,14 +30,15 @@ const PostCreationPage = ({ addNewPost }) => {
     }
   };
 
+  // Handle input change for tags
   const handleTagsChange = (e) => {
     const value = e.target.value;
     setTags(value); // Update tags input state
 
-    // Filter the community names based on the user input (case-insensitive)
     if (value) {
+      // Filter the community names based on the user input (exact match with the start of the community name)
       const filtered = communities.filter(community =>
-        community.name.toLowerCase().includes(value.toLowerCase()) // Case insensitive match
+        community.name.toLowerCase().startsWith(value.toLowerCase()) // Exact match from the beginning
       );
       setFilteredCommunities(filtered);
 
@@ -48,10 +50,15 @@ const PostCreationPage = ({ addNewPost }) => {
     }
   };
 
+  // Handle adding a new tag
   const handleAddTag = (tag) => {
     const trimmedTag = tag.trim();
-    if (trimmedTag && !tagList.includes(trimmedTag)) {
-      // Add the tag to the list
+    const matchingCommunity = communities.find(
+      (community) => community.name.toLowerCase() === trimmedTag.toLowerCase() // Exact match with the community name
+    );
+
+    if (trimmedTag && matchingCommunity && !tagList.includes(trimmedTag)) {
+      // Add the tag to the list if it matches exactly
       setTagList([...tagList, trimmedTag]);
       setTags(''); // Clear the input field
       setFilteredCommunities(communities); // Reset suggestions after adding the tag
@@ -59,10 +66,12 @@ const PostCreationPage = ({ addNewPost }) => {
     }
   };
 
+  // Handle removing a tag
   const handleRemoveTag = (tagToRemove) => {
     setTagList(tagList.filter(tag => tag !== tagToRemove));
   };
 
+  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
     if (content && tagList.length > 0) {
