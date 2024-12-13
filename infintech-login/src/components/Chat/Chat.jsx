@@ -4,9 +4,12 @@ import ChatBox from "./ChatBox";
 import '../../components/Global.css';
 
 const contacts = [
-  { id: 1, name: "John Doe", avatar: "https://i.pravatar.cc/100?img=1", status: "Online" },
-  { id: 2, name: "Jane Smith", avatar: "https://i.pravatar.cc/100?img=2", status: "Away" },
-  { id: 3, name: "Alice Johnson", avatar: "https://i.pravatar.cc/100?img=3", status: "Offline" },
+  { id: 1, name: "Kokki mama", avatar: "https://i.pravatar.cc/100?img=1", status: "Online" },
+  { id: 2, name: "Sundar macha", avatar: "https://i.pravatar.cc/100?img=2", status: "Away" },
+  { id: 3, name: "Musk macha", avatar: "https://i.pravatar.cc/100?img=3", status: "Offline" },
+  { id: 1, name: "Bezos uncle", avatar: "https://i.pravatar.cc/100?img=1", status: "Online" },
+  { id: 2, name: "My number", avatar: "https://i.pravatar.cc/100?img=2", status: "Away" },
+  { id: 3, name: "Mark Machan", avatar: "https://i.pravatar.cc/100?img=3", status: "Offline" },
 ];
 
 const initialMessages = {

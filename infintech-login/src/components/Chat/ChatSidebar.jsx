@@ -1,5 +1,5 @@
 import React from "react";
-import '../../components/Global.css';
+import "../../components/Global.css";
 
 const ChatSidebar = ({ contacts, activeChatId, setActiveChatId, search, setSearch }) => {
   const filteredContacts = contacts.filter((contact) =>
@@ -17,7 +17,8 @@ const ChatSidebar = ({ contacts, activeChatId, setActiveChatId, search, setSearc
           onChange={(e) => setSearch(e.target.value)}
         />
       </div>
-      <h3>Chats</h3>
+
+      <h3>Discussion</h3>
       <ul className="chat-list">
         {filteredContacts.map((contact) => (
           <li
@@ -33,10 +34,12 @@ const ChatSidebar = ({ contacts, activeChatId, setActiveChatId, search, setSearc
           </li>
         ))}
       </ul>
+
+      {/* Sidebar Options */}
       <div className="sidebar-options">
         <button>Settings</button>
         <button>Privacy</button>
-        <button>Help</button>
+        <button>Other</button>
       </div>
     </div>
   );

@@ -1,19 +1,22 @@
-import React, { useState, useEffect } from "react";
-import '../../components/Global.css';
+import React, { useState } from "react";
+import "../../components/Global.css";
 
 const ChatBox = ({ activeChatId, contacts, messages, setMessages }) => {
   const [message, setMessage] = useState("");
-  const [typing, setTyping] = useState(false); // Typing indicator
+  const [file, setFile] = useState(null); // File upload state
+  const [payment, setPayment] = useState(""); // Payment input state
 
   const currentContact = contacts.find((contact) => contact.id === activeChatId);
 
   const handleSendMessage = () => {
-    if (message.trim()) {
+    if (message.trim() || file || payment) {
       const newMessage = {
         sender: "You",
         message,
         time: new Date().toLocaleTimeString(),
-        read: false, // New messages are unread initially
+        read: false,
+        file,
+        payment,
       };
 
       setMessages((prevMessages) => {
@@ -23,56 +26,76 @@ const ChatBox = ({ activeChatId, contacts, messages, setMessages }) => {
       });
 
       setMessage("");
+      setFile(null); // Clear the file after sending
+      setPayment(""); // Clear payment input after sending
     }
   };
 
-  useEffect(() => {
-    if (message) {
-      setTyping(true);
-      const timeout = setTimeout(() => setTyping(false), 1000); // Typing indicator lasts 1 second
-      return () => clearTimeout(timeout);
-    }
-  }, [message]);
+  const handleFileChange = (event) => {
+    const uploadedFile = event.target.files[0];
+    setFile(uploadedFile);
+  };
 
   return (
     <div className="chat-box">
       {currentContact ? (
         <>
-          {/* Chat Header */}
+          {/* Chat Header with video and voice call options */}
           <div className="chat-header">
             <img src={currentContact.avatar} alt="user-avatar" className="avatar" />
-            <div>
+            <div className="header-info">
               <h3>{currentContact.name}</h3>
               <p>{currentContact.status}</p>
+            </div>
+            <div className="call-options">
+              <button className="call-btn">📞</button> {/* Voice call button */}
+              <button className="video-call-btn">📹</button> {/* Video call button */}
             </div>
           </div>
 
           {/* Messages */}
           <div className="messages">
             {messages[activeChatId]?.map((msg, index) => (
-              <div
-                key={index}
-                className={`message ${msg.sender === "You" ? "you" : "other"}`}
-              >
+              <div key={index} className={`message ${msg.sender === "You" ? "you" : "other"}`}>
                 <p className="message-text">{msg.message}</p>
+                {msg.file && <a href={URL.createObjectURL(msg.file)} download>Download File</a>}
+                {msg.payment && <p className="payment-info">Payment: {msg.payment}</p>}
                 <span className="message-time">{msg.time}</span>
                 {msg.sender === "You" && (
-                  <span className="message-status">{msg.read ? "Read" : "Sent"}</span>
+                  <div className="message-options">
+                    <button>Edit</button>
+                    <button>Delete</button>
+                  </div>
                 )}
               </div>
             ))}
-            {typing && <p className="typing-indicator">User is typing...</p>}
           </div>
 
           {/* Message Input */}
           <div className="message-input">
+            {/* Message input */}
             <input
               type="text"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               placeholder="Type a message..."
             />
-            <button onClick={handleSendMessage}>Send</button>
+
+            {/* File upload */}
+            <input type="file" onChange={handleFileChange} />
+
+            {/* Payment input */}
+            <input
+              type="text"
+              value={payment}
+              onChange={(e) => setPayment(e.target.value)}
+              placeholder="Enter payment amount"
+            />
+
+            {/* Send Button */}
+            <button className="send-btn" onClick={handleSendMessage}>
+              ➡️
+            </button>
           </div>
         </>
       ) : (
