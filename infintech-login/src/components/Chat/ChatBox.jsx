@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../../components/Global.css";
 
-const ChatBox = ({ activeChatId, contacts, messages, setMessages }) => {
+const ChatBox = ({ activeChatId, contacts, messages, setMessages, onBack }) => {
   const [message, setMessage] = useState("");
   const [file, setFile] = useState(null); // File upload state
   const [payment, setPayment] = useState(""); // Payment input state
@@ -40,7 +40,12 @@ const ChatBox = ({ activeChatId, contacts, messages, setMessages }) => {
     <div className="chat-box">
       {currentContact ? (
         <>
-          {/* Chat Header with video and voice call options */}
+          {/* Back Button for mobile */}
+          <button className="back-button" onClick={onBack}>
+            Back
+          </button>
+
+          {/* Chat Header */}
           <div className="chat-header">
             <img src={currentContact.avatar} alt="user-avatar" className="avatar" />
             <div className="header-info">
@@ -48,8 +53,8 @@ const ChatBox = ({ activeChatId, contacts, messages, setMessages }) => {
               <p>{currentContact.status}</p>
             </div>
             <div className="call-options">
-              <button className="call-btn">📞</button> {/* Voice call button */}
-              <button className="video-call-btn">📹</button> {/* Video call button */}
+              <button className="call-btn">📞</button>
+              <button className="video-call-btn">📹</button>
             </div>
           </div>
 
@@ -57,6 +62,7 @@ const ChatBox = ({ activeChatId, contacts, messages, setMessages }) => {
           <div className="messages">
             {messages[activeChatId]?.map((msg, index) => (
               <div key={index} className={`message ${msg.sender === "You" ? "you" : "other"}`}>
+
                 <p className="message-text">{msg.message}</p>
                 {msg.file && <a href={URL.createObjectURL(msg.file)} download>Download File</a>}
                 {msg.payment && <p className="payment-info">Payment: {msg.payment}</p>}
@@ -73,26 +79,19 @@ const ChatBox = ({ activeChatId, contacts, messages, setMessages }) => {
 
           {/* Message Input */}
           <div className="message-input">
-            {/* Message input */}
             <input
               type="text"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
               placeholder="Type a message..."
             />
-
-            {/* File upload */}
             <input type="file" onChange={handleFileChange} />
-
-            {/* Payment input */}
             <input
               type="text"
               value={payment}
               onChange={(e) => setPayment(e.target.value)}
               placeholder="Enter payment amount"
             />
-
-            {/* Send Button */}
             <button className="send-btn" onClick={handleSendMessage}>
               ➡️
             </button>
