@@ -16,6 +16,20 @@ const ProfilePage = () => {
     setIsEditing({ ...isEditing, [field]: !isEditing[field] });
   };
 
+  // Mock data for user points and badges
+  const userPoints = 1820;  // Example points calculated from user activity
+  const userBadges = ["Bronze Contributor", "Problem Solver"];  // Example badges earned
+
+  // Calculate badge level based on points
+  const getBadgeLevel = (points) => {
+    if (points <= 1000) return "Bronze Badge";
+    else if (points <= 5000) return "Silver Badge";
+    else if (points <= 15000) return "Gold Badge";
+    else return "Platinum Badge";
+  };
+
+  const badgeLevel = getBadgeLevel(userPoints);
+
   return (
     <section className="profile">
       <div className="profile__container">
@@ -121,30 +135,23 @@ const ProfilePage = () => {
 
           {/* Right Sidebar */}
           <div className="profile__right">
-            {/* Badges & Points */}
+            {/* Points & Badges */}
             <div className="profile__points">
-              <h3>Account Points: 1500</h3>
+              <h3>Account Points: {userPoints}</h3>
               <p>Total contributions, answers, and project engagements.</p>
             </div>
 
             <div className="profile__badges">
               <h3>Badges</h3>
               <div className="profile__badge-list">
-                <img src={badgeIcon} alt="Top Contributor Badge" title="Top Contributor" className="profile__badge" />
-                <img src={badgeIcon} alt="Mentor Badge" title="Mentor" className="profile__badge" />
-                <img src={badgeIcon} alt="Innovator Badge" title="Innovator" className="profile__badge" />
+                {userBadges.map((badge, index) => (
+                  <img key={index} src={badgeIcon} alt={badge} title={badge} className="profile__badge" />
+                ))}
               </div>
             </div>
 
-            {/* Recent Activity */}
-            <div className="profile__recent-activity">
-              <h3>Recent Activity</h3>
-              <ul className="profile__activity-list">
-                <li>Participated in "React vs Vue" discussion - 2 hours ago</li>
-                <li>Posted a new article on web accessibility - 5 hours ago</li>
-                <li>Completed a new project on GitHub - 1 day ago</li>
-                <li>Started learning Python - 3 days ago</li>
-              </ul>
+            <div className="profile__badge-level">
+              <h3>Current Badge Level: {badgeLevel}</h3>
             </div>
           </div>
         </div>

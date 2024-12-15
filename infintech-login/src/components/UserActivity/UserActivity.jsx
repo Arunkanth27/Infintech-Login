@@ -1,51 +1,76 @@
 import React from 'react';
-import '../../components/Global.css'
+import '../../components/Global.css';
+
+// Mock data for points from different activities
+const userActivityData = {
+  answeringQueries: 200,  // Points from answering queries
+  engagement: 80,         // Points from user engagement activities
+  problemSolvingUser: 500, // Points from solving user problems
+  problemSolvingIndustry: 1000, // Points from industry collaborations
+  softSkills: 120,       // Points from soft skills feedback
+};
+
+const getBadgeLevel = (points) => {
+  if (points <= 1000) return "Bronze Badge";
+  else if (points <= 5000) return "Silver Badge";
+  else if (points <= 15000) return "Gold Badge";
+  else return "Platinum Badge";
+};
+
+const calculateTotalPoints = () => {
+  return (
+    userActivityData.answeringQueries +
+    userActivityData.engagement +
+    userActivityData.problemSolvingUser +
+    userActivityData.problemSolvingIndustry +
+    userActivityData.softSkills
+  );
+};
 
 const UserActivity = () => {
-  // Mock data for points and achievements
-  const overallPoints = 1520;
-  const badges = ["Top Contributor", "Problem Solver", "Community Leader"];
-  const achievements = [
-    { title: "Completed Community Project", description: "Collaborated with peers on a React project.", points: 150 },
-    { title: "Top Contributor", description: "Recognized for helping 10+ users with their queries.", points: 100 },
-    { title: "Active Networker", description: "Built connections with 30+ community members.", points: 80 },
-    { title: "AI Project Collaboration", description: "Worked on an AI model with 5 other developers.", points: 120 },
-  ];
+  const totalPoints = calculateTotalPoints();
+  const badge = getBadgeLevel(totalPoints);
 
   return (
     <section className="activity">
       <h2 className="activity__title">My Activity & Achievements</h2>
-      
+
       {/* Overview Section */}
       <div className="activity__overview">
         <div className="overview__item">
-          <div className="overview__title">Overall Points</div>
-          <div className="overview__points">{overallPoints}</div>
+          <div className="overview__title">Total Points</div>
+          <div className="overview__points">{totalPoints}</div>
         </div>
-        
+
         <div className="overview__item">
-          <div className="overview__title">Badges</div>
-          <div className="overview__badges">
-            {badges.map((badge, index) => (
-              <span key={index} className="badge">{badge}</span>
-            ))}
-          </div>
+          <div className="overview__title">Badge Level</div>
+          <div className="overview__badge">{badge}</div>
         </div>
       </div>
 
-      {/* Achievements List */}
-      <h3 className="activity__subtitle">Achievements</h3>
+      {/* Activity Breakdown */}
+      <h3 className="activity__subtitle">Activity Breakdown</h3>
       <ul className="activity__list">
-        {achievements.map((achievement, index) => (
-          <li key={index} className="activity__list-item">
-            <div className="achievement__header">
-              <span className="achievement__title">{achievement.title}</span>
-              <span className="achievement__points">+{achievement.points} pts</span>
-            </div>
-            <p className="achievement__description">{achievement.description}</p>
-            <span className="achievement__badge">Earned Badge</span>
-          </li>
-        ))}
+        <li className="activity__list-item">
+          <span>Answering Queries: </span>
+          {userActivityData.answeringQueries} points
+        </li>
+        <li className="activity__list-item">
+          <span>Engagement: </span>
+          {userActivityData.engagement} points
+        </li>
+        <li className="activity__list-item">
+          <span>Problem Solving (User Issues): </span>
+          {userActivityData.problemSolvingUser} points
+        </li>
+        <li className="activity__list-item">
+          <span>Industry Problem Solving: </span>
+          {userActivityData.problemSolvingIndustry} points
+        </li>
+        <li className="activity__list-item">
+          <span>Soft Skills: </span>
+          {userActivityData.softSkills} points
+        </li>
       </ul>
     </section>
   );
