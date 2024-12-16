@@ -40,13 +40,13 @@ const ChatBox = ({ activeChatId, contacts, messages, setMessages, onBack }) => {
     <div className="chat-box">
       {currentContact ? (
         <>
-          {/* Back Button for mobile */}
-          <button className="back-button" onClick={onBack}>
-            Back
-          </button>
+
 
           {/* Chat Header */}
           <div className="chat-header">
+          <button className="back-button" onClick={onBack}>
+          &lt;
+          </button>
             <img src={currentContact.avatar} alt="user-avatar" className="avatar" />
             <div className="header-info">
               <h3>{currentContact.name}</h3>
