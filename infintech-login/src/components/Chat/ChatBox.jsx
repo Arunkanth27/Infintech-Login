@@ -79,23 +79,35 @@ const ChatBox = ({ activeChatId, contacts, messages, setMessages, onBack }) => {
 
           {/* Message Input */}
           <div className="message-input">
-            <input
-              type="text"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              placeholder="Type a message..."
-            />
-            <input type="file" onChange={handleFileChange} />
-            <input
-              type="text"
-              value={payment}
-              onChange={(e) => setPayment(e.target.value)}
-              placeholder="Enter payment amount"
-            />
-            <button className="send-btn" onClick={handleSendMessage}>
-              ➡️
-            </button>
-          </div>
+  <div className="input-wrapper">
+    <input
+      type="text"
+      value={message}
+      onChange={(e) => setMessage(e.target.value)}
+      placeholder="Type a message..."
+      className="text-input"
+    />
+    {/* Attachment Icon */}
+    <label className="input-icon attachment-icon" title="Attach File">
+      📎
+      <input type="file" onChange={handleFileChange} />
+    </label>
+    {/* Payment Icon */}
+    <label className="input-icon payment-icon" title="Enter Payment">
+      $
+      <input
+        type="text"
+        value={payment}
+        onChange={(e) => setPayment(e.target.value)}
+        placeholder="Enter payment amount"
+      />
+    </label>
+  </div>
+  <button className="send-btn" onClick={handleSendMessage}>
+    ➡️
+  </button>
+</div>
+
         </>
       ) : (
         <p>Select a chat to start messaging</p>

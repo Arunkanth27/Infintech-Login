@@ -918,6 +918,7 @@ body {
   align-items: center;
   margin-bottom: 20px;
   width: 100%; /* Ensure the container spans the full width */
+  flex-wrap: wrap; /* Allow wrapping of items */
 }
 
 /* Centering Search Bar in Feed Page */
@@ -926,7 +927,7 @@ body {
   align-items: center;
   justify-content: center;
   position: relative;
-  width: 50%; /* Adjust width of the search bar */
+  width: 50%; /* Default width for larger screens */
 }
 
 .feed__header-actions .search-bar input {
@@ -966,6 +967,54 @@ body {
   transform: scale(1.05);
 }
 
+/* Media Queries for Responsive Design */
+
+/* For screens smaller than 1200px (Tablets & Small Desktops) */
+@media (max-width: 1200px) {
+  .feed__header-actions .search-bar {
+    width: 60%; /* Increase search bar width for smaller screens */
+  }
+
+  .feed__header-actions .create-post-btn {
+    margin-left: 10px; /* Adjust spacing */
+  }
+}
+
+/* For screens smaller than 768px (Tablets & Mobile devices) */
+@media (max-width: 768px) {
+  .feed__header-actions {
+    flex-direction: column; /* Stack elements vertically */
+    gap: 10px; /* Add spacing between stacked items */
+  }
+
+  .feed__header-actions .search-bar {
+    width: 80%; /* Make the search bar wider on smaller screens */
+  }
+
+  .feed__header-actions .create-post-btn {
+    width: 80%; /* Stretch the button width */
+    text-align: center;
+    margin: 0; /* Reset margin */
+  }
+}
+
+/* For screens smaller than 480px (Mobile phones) */
+@media (max-width: 480px) {
+  .feed__header-actions .search-bar {
+    width: -webkit-fill-available; /* Full width for very small screens */
+  }
+
+  .feed__header-actions .create-post-btn {
+    width: 100%; /* Full width button */
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+
+  .feed__header-actions {
+    gap: 15px; /* Increase gap between items */
+  }
+}
+
+
 /* Fixed Right Sidebars Section */
 .app__sidebars {
   display: flex;
@@ -989,10 +1038,7 @@ body {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.sidebar:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-}
+
 
 .sidebar h3 {
   font-size: 1.2rem;
@@ -1687,6 +1733,7 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 margin-bottom: 20px;
+gap: 10px;
 }
 
 .communities__search-bar {
@@ -1720,8 +1767,6 @@ margin-bottom: 10px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  margin-bottom: 20px;
-  margin-left: 20px;
   white-space: nowrap;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
@@ -1835,7 +1880,7 @@ line-height: 1.6;
   
   .communities__search-bar,
   .communities__sort-select {
-    width: 100%; /* Full width on smaller screens */
+    width: -webkit-fill-available;
   }
   
   .community-details__content {
@@ -1934,7 +1979,7 @@ margin-top: 20px;
 }
 
 .community-details__post-form textarea {
-width: 100%;
+width: -webkit-fill-available;
 padding: 15px;
 font-size: 14px;
 border: 1px solid #ddd;
@@ -1945,6 +1990,7 @@ margin-bottom: 15px;
 }
 
 .community-details__post-form button {
+  width: -webkit-fill-available;
 background-color: #008080;
 color: white;
 padding: 10px 20px;
@@ -2309,7 +2355,7 @@ align-items: center;
 .profile__detail input {
   font-size: 16px;
   margin-bottom: 15px;
-  width: 100%;
+  width: -webkit-fill-available;
   padding: 12px;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -2397,7 +2443,7 @@ align-items: center;
   }
 
   .profile__right {
-    width: 100%;
+    width: -webkit-fill-available;
     margin-top: 20px;
   }
 }
@@ -2895,18 +2941,124 @@ h3 {
   background-color: #f8f8f8;
   align-items: center;
   gap: 10px;
+  position: relative;
 }
 
-.message-input input[type="text"],
-.message-input input[type="file"],
-.message-input input[type="text"] {
+.input-wrapper {
+  position: relative;
+  flex-grow: 1;
+}
+
+.text-input {
   padding: 12px 15px;
   font-size: 14px;
   border: 1px solid #d1d1d1;
   border-radius: 20px;
   outline: none;
   width: -webkit-fill-available;
+  box-sizing: border-box;
+  padding-right: 90px; /* Space for icons */
 }
+
+.input-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 18px;
+  color: #008080; /* Teal color */
+}
+
+.attachment-icon {
+  right: 55px; /* Position attachment icon */
+}
+
+.payment-icon {
+  right: 20px; /* Position payment icon */
+}
+
+.input-icon input {
+  opacity: 0; /* Hide the file input */
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.send-btn {
+  padding: 10px 15px;
+  background-color: #008080;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.send-btn:hover {
+  background-color: #005582;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .text-input {
+    padding-right: 70px; /* Reduce right padding for smaller screens */
+    font-size: 12px;
+  }
+
+  .input-icon {
+    font-size: 16px; /* Smaller icons on tablets */
+  }
+
+  .attachment-icon {
+    right: 45px; /* Adjust position for smaller screens */
+  }
+
+  .payment-icon {
+    right: 15px;
+  }
+
+  .send-btn {
+    padding: 8px 12px; /* Smaller send button */
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .message-input {
+    flex-direction: row; /* Stack elements vertically */
+    gap: 5px;
+  }
+
+  .input-wrapper {
+    width: 100%;
+  }
+
+  .text-input {
+    font-size: 12px;
+    padding: 10px 15px;
+    padding-right: 50px; /* Adjust padding for icons */
+  }
+
+  .input-icon {
+    font-size: 14px; /* Smaller icons on mobile */
+  }
+
+  .attachment-icon {
+    right: 35px; /* Position for smaller screens */
+  }
+
+  .payment-icon {
+    right: 10px;
+  }
+
+  .send-btn {
+    width: 100%; /* Full width button */
+    border-radius: 8px; /* Square button on smaller screens */
+  }
+}
+
 
 .message-input button {
   background-color: #008080;

@@ -63,6 +63,12 @@ const CommunityPage = () => {
           <option value="alphabetical">Sort by Name</option>
           <option value="popularity">Sort by Popularity</option>
         </select>
+        <button
+        className="create-post-btn"
+        onClick={handleNavigateToPostCreation}
+      >
+        Create a Post
+      </button>
       </div>
 
       <div className="communities__grid">
@@ -85,12 +91,7 @@ const CommunityPage = () => {
         ))}
       </div>
 
-      <button
-        className="create-post-btn"
-        onClick={handleNavigateToPostCreation}
-      >
-        Create a Post
-      </button>
+
     </section>
   );
 };
