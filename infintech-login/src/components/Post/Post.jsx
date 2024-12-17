@@ -1,28 +1,30 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate hook
+import { useNavigate } from 'react-router-dom';
 import avatar from '../../images/OIP.jpg';
 import '../../components/Global.css';
 
 const Post = ({ post }) => {
-  const [showMenu, setShowMenu] = useState(false);
-  const [likes, setLikes] = useState(post.likes || 0); // Track likes for the post
-  const [liked, setLiked] = useState(false); // To track if the post is liked
-  const [comments, setComments] = useState(post.comments || []); // Comments list
-  const [commentText, setCommentText] = useState(''); // Comment input field text
-  const [showCommentInput, setShowCommentInput] = useState(false); // To show/hide the comment input field
+  const [showMenu, setShowMenu] = useState(false); // To track whether the menu is open or closed
+  const [likes, setLikes] = useState(post.likes || 0);
+  const [liked, setLiked] = useState(false);
+  const [comments, setComments] = useState(post.comments || []);
+  const [commentText, setCommentText] = useState('');
+  const [showCommentInput, setShowCommentInput] = useState(false);
 
-  const [replyText, setReplyText] = useState(''); // Reply text for comments
-  const [showReplyInput, setShowReplyInput] = useState(null); // Show/hide reply input for each comment
+  const [replyText, setReplyText] = useState('');
+  const [showReplyInput, setShowReplyInput] = useState(null);
 
-  const navigate = useNavigate(); // Initialize navigate hook for programmatic navigation
+  const navigate = useNavigate();
 
-  const toggleMenu = () => {
-    setShowMenu((prev) => !prev);
+  const toggleMenu = (e) => {
+    // Prevent the event from bubbling up to the parent div and closing the menu
+    e.stopPropagation();
+    setShowMenu((prev) => !prev); // Toggle the menu visibility
   };
 
   const handleMenuOption = (option) => {
     console.log(`${option} selected for post ID: ${post.id}`);
-    setShowMenu(false);
+    setShowMenu(false); // Close the menu after selecting an option
   };
 
   const handleLikePost = () => {
@@ -43,11 +45,11 @@ const Post = ({ post }) => {
         content: commentText.trim(),
         likes: 0,
         liked: false,
-        replies: [], // Replies for this comment
+        replies: [],
       };
       setComments([...comments, newComment]);
-      setCommentText(''); // Clear the comment input field
-      setShowCommentInput(false); // Close the comment input after submission
+      setCommentText('');
+      setShowCommentInput(false);
     }
   };
 
@@ -84,8 +86,8 @@ const Post = ({ post }) => {
             : comment
         )
       );
-      setReplyText(''); // Clear the reply input field
-      setShowReplyInput(null); // Close the reply input field after submission
+      setReplyText('');
+      setShowReplyInput(null);
     }
   };
 
@@ -95,7 +97,13 @@ const Post = ({ post }) => {
   };
 
   return (
-    <div className="post">
+    <div
+      className="post"
+      onClick={() => {
+        // Close the menu if clicking outside the post
+        setShowMenu(false);
+      }}
+    >
       {/* Post Header */}
       <div className="post__header">
         <img src={avatar} alt="User Avatar" className="post__avatar" />
@@ -110,7 +118,7 @@ const Post = ({ post }) => {
         <div className="post__menu">
           <i
             className="fas fa-ellipsis-h post__menu-icon"
-            onClick={toggleMenu}
+            onClick={toggleMenu} // Trigger the menu toggle on click
           ></i>
           {showMenu && (
             <ul className="post__menu-options">

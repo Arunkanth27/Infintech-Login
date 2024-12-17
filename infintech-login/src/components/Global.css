@@ -137,7 +137,7 @@ p {
 .login-button {
   width: 100%;
   padding: 15px;
-  background-color: #008080;
+  background-color: #056f5a;;
   color: white;
   border: none;
   border-radius: 4px;
@@ -158,7 +158,7 @@ p {
 }
 
 .login-links a {
-  color: #008080;
+  color: #056f5a;;
   text-decoration: none;
   font-weight: bold;
 }
@@ -195,7 +195,7 @@ p {
 
 .university-signup a {
   font-size: 16px;
-  color: #008080; /* Teal color for the text */
+  color: #056f5a;; /* Teal color for the text */
   text-decoration: none;
   font-weight: bold;
 }
@@ -409,7 +409,7 @@ p {
 .register-button {
   width: 100%;
   padding: 15px;
-  background-color: #008080;
+  background-color: #056f5a;;
   color: white;
   border: none;
   border-radius: 4px;
@@ -430,7 +430,7 @@ p {
 }
 
 .register-links a {
-  color: #008080;
+  color: #056f5a;;
   text-decoration: none;
   font-weight: bold;
 }
@@ -592,7 +592,7 @@ p {
   margin-top: 30px;
   font-size: 24px;
   font-family: 'Arial', sans-serif;
-  color: #008080; /* Softer black for text */
+  color: #056f5a;; /* Softer black for text */
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-left: 35px; /* Adjust as needed for spacing */
@@ -619,7 +619,7 @@ p {
 }
 
 .header__link:hover {
-  color: #008080; /* Teal text on hover */
+  color: #056f5a;; /* Teal text on hover */
   background-color: rgba(0, 128, 128, 0.1); /* Light teal background */
   transform: scale(1.05); /* Subtle hover effect */
 }
@@ -659,7 +659,7 @@ p {
 }
 
 .header__search-input:focus {
-  border-color: #008080; /* Teal border on focus */
+  border-color: #056f5a;; /* Teal border on focus */
   outline: none;
 }
 
@@ -673,7 +673,7 @@ p {
 }
 
 .header__search-icon:hover {
-  color: #008080; /* Teal on hover */
+  color: #056f5a;; /* Teal on hover */
 }
 
 /* Responsive Design */
@@ -752,7 +752,7 @@ body {
     top: 14px; /* 20px from the top */
     left: 20px; /* 20px from the left */
     font-size: 30px;
-    color: #008080;; /* Dark color for visibility */
+    color: #056f5a;;; /* Dark color for visibility */
     cursor: pointer;
     z-index: 1000; /* Ensure it appears on top */
   }
@@ -766,7 +766,7 @@ body {
     text-align: center;
     font-size: 20px;
     margin: 20px 0;
-    color: #008080; /* Teal color for the logo text */
+    color: #056f5a;; /* Teal color for the logo text */
   }
   
   .sidebar__nav {
@@ -797,12 +797,12 @@ body {
   
   .sidebar__link:hover {
     background-color: #e0f7f7; /* Light teal hover background */
-    color: #008080; /* Teal font color on hover */
+    color: #056f5a;; /* Teal font color on hover */
   }
   
   .sidebar__link--active {
     background-color: #e0f7f7; /* Light teal background for active link */
-    color: #008080; /* Teal color for active text */
+    color: #056f5a;; /* Teal color for active text */
   }
   
   /* Tips Section */
@@ -819,7 +819,7 @@ body {
   .sidebar__tips h4 {
     font-size: 16px;
     margin-bottom: 10px;
-    color: #008080; /* Teal color for tips heading */
+    color: #056f5a;; /* Teal color for tips heading */
   }
   
   .sidebar__tips p {
@@ -829,7 +829,7 @@ body {
   }
   
   .sidebar__learn-more {
-    background-color: #008080; /* Teal color for button */
+    background-color: #056f5a;; /* Teal color for button */
     color: #ffffff; /* White text */
     padding: 8px 15px;
     font-size: 14px;
@@ -845,7 +845,7 @@ body {
 
   /* Sidebar logout button styling */
 .sidebar__logout-btn {
-  background-color: #008080; /* Red color for the logout button */
+  background-color: #056f5a;; /* Red color for the logout button */
   color: #fff; /* White text color */
   padding: 10px 20px; /* Add padding for better button size */
   font-size: 12px; /* Font size */
@@ -861,7 +861,7 @@ body {
 }
 
 .sidebar__logout-btn:hover {
-  background-color: #008080; /* Teal color on hover */
+  background-color: #056f5a;; /* Teal color on hover */
   transition: background-color 0.3s ease; /* Smooth transition */
 }
 
@@ -906,7 +906,7 @@ body {
 .feed__title {
   font-size: 28px;
   font-weight: 700;
-  color: #008080;
+  color: #056f5a;;
   margin-left: 80px; /* Adjusted for slight alignment */
   flex: 1; /* Allow the title to take available space */
 }
@@ -951,7 +951,7 @@ body {
 /* Create Post Button */
 .feed__header-actions .create-post-btn {
   padding: 10px 20px;
-  background-color: #008080;
+  background-color: #056f5a;;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -1199,7 +1199,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #008080;
+  background-color: #056f5a;;
   color: #ffffff;
   font-size: 14px; /* Smaller font size */
   font-weight: 500;
@@ -1212,7 +1212,7 @@ body {
 }
 
 .messaging__button:hover {
-  background-color: #008080; /* Darker blue on hover */
+  background-color: #056f5a;; /* Darker blue on hover */
   transform: scale(1.05); /* Slight zoom effect */
 }
 
@@ -1298,7 +1298,7 @@ body {
 .post-creation textarea:focus,
 .post-creation select:focus,
 .post-creation input[type="file"]:focus {
-  border-color: #008080;
+  border-color: #056f5a;;
 }
 
 /* Tags input field */
@@ -1313,7 +1313,7 @@ body {
 }
 
 .post-creation input[type="text"]:focus {
-  border-color: #008080;
+  border-color: #056f5a;;
 }
 
 /* Tags input display */
@@ -1325,7 +1325,7 @@ body {
 }
 
 .tags-container .tag {
-  background-color: #008080;
+  background-color: #056f5a;;
   color: white;
   padding: 5px 10px;
   border-radius: 15px;
@@ -1343,7 +1343,7 @@ body {
 
 /* Submit Button */
 .post-creation__submit {
-  background-color: #008080;
+  background-color: #056f5a;;
   color: #fff;
   padding: 12px;
   border: none;
@@ -1427,7 +1427,7 @@ body {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: 2px solid #008080;
+  border: 2px solid #056f5a;;
   margin-right: 10px; /* Slightly reduced margin for tighter spacing */
 }
 
@@ -1441,7 +1441,7 @@ body {
 .post__author {
   font-size: 14px; /* Reduced font size for compact alignment */
   font-weight: bold;
-  color: #008080;
+  color: #056f5a;;
   text-decoration: none;
 }
 
@@ -1502,7 +1502,7 @@ body {
 
 .post__menu-options li:hover {
   background-color: #f0f8f8;
-  color: #008080; /* Teal text color on hover */
+  color: #056f5a;; /* Teal text color on hover */
 }
 
 /* Post Type */
@@ -1567,7 +1567,7 @@ body {
   transition: border-color 0.3s;
 }
 .comment-form button {
-  background-color: #008080;
+  background-color: #056f5a;;
     color: #fff;
     padding: 12px;
     border: none;
@@ -1602,7 +1602,7 @@ body {
   transition: border-color 0.3s;
 }
 .reply-form button {
-  background-color: #008080;
+  background-color: #056f5a;;
     color: #fff;
     padding: 12px;
     border: none;
@@ -1616,7 +1616,7 @@ body {
 }
 .post__action {
   font-size: 14px;
-  color: #008080;
+  color: #056f5a;;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -1667,7 +1667,7 @@ body {
 }
 
 .comment-actions i:hover {
-  color: #008080;
+  color: #056f5a;;
   transform: scale(1.2);
 }
 
@@ -1681,7 +1681,7 @@ body {
 
 .reply-form button {
   padding: 8px 12px;
-  background-color: #008080;
+  background-color: #056f5a;;
   color: white;
   border: none;
   border-radius: 5px;
@@ -1722,7 +1722,7 @@ align-items: center;
 .communities__title {
 font-size: 28px;
 font-weight: 700;
-color: #008080;
+color: #056f5a;;
 text-align: center;
 margin-bottom: 20px;
 }
@@ -1762,7 +1762,7 @@ margin-bottom: 10px;
 
 .create-post-btn{
   padding: 10px 20px;
-  background-color: #008080;
+  background-color: #056f5a;;
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -1788,7 +1788,7 @@ box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 .community__name {
 font-size: 18px;
 font-weight: bold;
-color: #008080;
+color: #056f5a;;
 cursor: pointer;
 }
 
@@ -1799,7 +1799,7 @@ margin: 8px 0;
 }
 
 .community__join-btn {
-background-color: #008080;
+background-color: #056f5a;;
 color: white;
 border: none;
 padding: 8px 16px;
@@ -1809,7 +1809,7 @@ transition: background-color 0.3s;
 }
 
 .community__join-btn:hover {
-background-color: #008080;
+background-color: #056f5a;;
 }
 
 /* Community Details Page */
@@ -1824,7 +1824,7 @@ font-family: 'Segoe UI', Arial, sans-serif;
 
 .community-details__title {
 font-size: 36px;
-color: #008080;
+color: #056f5a;;
 text-align: center;
 margin-bottom: 20px;
 border-bottom: 2px solid #ddd;
@@ -1856,7 +1856,7 @@ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 .community-details__info h4,
 .community-details__announcements h4 {
 font-size: 18px;
-color: #008080;
+color: #056f5a;;
 margin-bottom: 10px;
 }
 
@@ -1971,7 +1971,7 @@ padding: 20px;
 .community-details__feed h3 {
 font-size: 24px;
 margin-bottom: 15px;
-color: #008080;
+color: #056f5a;;
 }
 
 .community-details__post-form {
@@ -1991,7 +1991,7 @@ margin-bottom: 15px;
 
 .community-details__post-form button {
   width: -webkit-fill-available;
-background-color: #008080;
+background-color: #056f5a;;
 color: white;
 padding: 10px 20px;
 border: none;
@@ -2002,7 +2002,7 @@ transition: background-color 0.3s ease;
 }
 
 .community-details__post-form button:hover {
-background-color: #008080;
+background-color: #056f5a;;
 }
 
 /* Right Sidebar (Top Contributors) */
@@ -2021,7 +2021,7 @@ box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
 .community-details__ranking h4 {
 font-size: 18px;
-color: #008080;
+color: #056f5a;;
 margin-bottom: 10px;
 }
 
@@ -2037,7 +2037,7 @@ line-height: 1.5;
 
 /* Invite Button */
 .community-details__invite-btn {
-background-color: #008080;
+background-color: #056f5a;;
 color: white;
 padding: 10px;
 width: 100%;
@@ -2051,7 +2051,7 @@ transition: background-color 0.3s ease;
 }
 
 .community-details__invite-btn:hover {
-background-color: #008080;
+background-color: #056f5a;;
 }
 
 /* Responsive Design */
@@ -2080,7 +2080,7 @@ box-sizing: border-box;
 }
 
 .search-bar input:focus {
-border-color: #008080;
+border-color: #056f5a;;
 outline: none;
 }
 
@@ -2089,7 +2089,7 @@ position: absolute;
 right: 15px;
 top: 50%;
 transform: translateY(-50%);
-color: #008080;
+color: #056f5a;;
 font-size: 18px;
 cursor: pointer;
 }
@@ -2114,7 +2114,7 @@ align-items: center;
 .notifications__title {
   font-size: 28px;
   font-weight: 700;
-  color: #008080;
+  color: #056f5a;;
   margin-bottom: 25px;
   text-align: left;
   border-bottom: 2px solid #e0e0e0;
@@ -2154,7 +2154,7 @@ align-items: center;
   height: 50px;
   border-radius: 50%;
   margin-right: 15px;
-  border: 2px solid #008080;
+  border: 2px solid #056f5a;;
 }
 
 /* Notification Content */
@@ -2164,7 +2164,7 @@ align-items: center;
 
 .notification__user {
   font-weight: 600;
-  color: #008080;
+  color: #056f5a;;
   font-size: 16px;
 }
 
@@ -2176,11 +2176,11 @@ align-items: center;
 
 /* Different Notification Types */
 .notification_item--mention .notification_user {
-  color: #008080;
+  color: #056f5a;;
 }
 
 .notification_item--comment .notification_user {
-  color:#008080;
+  color:#056f5a;;
 }
 
 .notification_item--badge .notification_user {
@@ -2300,12 +2300,12 @@ align-items: center;
 .profile__name {
   font-size: 34px;
   font-weight: bold;
-  color: #004c40;
+  color: #056f5a;
 }
 
 .profile__bio {
   font-size: 18px;
-  color: #006d57;
+  color: #056f5a;
   font-weight: 500;
 }
 
@@ -2347,7 +2347,7 @@ align-items: center;
 
 .profile__detail h4 {
   font-size: 18px;
-  color: #004c40;
+  color: #056f5a;
   margin-bottom: 10px;
 }
 
@@ -2363,7 +2363,7 @@ align-items: center;
 }
 
 .profile__details input {
-  border-color: #004c40;
+  border-color: #056f5a;
 }
 
 .profile__details input:focus {
@@ -2385,7 +2385,7 @@ align-items: center;
 .profile__recent-activity h3 {
   font-size: 22px;
   font-weight: bold;
-  color: #004c40;
+  color: #056f5a;
   margin-bottom: 10px;
 }
 
@@ -2417,7 +2417,7 @@ align-items: center;
 .edit-icon {
   background: none;
   border: none;
-  color: #004c40;
+  color: #056f5a;
   font-size: 20px;
   cursor: pointer;
   transition: color 0.3s ease;
@@ -2466,7 +2466,7 @@ align-items: center;
 
 .activity__title {
   font-size: 28px;
-  color: #008080;
+  color: #056f5a;;
   text-align: center;
   font-weight: 700;
   margin-bottom: 20px;
@@ -2502,7 +2502,7 @@ align-items: center;
 .overview__points {
   font-size: 30px;
   font-weight: 700;
-  color:#008080;
+  color:#056f5a;;
 }
 
 .overview__badges {
@@ -2514,7 +2514,7 @@ align-items: center;
 
 .badge {
   background-color: #e0f7fa;
-  color: #008080;
+  color: #056f5a;;
   padding: 5px 10px;
   border-radius: 12px;
   font-size: 14px;
@@ -2525,7 +2525,7 @@ align-items: center;
 /* Achievements Section */
 .activity__subtitle {
   font-size: 24px;
-  color: #008080;
+  color: #056f5a;;
   text-align: center;
   margin-bottom: 15px;
 }
@@ -2561,7 +2561,7 @@ align-items: center;
 .achievement__title {
   font-size: 18px;
   font-weight: 600;
-  color: #008080;
+  color: #056f5a;
 }
 
 .achievement__points {
@@ -2581,7 +2581,7 @@ align-items: center;
 
 .achievement__badge {
   font-size: 13px;
-  color: #008080;
+  color: #056f5a;;
   font-weight: 500;
   background-color: #e0f7fa;
   padding: 5px 10px;
@@ -2709,7 +2709,7 @@ align-items: center;
 }
 
 .sidebar-options button:hover {
-  color: #008080; /* Highlight color on hover */
+  color: #056f5a;; /* Highlight color on hover */
 }
 
 /* Icon Styles */
@@ -2779,7 +2779,7 @@ h3 {
 
 .chat-list li.active {
   background-color: #b2dfdb;
-  border-left: 4px solid #008080;
+  border-left: 4px solid #056f5a;;
 }
 
 .chat-list .avatar {
@@ -2827,7 +2827,7 @@ h3 {
 }
 .chat-header .back-button {
   background-color: #f5f5f5;
-    color: #008080;
+    color: #056f5a;;
     border: none;
     padding: 10px;
     cursor: pointer;
@@ -2861,7 +2861,7 @@ h3 {
 
 .chat-header .call-btn,
 .chat-header .video-call-btn {
-  background-color: #008080;
+  background-color: #056f5a;;
   color: white;
   border: none;
   border-radius: 50%;
@@ -2895,7 +2895,7 @@ h3 {
 
 .message.you {
   align-self: flex-end;
-  background-color: #008080;
+  background-color: #056f5a;;
   color: #ffffff;
 }
 
@@ -2928,7 +2928,7 @@ h3 {
 .message .message-options button {
   background: none;
   border: none;
-  color: #008080;
+  color: #056f5a;;
   cursor: pointer;
   font-size: 12px;
 }
@@ -2966,7 +2966,7 @@ h3 {
   transform: translateY(-50%);
   cursor: pointer;
   font-size: 18px;
-  color: #008080; /* Teal color */
+  color: #056f5a;; /* Teal color */
 }
 
 .attachment-icon {
@@ -2987,7 +2987,7 @@ h3 {
 
 .send-btn {
   padding: 10px 15px;
-  background-color: #008080;
+  background-color: #056f5a;;
   color: white;
   border: none;
   border-radius: 50%;
@@ -3061,7 +3061,7 @@ h3 {
 
 
 .message-input button {
-  background-color: #008080;
+  background-color: #056f5a;;
   color: white;
   border: none;
   border-radius: 50%;
@@ -3163,7 +3163,7 @@ h3 {
 .opportunities-sidebar h3 {
   font-size: 20px;
   margin-bottom: 20px;
-  color: #008080; /* Teal heading */
+  color: #056f5a;; /* Teal heading */
 }
 
 .filter-group {
@@ -3190,7 +3190,7 @@ h3 {
 
 .filter-group input:focus,
 .filter-group select:focus {
-  border-color: #008080; /* Teal border on focus */
+  border-color: #056f5a;; /* Teal border on focus */
 }
 
 /* Main Content */
@@ -3204,7 +3204,7 @@ h3 {
 /* Header in Main Section */
 .opportunities-header h1 {
   font-size: 28px;
-  color: #008080; /* Teal color for main heading */
+  color: #056f5a;; /* Teal color for main heading */
   margin-bottom: 10px;
 }
 
@@ -3236,7 +3236,7 @@ h3 {
 
 .opportunity-card h2 {
   font-size: 20px;
-  color: #008080; /* Teal color for title */
+  color: #056f5a;; /* Teal color for title */
   margin-bottom: 5px;
 }
 
@@ -3265,14 +3265,14 @@ h3 {
 
 .opportunity-card .skill {
   background-color: #e0f7f7; /* Light teal background */
-  color: #008080; /* Teal text */
+  color: #056f5a;; /* Teal text */
   font-size: 12px;
   padding: 5px 10px;
   border-radius: 20px;
 }
 
 .apply-btn {
-  background-color: #008080; /* Teal button */
+  background-color: #056f5a;; /* Teal button */
   color: white;
   padding: 10px 15px;
   border: none;
