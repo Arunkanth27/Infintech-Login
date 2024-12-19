@@ -63,13 +63,13 @@ const SideBar = () => {
             </NavLink>
           </li>
           <li className="sidebar__nav-item">
-            <NavLink to="/messages" activeClassName="sidebar__link--active" className="sidebar__link">
+            <NavLink to="/chat" activeClassName="sidebar__link--active" className="sidebar__link">
               <i className="fas fa-envelope"></i>
               Messages
             </NavLink>
           </li>
           <li className="sidebar__nav-item">
-            <NavLink to="/community-feed" activeClassName="sidebar__link--active" className="sidebar__link">
+            <NavLink to="/communities" activeClassName="sidebar__link--active" className="sidebar__link">
               <i className="fas fa-users"></i>
               Community Feed
             </NavLink>

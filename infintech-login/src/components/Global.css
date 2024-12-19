@@ -638,14 +638,18 @@ p {
 .header__right > *:hover {
   color: teal; /* Change color to teal on hover */
 }
-
+.header__center{
+  width: -webkit-fill-available;
+  display: flex;
+  justify-content: center;
+}
 /* Search Bar */
 .header__search {
   display: flex;
   align-items: center;
   position: relative;
-  margin-top: 15px;
-  max-width: 300px; /* Adjust width as needed */
+  margin-left: 15px;
+  max-width: 500px; /* Adjust width as needed */
   flex: 1; /* Allow the search bar to grow in width */
 }
 
@@ -711,7 +715,7 @@ body {
     position: fixed;
     top: 60px; /* Align with the header height */
     left: 0;
-    width: 200px; /* Reduced width for better alignment */
+    width: 300px; /* Reduced width for better alignment */
     height: calc(100vh - 60px); /* Fill the screen below the header */
     background-color: #ffffff; /* White background */
     color: #444; /* Light black font color */
@@ -771,7 +775,7 @@ body {
   
   .sidebar__nav {
     list-style: none;
-    padding: 0;
+    padding: 20px;
     margin: 0;
   }
   
@@ -857,7 +861,7 @@ body {
   gap: 10px;
   width: auto; /* Auto width based on content */
   text-align: left; /* Align text to the left */
-  margin-left: 10px; /* Optional: add some space from the left side */
+
 }
 
 .sidebar__logout-btn:hover {
@@ -868,15 +872,7 @@ body {
 .sidebar__logout-btn i {
   font-size: 20px; /* Increase the icon size */
 }
-
-/* Optional: Add a small margin at the bottom of the button */
-.sidebar__logout-btn {
-  margin-bottom: 15px;
-}
-
-
-
-  
+ 
 /* Feed Layout */
 .feed {
   flex: 1;
@@ -968,6 +964,13 @@ body {
 }
 
 /* Media Queries for Responsive Design */
+@media (min-width: 1440px) {
+  .feed {
+    margin-left: 3%;
+    margin-right: 3%;
+    width: 100%;
+  }
+}
 
 /* For screens smaller than 1200px (Tablets & Small Desktops) */
 @media (max-width: 1200px) {
@@ -1033,7 +1036,7 @@ body {
 .sidebar {
   background-color: #ffffff;
   border-radius: 10px;
-  padding: 15px;
+
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -1167,7 +1170,7 @@ body {
 /* User Info Section */
 .sidebar__user {
   display: flex;
-  align-items: center;
+  justify-content: center;
   margin-top: auto;
   padding: 20px;
   background-color: #f9f9f9; /* Light gray background */
@@ -2196,6 +2199,27 @@ align-items: center;
 }
 
 /* Responsive Design */
+@media (min-width: 1440px) {
+  .notifications {
+    width: 100%; /* Wider width for large screens */
+    max-width: 1400px; /* Further increase max width */
+    margin-inline-end: 500px;
+  }
+  .notifications__list{
+    width: -webkit-fill-available;
+  }
+}
+
+@media (max-width: 1024px) {
+  .notifications {
+    width: -webkit-fill-available;
+
+  }
+}
+
+
+
+
 @media (max-width: 768px) {
   .notifications {
     padding: 15px;
@@ -2369,6 +2393,28 @@ align-items: center;
 .profile__details input:focus {
   border-color: #00332e;
 }
+
+.text-with-icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px; /* Optional: Adds spacing between text and button */
+}
+
+.text-with-icon p {
+  flex: 1; /* Ensures the text takes up available space */
+  margin: 0; /* Reset default margin */
+}
+
+/* .edit-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #007bff; 
+  padding: 0;
+  margin: 0;
+} */
+
 
 /* Sidebar (Badges and Recent Activity) */
 .profile__points,

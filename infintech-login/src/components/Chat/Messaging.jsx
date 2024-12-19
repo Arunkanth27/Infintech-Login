@@ -11,7 +11,7 @@ const Messaging = () => {
   return (
     <div className="messaging">
       <button className="messaging__button" onClick={handleButtonClick}>
-        <i className="fas fa-comments"></i> Messages
+        <i className="fas fa-comments"></i> discussions
       </button>
     </div>
   );

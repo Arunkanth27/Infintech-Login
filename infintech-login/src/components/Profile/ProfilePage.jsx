@@ -73,63 +73,64 @@ const ProfilePage = () => {
             <div className="profile__personal-details">
               <h3>Personal Details</h3>
               <div className="profile__details">
-                <div className="profile__detail">
-                  <h4>Current Role</h4>
-                  {isEditing.role ? (
-                    <>
-                      <input type="text" defaultValue="Senior Software Engineer at ABC Corp" />
-                      <button onClick={() => handleEditClick('role')} className="edit-icon"><FaPen /></button>
-                    </>
-                  ) : (
-                    <>
-                      <p>Senior Software Engineer at ABC Corp</p>
-                      <button onClick={() => handleEditClick('role')} className="edit-icon"><FaPen /></button>
-                    </>
-                  )}
-                </div>
-                <div className="profile__detail">
-                  <h4>Future Goals</h4>
-                  {isEditing.goals ? (
-                    <>
-                      <input type="text" defaultValue="To become a tech lead" />
-                      <button onClick={() => handleEditClick('goals')} className="edit-icon"><FaPen /></button>
-                    </>
-                  ) : (
-                    <>
-                      <p>To become a tech lead and contribute to innovative projects in AI and Web Development</p>
-                      <button onClick={() => handleEditClick('goals')} className="edit-icon"><FaPen /></button>
-                    </>
-                  )}
-                </div>
-                <div className="profile__detail">
-                  <h4>Passion</h4>
-                  {isEditing.passion ? (
-                    <>
-                      <input type="text" defaultValue="Building scalable web applications, AI, open-source contributions" />
-                      <button onClick={() => handleEditClick('passion')} className="edit-icon"><FaPen /></button>
-                    </>
-                  ) : (
-                    <>
-                      <p>Building scalable web applications, AI, and open-source contributions</p>
-                      <button onClick={() => handleEditClick('passion')} className="edit-icon"><FaPen /></button>
-                    </>
-                  )}
-                </div>
-                <div className="profile__detail">
-                  <h4>Hobbies</h4>
-                  {isEditing.hobbies ? (
-                    <>
-                      <input type="text" defaultValue="Coding, Reading Sci-Fi Novels, Hiking, Playing Chess" />
-                      <button onClick={() => handleEditClick('hobbies')} className="edit-icon"><FaPen /></button>
-                    </>
-                  ) : (
-                    <>
-                      <p>Coding, Reading Sci-Fi Novels, Hiking, Playing Chess</p>
-                      <button onClick={() => handleEditClick('hobbies')} className="edit-icon"><FaPen /></button>
-                    </>
-                  )}
-                </div>
-              </div>
+  <div className="profile__detail">
+    <h4>Current Role</h4>
+    {isEditing.role ? (
+      <>
+        <input type="text" defaultValue="Senior Software Engineer at ABC Corp" />
+        <button onClick={() => handleEditClick('role')} className="edit-icon"><FaPen /></button>
+      </>
+    ) : (
+      <p className="text-with-icon">
+        Senior Software Engineer at ABC Corp
+        <button onClick={() => handleEditClick('role')} className="edit-icon"><FaPen /></button>
+      </p>
+    )}
+  </div>
+  <div className="profile__detail">
+    <h4>Future Goals</h4>
+    {isEditing.goals ? (
+      <>
+        <input type="text" defaultValue="To become a tech lead" />
+        <button onClick={() => handleEditClick('goals')} className="edit-icon"><FaPen /></button>
+      </>
+    ) : (
+      <p className="text-with-icon">
+        To become a tech lead and contribute to innovative projects in AI and Web Development
+        <button onClick={() => handleEditClick('goals')} className="edit-icon"><FaPen /></button>
+      </p>
+    )}
+  </div>
+  <div className="profile__detail">
+    <h4>Passion</h4>
+    {isEditing.passion ? (
+      <>
+        <input type="text" defaultValue="Building scalable web applications, AI, open-source contributions" />
+        <button onClick={() => handleEditClick('passion')} className="edit-icon"><FaPen /></button>
+      </>
+    ) : (
+      <p className="text-with-icon">
+        Building scalable web applications, AI, and open-source contributions
+        <button onClick={() => handleEditClick('passion')} className="edit-icon"><FaPen /></button>
+      </p>
+    )}
+  </div>
+  <div className="profile__detail">
+    <h4>Hobbies</h4>
+    {isEditing.hobbies ? (
+      <>
+        <input type="text" defaultValue="Coding, Reading Sci-Fi Novels, Hiking, Playing Chess" />
+        <button onClick={() => handleEditClick('hobbies')} className="edit-icon"><FaPen /></button>
+      </>
+    ) : (
+      <p className="text-with-icon">
+        Coding, Reading Sci-Fi Novels, Hiking, Playing Chess
+        <button onClick={() => handleEditClick('hobbies')} className="edit-icon"><FaPen /></button>
+      </p>
+    )}
+  </div>
+</div>
+
             </div>
           </div>
 
