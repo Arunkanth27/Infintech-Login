@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Infintech-Login/static/css/main.91d0b543.css",
+    "main.js": "/Infintech-Login/static/js/main.f5390d50.js",
+    "static/media/fa-solid-900.ttf": "/Infintech-Login/static/media/fa-solid-900.07ed6d5fa32c1d54af0f.ttf",
+    "static/media/fa-brands-400.ttf": "/Infintech-Login/static/media/fa-brands-400.0ff70dcbf135d859ebf3.ttf",
+    "static/media/fa-solid-900.woff2": "/Infintech-Login/static/media/fa-solid-900.93f719f4d62bfa3e748c.woff2",
+    "static/media/background_pictures.jpg": "/Infintech-Login/static/media/background_pictures.262b142a74fc87c5fca6.jpg",
+    "static/media/fa-brands-400.woff2": "/Infintech-Login/static/media/fa-brands-400.bb8d5a145e22822103fb.woff2",
+    "static/media/fa-regular-400.ttf": "/Infintech-Login/static/media/fa-regular-400.17a6e1aebccdbaa39e78.ttf",
+    "static/media/fa-regular-400.woff2": "/Infintech-Login/static/media/fa-regular-400.bc3722686635b5f86132.woff2",
+    "static/media/fa-v4compatibility.ttf": "/Infintech-Login/static/media/fa-v4compatibility.0f6cb412603527bda691.ttf",
+    "static/media/OIP.jpg": "/Infintech-Login/static/media/OIP.ea678f0de2a3b2f69ddd.jpg",
+    "static/media/fa-v4compatibility.woff2": "/Infintech-Login/static/media/fa-v4compatibility.6cfec8414be20e2c3426.woff2",
+    "index.html": "/Infintech-Login/index.html",
+    "main.91d0b543.css.map": "/Infintech-Login/static/css/main.91d0b543.css.map",
+    "main.f5390d50.js.map": "/Infintech-Login/static/js/main.f5390d50.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.91d0b543.css",
+    "static/js/main.f5390d50.js"
+  ]
+}
