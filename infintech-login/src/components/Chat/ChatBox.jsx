@@ -60,22 +60,36 @@ const ChatBox = ({ activeChatId, contacts, messages, setMessages, onBack }) => {
 
           {/* Messages */}
           <div className="messages">
-            {messages[activeChatId]?.map((msg, index) => (
-              <div key={index} className={`message ${msg.sender === "You" ? "you" : "other"}`}>
+  {messages[activeChatId]?.map((msg, index) => (
+   <div
+   key={index}
+   className={`message ${msg.sender === "You" ? "you" : "other"}`}
+ >
+      {/* Message Content */}
+      <div className="message-content">
+        <p className="message-text">{msg.message}</p>
+        {msg.file && (
+          <a href={URL.createObjectURL(msg.file)} download>
+            Download File
+          </a>
+        )}
+        {msg.payment && <p className="payment-info">Payment: {msg.payment}</p>}
+      </div>
 
-                <p className="message-text">{msg.message}</p>
-                {msg.file && <a href={URL.createObjectURL(msg.file)} download>Download File</a>}
-                {msg.payment && <p className="payment-info">Payment: {msg.payment}</p>}
-                <span className="message-time">{msg.time}</span>
-                {msg.sender === "You" && (
-                  <div className="message-options">
-                    <button>Edit</button>
-                    <button>Delete</button>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
+      {/* Message Time */}
+      <span className="message-time">{msg.time}</span>
+
+      {/* Options for "You" */}
+      {msg.sender === "You" && (
+        <div className="message-options">
+          <button>Edit</button>
+          <button>Delete</button>
+        </div>
+      )}
+    </div>
+  ))}
+</div>
+
 
           {/* Message Input */}
           <div className="message-input">
