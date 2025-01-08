@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { NavLink, useNavigate } from 'react-router-dom'; // Import useNavigate
-import { useAuth } from '../../components/Login/AuthContext'; // Import useAuth to check if user is logged in
+import { useAuth } from '../Login/AuthContext'; // Import useAuth to check if user is logged in
 import '../../components/Global.css';
 
 
-const SideBar = () => {
+const Sidebar = () => {
   const [isSidebarVisible, setSidebarVisible] = useState(false); // Start with sidebar hidden
   const navigate = useNavigate(); // Initialize navigate hook
   const { logout } = useAuth(); // Assuming useAuth provides a logout function
@@ -101,4 +101,4 @@ const SideBar = () => {
 };
 
 
-export default SideBar;
+export default Sidebar;
