@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate, useLocation } from 'react-router-dom';
 import { AuthProvider, useAuth } from './components/Login/AuthContext';
 import Header from './components/Homepage/Header';
-import Sidebar from './components/Homepage/SideBar'; // Your existing Sidebar
+import Sidebar from './components/Homepage/Sidebar'; // Your existing Sidebar
 import Feed from './components/Feed/Feed';
 import PostCreation from './components/Post/PostCreationPage';
 import '@fortawesome/fontawesome-free/css/all.min.css';
