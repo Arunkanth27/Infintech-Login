@@ -24,6 +24,20 @@ const Register = () => {
     navigate('/login'); // Redirect to login page
   };
 
+  // const handleSubmit = (e) => {
+  //   var option = {
+  //     method: "POST",
+  //     body: JSON.stringify({
+  //       email
+  //     })
+  //   }
+
+
+  //   const res = fetch().then(ress=>{
+  //     return ress.json()
+  //   }).catch(error=>console.error("Error occured"));
+  // }
+
   return (
     <div className="register-container">
       <div className="register-box">

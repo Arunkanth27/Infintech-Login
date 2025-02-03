@@ -55,6 +55,7 @@ const Login = () => {
         if (data.isSuccess) {
           sessionStorage.setItem("jwt", data.message);
           console.log(data.message);
+          setErrorMessage('');
           login();
           setTimeout(() => {
             setLoading(false);
@@ -64,7 +65,8 @@ const Login = () => {
           data.isSuccess === false &&
           data.message === "User credentials wrong"
         ) {
-          alert("User credentials wrong");
+          // alert("User credentials wrong");
+          setErrorMessage('Invalid credentials'); // Set error message if credentials are invalid
           setLoading(false);
         } else {
           alert("Error in login");
